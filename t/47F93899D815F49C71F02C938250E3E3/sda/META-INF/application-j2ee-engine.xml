@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application-j2ee-engine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="application-j2ee-engine.xsd">
+  <reference reference-type="hard">
+    <reference-target provider-name="incture.com" target-type="application">inc/ext/libs/app</reference-target>
+  </reference>
+<reference reference-type="hard">
+<reference-target provider-name="sap.com" target-type="service">tc/je/scheduler/api</reference-target>
+</reference>
+<provider-name>incture.com</provider-name>
+<modules-additional>
+<module>
+<entry-name>incture.com~pmc~service~ejb.jar</entry-name>
+<container-type>scheduler~container</container-type>
+</module>
+</modules-additional>
+</application-j2ee-engine>

@@ -1,0 +1,114 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<VBox>
+		<Table class="tableBorderClass tableHeader sapUiSizeCompact">
+			<headerToolbar>
+				<Toolbar>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button
+						class="sapUiSizeCompact buttonRadiusStyleClass secondaryBtnStyleClass"
+						icon="images/mSExcel.png" press="taskListDownload"></Button>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column width="10%">
+					<Text text="{i18n>REQUEST_ID}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+				<Column width="13%">
+					<Text text="{i18n>PROCESS_NAME}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+				<Column width="26%">
+					<Text text="{i18n>SUBJECT}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+				<Column width="12%">
+					<Toolbar class="sortingStyleClass">
+						<Text text="{i18n>CREATED_AT}" class="userWorkLoadTableHeaderLblStyle" />
+						<ToolbarSpacer></ToolbarSpacer>
+						<core:Icon src="sap-icon://sort" press="onSort" />
+					</Toolbar>
+				</Column>
+				<!-- <Column width="22%">
+					<Text text="{i18n>OWNERSNAME}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column> -->
+				<Column width="10%">
+					<Text text="{i18n>STATUS}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table inset="false" id="taskListTable" items="{oTaskAgeingModel>/tasks}"
+			class="tableBorderClass sapUiSizeCompact tableClass">
+			<columns>
+				<Column width="10%">
+					<HBox>
+						<Input value="{oTaskAgeingModel>/requestId}" submit="onFilterTableData"
+							width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass"></core:Icon>
+					</HBox>
+				</Column>
+				<Column width="13%">
+					<HBox>
+						<Input value="{oTaskAgeingModel>/processDisplayName}"
+							submit="onFilterTableData" width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+				<Column width="26%">
+					<HBox>
+						<Input value="{oTaskAgeingModel>/subject}" submit="onFilterTableData"
+							class="filterColumnInputClass">
+							<layoutData>
+								<FlexItemData growFactor='1' />
+							</layoutData>
+						</Input>
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+				<Column width="12%">
+					<HBox>
+						<Input value="{oTaskAgeingModel>/createdAt}" submit="onFilterTableData"
+							width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+				<!-- <Column width="22%">
+					<HBox>
+						<Input value="{oTaskAgeingModel>/owner}" submit="onFilterTableData"
+							width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column> -->
+				<Column width="10%">
+					<HBox>
+						<Input value="{oTaskAgeingModel>/newStatus}" submit="onFilterTableData"
+							width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{oTaskAgeingModel>requestId}" />
+						<Text text="{oTaskAgeingModel>processDisplayName}" />
+						<Text text="{oTaskAgeingModel>taskSubject}" />
+						<Text
+							text="{path:'oTaskAgeingModel>createdDate', formatter:'pmc.util.formatter.fnFormatCreateDate'}" />
+						<!-- <Text text="{oTaskAgeingModel>owners}" /> -->
+						<Text text="{path:'oTaskAgeingModel>status', formatter:'pmc.util.formatter.displayStatus'}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<!-- <VBox justifyContent="Center" alignItems="Center"> <Label id="idCurrentPage" 
+			class="idSelectedPage" /> <HBox> <Button id="idPrevButton" icon="sap-icon://close-command-field" 
+			class="navigateButtonClass sapUiSizeCompact" press="onScrollLeft" /> <HBox 
+			items="{paginatedModel>/array}"> <Link text="{paginatedModel>text}" press="onPageClick" 
+			class="paginationNumbers" /> </HBox> <Button id="idNextButton" icon="sap-icon://open-command-field" 
+			class="navigateButtonClass sapUiSizeCompact" press="onScrollRight" /> </HBox> 
+			</VBox> -->
+	</VBox>
+</core:FragmentDefinition>

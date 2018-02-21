@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ResponsivePopover placement="Right" class="userProfilePopUpClass"
+		showHeader="false" contentHeight='25.2rem'>
+		<content>
+			<Image src="{oUserDefaultModel>/confInfoImage}" width="100%" />
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

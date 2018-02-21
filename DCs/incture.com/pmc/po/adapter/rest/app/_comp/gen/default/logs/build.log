@@ -1,0 +1,116 @@
+Development Component Build (2018-02-21 11:51:40 GMT+05:30 (IST))
+  Component name: pmc/po/adapter/rest/app
+  Component vendor: incture.com
+  SC compartment: incture.com_PMC_PO_ADAPTER_1
+  Configuration: CWD_INC-PMC_D
+  Location: CWD_INC-PMC_D
+  Source code location: http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/DCs/incture.com/pmc/po/adapter/rest/app/_comp/
+  DC root folder: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\rest\app\_comp\
+  DC type: J2EE
+  DC subtype: Enterprise Application
+  Host: INC00718
+
+DC Model check:
+   DC is available locally
+   validating dependency to build plugin "sap.com/tc/bi/bp/enterpriseApplication"
+   validating dependency to used DC "incture.com/inc/ext/libs/app"
+   validating dependency to  public part "lib_PP" of DC "incture.com/inc/ext/libs/app"
+   validating dependency to used DC "incture.com/pmc/po/adapter/entities/app"
+   validating dependency to  public part "entities_PP" of DC "incture.com/pmc/po/adapter/entities/app"
+   validating dependency to  public part "war" of DC "incture.com/pmc/po/adapter/rest/web"
+   validating dependency to used DC "incture.com/pmc/po/adapter/services/app"
+   DC model check OK
+
+Start build plugin:
+   using build plugin: sap.com/tc/bi/bp/enterpriseApplication
+   starting build plugin from : C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\bi\bp\enterpriseApplication\_comp\gen\default\public\enterpriseApplication\
+
+
+
+Build Plugin 'EnterpriseApplicationPlugin', Version 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:24:14 +0200, CL239773)
+   development component:  pmc/po/adapter/rest/app (incture.com)
+      software component:  PMC_PO_ADAPTER (incture.com)
+                location:  CWD_INC-PMC_D
+                    type:  J2EE, subtype Enterprise Application
+           build variant:  default
+         source location:  http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/
+         output location:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1FF9F753F7A7861010EB16FF03FD6966\default
+       generation folder:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\1FF9F753F7A7861010EB16FF03FD6966
+       plugin start time:  2018-02-21 11:51:40 GMT+05:30 (IST)
+                 Java VM:  Java HotSpot(TM) 64-Bit Server VM, 25.91-b15 (1.8, Oracle Corporation)
+
+
+General options:
+  convert *.xlf to *.properties: yes
+  include sources for debugging: yes
+ 
+
+
+Checking path lengths for sources
+Path length checks finished in 0.001 seconds
+ 
+Preparing data context..
+Data context preparation finished in 0.022 seconds
+ 
+Creating Ant build file..
+  Creating output file: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1FF9F753F7A7861010EB16FF03FD6966\default\logs\build.xml
+  Using Java class:     com.sap.tc.buildplugin.BuildEnterpriseApplication
+Target "createDeployArchive" has a dependency on "compile" but no such target exists. Dependency will be ignored.
+Build file creation finished in 0.018 seconds
+ 
+Starting Ant..
+  Using build file:     C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1FF9F753F7A7861010EB16FF03FD6966\default\logs\build.xml
+  Using build target:   build
+  Using Ant version:    1.7.1
+ 
+createDeployArchive:
+       [cdu] Preparing archive for deploy unit "default"
+       [cdu]   deployment type: "J2EE"
+ 
+       [cdu] Creating Ant build file: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1FF9F753F7A7861010EB16FF03FD6966\default\logs\buildDeployArchive.xml
+ 
+       [cdu] Creating descriptor META-INF/sda-dd.xml ...
+ 
+       [cdu] Validating descriptor C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\rest\app\_comp\META-INF\application.xml
+       [cdu] Display name "PMC" in application.xml does not match DC name "pmc/po/adapter/rest/app".
+ 
+       [cdu] Validating descriptor C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\rest\app\_comp\META-INF\application-j2ee-engine.xml
+       [cdu] Setting provider name to "incture.com".
+ 
+       [cdu] Collecting modules ...
+       [cdu] Adding module 'incture.com~pmc~po~adapter~rest~web.war' from DC 'pmc/po/adapter/rest/web' (vendor 'incture.com'), public part 'war'
+       [cdu] Missing deploy-time dependency for hard runtime reference to "inc/ext/libs/app" (vendor "incture.com").
+       [cdu] Missing deploy-time dependency for hard runtime reference to "pmc/po/adapter/entities/app" (vendor "incture.com").
+       [cdu] Missing deploy-time dependency for hard runtime reference to "pmc/po/adapter/services/app" (vendor "incture.com").
+       [cdu] Ant build file creation finished in 0.05 seconds
+ 
+packDeployArchive:
+ [srcpacker] Creating source archive
+ [srcpacker] Adding source archive from incture.com~pmc/po/adapter/rest/web
+     [timer] Source archive creation finished in 0.02 seconds
+ 
+    [jarsap] Info: JarSAP version 20090803.1000
+    [jarsap] Info: JarSAPProcessing version 20090907.1000 / JarSL version 20100616.1800
+    [jarsap] Building: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1FF9F753F7A7861010EB16FF03FD6966\default\deploy\incture.com~pmc~po~adapter~rest~app.ear with compression
+     [timer] JarSAP finished in 0.017 seconds
+ 
+ 
+build:
+ 
+Ant runtime 0.121 seconds
+ 
+Ant build finished OK
+Checking package reservation
+Package reservation check finished in 0 seconds
+ 
+Build plugin finished at 2018-02-21 11:51:41 GMT+05:30 (IST)
+Total build plugin runtime: 0.421 seconds
+ 
+Build finished with WARNING
+
+==== Post-Processing ====   started at 2018-02-21 11:51:41.207 IST
+Comparison of previous and actual build results took: 0 seconds
+
+Copy the build results 
+  from: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1FF9F753F7A7861010EB16FF03FD6966\default\
+  to:   C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\rest\app\_comp\gen\default\

@@ -1,0 +1,195 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="false" contentWidth="100%">
+		<VBox class="outerBoxStyleClass" visible="{path:'oPageModel>key', formatter:'displayRangeFragment'}">
+			<Table id="idRangeTable" class="tableBorderClass tableHeader sapUiSizeCompact"
+				items="{oConfigModel>/agingReportConfigDtos}">
+				<headerToolbar>
+					<Toolbar class="barClass">
+						<Text text="{oPageModel>name}" class="sectionHeaderLabelStyleClass" />
+						<ToolbarSpacer></ToolbarSpacer>
+						<HBox items="{oConfigModel>/agingRangeConfigDto}" > 
+							<HBox visible="{parts:['oPageModel>key','oConfigModel>reportName'], formatter:'displayEndRangeNo'}">
+								<Text text="Range for last " class="sapUiTinyMarginEnd sapUiTinyMarginTop"/>
+								<Input value="{oConfigModel>agingRange}" class="sapUiSizeCompact" 
+									width="5rem" visible="{parts:['oPageModel>key','oConfigModel>reportName'], formatter:'displayEndRangeNo'}"/>
+								<Text text="days" class="sapUiTinyMarginBeginEnd sapUiTinyMarginTop" />
+							</HBox>
+						 </HBox>
+						<Image src="images/add.png" class="addImageClass" press="onRangeTableAddPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="10%">
+						<Text text="Range" class="tableHeaderLblStyle" />
+					</Column>
+					<Column width="30%">
+						<Text text="From - To (Days)" class="tableHeaderLblStyle" />
+					</Column>
+					<Column>
+						<Text text="Display Name" class="tableHeaderLblStyle" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem visible="{parts:['oPageModel>key','oConfigModel>reportName'], formatter:'displayRangeItem'}">
+						<cells>
+							<Text
+								text="{parts:['oConfigModel>id','oConfigModel>reportName'], formatter:'displayRangeNo'}" />
+							<HBox alignItems="Center">
+								<Input value="{oConfigModel>lowerSegment}" width="100%"
+									liveChange="rangeCheck" name="lowerSegment" />
+								<Text text=" - " class="sapUiTinyMarginBeginEnd" />
+								<Input value="{oConfigModel>higherSegment}" width="100%"
+									liveChange="rangeCheck" name="higherSegment" />
+							</HBox>
+							<VBox>
+								<Input value="{oConfigModel>displayName}" width="100%" visible="{parts:['oPageModel>key'], formatter:'displayInputRange'}"/>
+								<Text text="{oConfigModel>displayName}" visible="{parts:['oPageModel>key'], formatter:'displayTextRange'}"/>
+							</VBox>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</VBox>
+		<VBox class="outerBoxStyleClass" visible="{path:'oPageModel>key', formatter:'displayProcessNameFragment'}">
+			<Table class="tableBorderClass tableHeader sapUiSizeCompact"
+					 items="{oConfigModel>/processConfigDtos}"
+					mode="None">
+					<headerToolbar>
+						<Toolbar class="barClass">
+							<Text text="{oPageModel>name}" class="sectionHeaderLabelStyleClass" />
+							<ToolbarSpacer></ToolbarSpacer>
+							<Image src="images/add.png" class="addImageClass" press="onAddProcessNamePress"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Text text="Process Name" class="tableHeaderLblStyle" />
+						</Column>
+						<Column>
+							<Text text="Process Display Name" class="tableHeaderLblStyle" />
+						</Column>
+						<Column>
+							<Text text="Buissness Id" class="tableHeaderLblStyle" />
+						</Column>
+						<Column>
+							<Text text="User Group" class="tableHeaderLblStyle" />
+						</Column>
+						<Column>
+							<Text text="Selected Group(s)" class="tableHeaderLblStyle" />
+						</Column>
+						<!-- <Column>
+							<Text text="Role" class="tableHeaderLblStyle" />
+						</Column>
+						<Column>
+							<Text text="Selected Role(s)" class="tableHeaderLblStyle" />
+						</Column> -->
+						<Column width="1.5rem"></Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Select width="90%"
+									class="sapUiTinyMargin dropDownStyle sapUiSizeCompact borderRadiusClass"
+									selectedKey="{oConfigModel>processName}" items="{oProcessNameModel>/processConfigDto}"
+									change="onProcessNameSelection">
+									<core:Item key="{oProcessNameModel>processName}"
+										text="{oProcessNameModel>processName}" />
+								</Select>
+								<Input value="{oConfigModel>processDisplayName}" class="borderRadiusClass" />
+								<Input value="{oConfigModel>labelName}" visible="{parts:['oConfigModel>processName'], formatter:'displayLabel'}"/>
+								<MultiComboBox
+									class="sapUiSizeCompact multiBoxFilter borderRadiusClass"
+									selectionChange="onUserGroupSelect" selectedKeys="{oConfigModel>userGroupList}"
+									items="{oUserGroupModel>/userGroupDto}">
+									<core:Item key="{oUserGroupModel>groupName}" text="{oUserGroupModel>groupName}" />
+								</MultiComboBox>
+								<Text text="{oConfigModel>userGroup}" />
+								<!-- <MultiComboBox
+									class="sapUiSizeCompact multiBoxFilter borderRadiusClass"
+									selectionChange="onRoleSelect" selectedKeys="{oConfigModel>userGroupList}"
+									items="{oRoleModel>/roleInfoDto}">
+									<core:Item key="{oRoleModel>roleUniqName}" text="{oRoleModel>roleDescription}" />
+								</MultiComboBox>
+								<Text text="{oConfigModel>roleGroup}" /> -->
+								<Button icon="sap-icon://delete" type="Transparent" class="deleteButtonClass"
+									press="onDeletePress"></Button>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</VBox>
+		<VBox class="outerBoxStyleClass" visible="{path:'oPageModel>key', formatter:'displayWorkloadFragment'}">
+				<Toolbar class="barClass">
+					<Text text="Workload Configuration" class="sectionHeaderLabelStyleClass sapUiSmallMargin " />
+					<ToolbarSpacer></ToolbarSpacer>
+				</Toolbar>
+				<layout:Grid defaultSpan="L4 M12 S12" vSpacing="1"
+					class="gridStyleClass">
+					<layout:content>
+						<VBox class="sapUiSmallMargin">
+							<HBox>
+								<HBox class="lowWorkLOadLegendStyle" />
+								<Text text="Low Workload" class=" workloadTitleStyleClass" />
+							</HBox>
+							<HBox class="sapUiTinyMarginTop workloadCountBoxClass"
+								marginLeft="1.4rem">
+								<VBox>
+									<Label text="Min (Count)" class="tableHeaderLblStyle" />
+									<Input value="{oConfigModel>/countDetails/lmin}" enabled="false"
+										class="sapUiSizeCompact" width="50%"></Input>
+								</VBox>
+								<VBox>
+									<Label text="Max (Count)" class="tableHeaderLblStyle" />
+									<Input value="{oConfigModel>/countDetails/lmax}"
+										liveChange="countAutoPopulate" class="sapUiSizeCompact" width="50%"
+										name="lmax"></Input>
+								</VBox>
+							</HBox>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<HBox>
+								<HBox class="normalWorkLOadLegendStyle" />
+								<Text text="Normal Workload" class=" workloadTitleStyleClass" />
+							</HBox>
+							<HBox class="sapUiTinyMarginTop workloadCountBoxClass"
+								marginLeft="1.4rem">
+								<VBox>
+									<Label text="Min (Count)" class="tableHeaderLblStyle" />
+									<Input value="{oConfigModel>/countDetails/nmin}" enabled="false"
+										liveChange="countAutoPopulate" class="sapUiSizeCompact" width="50%"
+										name="nmin"></Input>
+								</VBox>
+								<VBox>
+									<Label text="Max (Count)" class="tableHeaderLblStyle" />
+									<Input value="{oConfigModel>/countDetails/nmax}"
+										liveChange="countAutoPopulate" class="sapUiSizeCompact" width="50%"
+										name="nmax"></Input>
+								</VBox>
+							</HBox>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<HBox>
+								<HBox class="highWorkLOadLegendStyle" />
+								<Text text="High Workload" class="workloadTitleStyleClass" />
+							</HBox>
+							<HBox class="sapUiTinyMarginTop workloadCountBoxClass"
+								marginLeft="1.4rem">
+								<VBox>
+									<Label text="Min (Count)" class="tableHeaderLblStyle" />
+									<Input value="{oConfigModel>/countDetails/hmin}"
+										liveChange="countAutoPopulate" class="sapUiSizeCompact" width="50%"
+										name="hmin"></Input>
+								</VBox>
+								<VBox>
+									<Label text="Max (Count)" class="tableHeaderLblStyle" />
+									<Input value="{oConfigModel>/countDetails/hmax}" enabled="false"
+										class="sapUiSizeCompact" width="50%"></Input>
+								</VBox>
+							</HBox>
+						</VBox>
+					</layout:content>
+				</layout:Grid>
+			</VBox>
+	</Page>
+</core:FragmentDefinition>

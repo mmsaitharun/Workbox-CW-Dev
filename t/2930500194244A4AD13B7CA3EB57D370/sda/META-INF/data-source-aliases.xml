@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<data-source-aliases 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="data-source-aliases.xsd">
+	<aliases>
+		<data-source-name>Z_PMC_DS</data-source-name>
+		<alias>PMC_ALIAS</alias>
+	</aliases>
+</data-source-aliases>

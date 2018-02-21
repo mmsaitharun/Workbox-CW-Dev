@@ -1,0 +1,158 @@
+.sapUiBody {
+	background-color: black !important;
+	background-image: none !important;
+}
+
+.sapUiGlobalBackgroundColor {
+	background-color: #737373 !important;
+	background-image: none !important;
+}
+
+.tableBorderClass .sapMListTblSelCol+.sapMListTblCell {
+	padding-left: 8px;
+}
+
+.tableBorderClass .sapMListTblSelCol {
+	border-right: 1px solid #e5e5e5 !important;
+}
+
+.tableBorderClass .sapMListTblCell {
+    border: 1px solid #b7b7b7 !important;
+}
+
+.tableHeader .sapMListTbl th {
+    background: #f3af5e;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+.sapMListBGTranslucent .sapMLIB {
+	background: #e4e4e4 !important;
+}
+
+.outerBoxStyleClass {
+	border: 1px solid gainsboro;
+    background: #e4e4e4;
+    margin: 2%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    margin-top: 15px;
+    width: auto !important;
+}
+
+.sectionHeaderStyleClass{
+	width: 100%;
+ 	height: 2rem;
+    margin-left: -1.5rem !important;
+    margin-top: 1rem;
+    border: rgba(229, 229, 229, 0);
+}
+
+.sectionHeaderLabelStyleClass{
+    font-size: 0.9rem;
+    font-weight: bold !important;
+}
+
+.sectionHeaderLabelStyleClass.sapMText{
+	color:#000000 !important;
+}
+
+.sapMTB-Transparent-CTX .sapMText{
+	text-shadow:none !important;
+}
+
+
+.tableHeaderLblStyle {
+	font-size: 0.9rem !important;
+    color: #100101 !important;
+}
+
+.buttonRadiusStyleClass.sapUiSizeCompact .sapMBtnInner{
+	border-radius: 4px;
+}
+
+.workloadTitleStyleClass {
+	font-size: 0.9rem;
+    color: #6d6d6d;
+    font-weight: bold !important;
+    border-bottom-color: #6d6d6d;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-left: 0.3rem;
+    font-family: Open Sans !important;
+}
+
+.borderRadiusClass {
+	border-radius: 3px;
+}
+
+.sapUiSizeCompact .sapMInputBaseInner{
+	border-radius: 3px;
+}
+
+.lowWorkLOadLegendStyle {
+	width: 1.1rem;
+	height: 1.1rem;
+	background: #fcf2d1;
+	margin-top: 0.15em;
+	border: 0.1rem solid #ffe9a0;
+}
+
+.normalWorkLOadLegendStyle {
+	width: 1.1rem;
+	height: 1.1rem;
+	background: #fff1b2;
+	margin-top: 0.15em;
+	border: 0.1rem solid #fbe087;
+}
+
+.highWorkLOadLegendStyle {
+	width: 1.1rem;
+	height: 1.1rem;
+	background: #fdd183;
+	margin-top: 0.15em;
+	border: 0.1rem solid #ffc400;
+}
+
+.workloadCountBoxClass {
+	margin-left: 1.4rem;
+}
+
+.gridStyleClass {
+	margin-bottom: -2rem;
+}
+
+.addButtonClass{
+	left:-0.5rem;
+	top:-0.2rem;
+}
+
+.addButtonClass .sapMBtnInner {
+	width: 2.15rem;
+    height: 2.15rem;
+    background-color: #008000 !important;
+    border-radius: 25px;
+}
+
+.addButtonClass .sapMBtnIcon {
+	color: #ffffff !important;
+    font-size: 1.500rem;
+    margin-right: 0.3rem !important;
+    margin-left: 0rem !important;
+    margin-top: 0.2rem !important;
+}
+
+.deleteButtonClass .sapMBtnIcon {
+	color: #af0000 !important;
+	font-size: 1.500rem;
+}
+
+.barClass{
+	background-color: #333030 !important;
+    height: 3rem;
+    background: transparent;
+    border-bottom: 2px solid #c0c0c0;
+}
+
+.barClass .sapMText{
+	color:white !important;
+}

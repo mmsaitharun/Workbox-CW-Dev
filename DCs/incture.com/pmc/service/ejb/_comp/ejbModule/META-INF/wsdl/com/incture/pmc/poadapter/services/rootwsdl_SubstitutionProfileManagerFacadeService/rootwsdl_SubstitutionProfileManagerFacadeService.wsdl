@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://incture.com/pmc/poadapter/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://incture.com/pmc/poadapter/services/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://incture.com/pmc/poadapter/services/" version="1.0">
+<xs:element name="createSubstitutionProfile" type="tns:createSubstitutionProfile"/>
+<xs:element name="createSubstitutionProfileResponse" type="tns:createSubstitutionProfileResponse"/>
+<xs:element name="deleteProfile" type="tns:deleteProfile"/>
+<xs:element name="deleteProfileResponse" type="tns:deleteProfileResponse"/>
+<xs:element name="getAllProfiles" type="tns:getAllProfiles"/>
+<xs:element name="getAllProfilesResponse" type="tns:getAllProfilesResponse"/>
+<xs:element name="getMyTaskModelIds" type="tns:getMyTaskModelIds"/>
+<xs:element name="getMyTaskModelIdsResponse" type="tns:getMyTaskModelIdsResponse"/>
+<xs:element name="getProfileById" type="tns:getProfileById"/>
+<xs:element name="getProfileByIdResponse" type="tns:getProfileByIdResponse"/>
+<xs:element name="getProfileByKey" type="tns:getProfileByKey"/>
+<xs:element name="getProfileByKeyResponse" type="tns:getProfileByKeyResponse"/>
+<xs:element name="getTaskModel" type="tns:getTaskModel"/>
+<xs:element name="getTaskModelResponse" type="tns:getTaskModelResponse"/>
+<xs:element name="responseDto" type="tns:responseDto"/>
+<xs:element name="taskModelDto" type="tns:taskModelDto"/>
+<xs:complexType name="createSubstitutionProfile">
+<xs:sequence>
+<xs:element minOccurs="0" name="profileDto" type="tns:substitutionProfileDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="substitutionProfileDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="profileId" type="xs:string"/>
+<xs:element minOccurs="0" name="profileKey" type="xs:string"/>
+<xs:element minOccurs="0" name="profileName" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="taskModelIds" nillable="true" type="tns:taskModelDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="taskModelDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="taskModelId" type="xs:string"/>
+<xs:element minOccurs="0" name="taskModelName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="createSubstitutionProfileResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:substitutionProfileResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="substitutionProfileResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="profiles" nillable="true" type="tns:substitutionProfileDto"/>
+<xs:element minOccurs="0" name="responseMessage" type="tns:responseDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="responseDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+<xs:element minOccurs="0" name="statusCode" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllProfiles">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAllProfilesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:substitutionProfileResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteProfile">
+<xs:sequence>
+<xs:element minOccurs="0" name="profileId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteProfileResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:responseDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getProfileById">
+<xs:sequence>
+<xs:element minOccurs="0" name="profileId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getProfileByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:substitutionProfileResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getProfileByKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="profileKey" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getProfileByKeyResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:substitutionProfileResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getMyTaskModelIds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getMyTaskModelIdsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:taskModelDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTaskModel">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTaskModelResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:taskModelDto"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="createSubstitutionProfileIn">
+<wsdl:part element="tns:createSubstitutionProfile" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="createSubstitutionProfileOut">
+<wsdl:part element="tns:createSubstitutionProfileResponse" name="createSubstitutionProfileResponse"/>
+</wsdl:message>
+<wsdl:message name="getAllProfilesIn">
+<wsdl:part element="tns:getAllProfiles" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getAllProfilesOut">
+<wsdl:part element="tns:getAllProfilesResponse" name="getAllProfilesResponse"/>
+</wsdl:message>
+<wsdl:message name="deleteProfileIn">
+<wsdl:part element="tns:deleteProfile" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="deleteProfileOut">
+<wsdl:part element="tns:deleteProfileResponse" name="deleteProfileResponse"/>
+</wsdl:message>
+<wsdl:message name="getProfileByIdIn">
+<wsdl:part element="tns:getProfileById" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getProfileByIdOut">
+<wsdl:part element="tns:getProfileByIdResponse" name="getProfileByIdResponse"/>
+</wsdl:message>
+<wsdl:message name="getProfileByKeyIn">
+<wsdl:part element="tns:getProfileByKey" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getProfileByKeyOut">
+<wsdl:part element="tns:getProfileByKeyResponse" name="getProfileByKeyResponse"/>
+</wsdl:message>
+<wsdl:message name="getMyTaskModelIdsIn">
+<wsdl:part element="tns:getMyTaskModelIds" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getMyTaskModelIdsOut">
+<wsdl:part element="tns:getMyTaskModelIdsResponse" name="getMyTaskModelIdsResponse"/>
+</wsdl:message>
+<wsdl:message name="getTaskModelIn">
+<wsdl:part element="tns:getTaskModel" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getTaskModelOut">
+<wsdl:part element="tns:getTaskModelResponse" name="getTaskModelResponse"/>
+</wsdl:message>
+<wsdl:portType name="SubstitutionProfileManagerFacade">
+<wsdl:operation name="createSubstitutionProfile" parameterOrder="parameters">
+<wsdl:input message="tns:createSubstitutionProfileIn"/>
+<wsdl:output message="tns:createSubstitutionProfileOut"/>
+</wsdl:operation>
+<wsdl:operation name="getAllProfiles" parameterOrder="parameters">
+<wsdl:input message="tns:getAllProfilesIn"/>
+<wsdl:output message="tns:getAllProfilesOut"/>
+</wsdl:operation>
+<wsdl:operation name="deleteProfile" parameterOrder="parameters">
+<wsdl:input message="tns:deleteProfileIn"/>
+<wsdl:output message="tns:deleteProfileOut"/>
+</wsdl:operation>
+<wsdl:operation name="getProfileById" parameterOrder="parameters">
+<wsdl:input message="tns:getProfileByIdIn"/>
+<wsdl:output message="tns:getProfileByIdOut"/>
+</wsdl:operation>
+<wsdl:operation name="getProfileByKey" parameterOrder="parameters">
+<wsdl:input message="tns:getProfileByKeyIn"/>
+<wsdl:output message="tns:getProfileByKeyOut"/>
+</wsdl:operation>
+<wsdl:operation name="getMyTaskModelIds" parameterOrder="parameters">
+<wsdl:input message="tns:getMyTaskModelIdsIn"/>
+<wsdl:output message="tns:getMyTaskModelIdsOut"/>
+</wsdl:operation>
+<wsdl:operation name="getTaskModel" parameterOrder="parameters">
+<wsdl:input message="tns:getTaskModelIn"/>
+<wsdl:output message="tns:getTaskModelOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="SubstitutionProfileManagerFacadeBinding" type="tns:SubstitutionProfileManagerFacade">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="createSubstitutionProfile">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getAllProfiles">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="deleteProfile">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getProfileById">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getProfileByKey">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getMyTaskModelIds">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getTaskModel">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="SubstitutionProfileManagerFacadeService">
+<wsdl:port binding="tns:SubstitutionProfileManagerFacadeBinding" name="SubstitutionProfileManagerFacadePort">
+<soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://incturecwd:50000/SubstitutionProfileManagerFacadeService/SubstitutionProfileManagerFacade"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

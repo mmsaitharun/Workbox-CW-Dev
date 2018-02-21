@@ -1,0 +1,5 @@
+#JDK Properties for Configuration INC-PMC_dev
+#Wed Feb 21 11:52:57 IST 2018
+jdk_source=1.6
+jdk_target=1.6
+jdk_path_heuristic=C\:\\Program Files\\Java\\jdk1.8.0_131

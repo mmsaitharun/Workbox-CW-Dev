@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.sapMTitle{
+	color: #000000;
+}
+
+.searchBarHeaderStyleClass {
+	background: #ffffff;
+	padding-left: 20px;
+}
+
+.processNameHeadingStyleClass{
+	font-size: 1.05rem;
+    font-weight: 600;
+    font-family: Open Sans !important;
+    color: #223138;
+    margin-top: 1rem;
+}
+
+.filterBarStyleClass.sapUiCompFilterBar{
+	background-color: #ffffff !important;
+}
+
+.filterBarStyleClass .sapMLabel {
+	font-family: Open Sans !important;
+	font-weight: bold;
+	color: #000000;
+}
+
+.outerBoxStyleClass {
+	border: 1px solid gainsboro;
+    background: #ffffff;
+    margin: 2%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    margin-top: 15px;
+    width: auto !important;
+}
+
+.panelBoxStyleClass{
+	border: 1px solid gainsboro;
+    background: #ffffff;
+    left: 0.65%;
+    width: 95.7% !important;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.panelBoxStyleClass .sapMPanelBGTranslucent{
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.rulesOuterBoxStyleClass {
+	border: 1px solid gainsboro;
+	background: #b3b1b1;
+	margin: 2%;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .5);
+	border-radius: 5px;
+	margin-top: 15px;
+	width: auto !important;
+}
+
+.legendBarStyle {
+	border-top: 1px solid #d2cfcf;
+	background: #ffffff;
+	padding-left: 20px;
+	height: 3.8rem;
+}
+
+.processLegendTextClass {
+	color: #3b484d;
+	font-size: 0.8rem;
+	font-weight: 600;
+	margin-top: 0.2rem;
+	margin-right: 0.8rem;
+	padding-left: 0.3rem;
+	font-family: Open Sans !important;
+}
+
+.totalLegendTextClass {
+	color: #3b484d;
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin-top: 0.2rem;
+	margin-right: 0.8rem;
+	padding-left: 2rem;
+	font-family: Open Sans !important;
+}
+
+.pmcBackGroundColor {
+    background: transparent;
+}
+
+.searchBarHeaderLblStyleClass {
+	font-size: 0.85rem !important;
+	font-weight: bolder !important;
+	font-family: Open Sans !important;
+	color: #000000;
+}
+
+.sapMListBGTranslucent .sapMLIB{
+	background: #ffffff !important;
+}
+
+.tableHeader .sapMListTbl th {
+    background: #dadada;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+.userWorkLoadNamestyle {
+	font-size: 1.3rem;
+	font-weight: 600;
+	font-family: Open Sans !important;
+	color: #000000;
+}
+
+.userWorkLoadLblStyle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #8e8e8e;
+    font-family: Open Sans !important;
+    width: 7rem !important;
+}
+
+.userWorkLoadKeyStyle {
+    font-size: 0.8rem;
+    color: #000000;
+    width: 50rem;
+    font-family: Open Sans !important;
+}
+
+.sapMITBContent{
+	background: #ffffff;
+}
+
+.userWorkLoadDetailsTitalLblClass {
+	color: #949494;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: Open Sans !important;
+}
+
+.userWorkLoadKeyClass {
+	color: #060606;
+	font-size: 1rem;
+	font-weight: 700;
+	font-family: Open Sans !important;
+}
+
+.processHeaderToolBarStyleClass{
+	border: 1px solid #e5e5e5;
+    border-left: 0px;
+    border-right: 0px;
+    background: #ffffff;
+}
+
+.tableBorderClass .sapMListTblCell {
+    border-left: 1px solid #b7b7b7 !important;
+    border-top: 1px solid #b7b7b7 !important;
+}
+
+.processTableBorderStyleClass{
+	border: 1px solid #e5e5e5 !important;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault>.sapMITBText {
+    color: #333333;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.graphLabel{
+    width: 4.5rem;
+    margin: 0.5rem;
+    margin-top: 0.75rem;
+    color: #333333 !important;
+}
+
+.processFlowPage{
+	background-color: transparent;
+}
+
+.statusHeaderTextStyle{
+	color: #949494;
+    font-family: Open Sans !important;
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+}
+
+.processHeaderStyle{
+	background-color: #ffffff;
+	height: -webkit-fill-available;
+}
+
+.taskRightHeaderLblClass {
+	color: #949d9f;
+	padding: 1.5rem;
+	font-size: 0.8rem;
+	font-family: Open Sans !important;
+	width: 15rem;
+	font-weight: 600
+}
+
+.taskHeaderLblClass {
+	color: #949d9f;
+	padding: 1.1rem;
+	padding-top: 0.1rem;
+	padding-left: 1.5rem;
+	font-size: 0.75rem;
+	width: 6rem;
+	font-family: Open Sans !important;
+	font-weight: 600
+}
+
+.taskHeaderFieldClass {
+	font-weight: 600;
+	font-family: Open Sans !important;
+	color: #474747;
+	font-size: 0.8rem;
+	padding-top: 0.1rem;
+}
+
+.taskHeaderStatusClass {
+	font-weight: 600;
+	font-family: Open Sans !important;
+	color: #474747;
+	font-size: 0.8rem;
+	padding-top: 0.1rem;
+}
+
+.outerBoxProcessAgingStyleClass {
+	border: 1px solid gainsboro;
+	background: #ffffff;
+	margin: 1.5%;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .5);
+	border-radius: 5px;
+	margin-top: 15px;
+	width: 97%;
+}
+
+.processAgingBarLabelClass{
+	margin-left: 1rem !important;
+    font-size: 0.85rem;
+    font-family: Open Sans;
+    font-weight: bold;
+    color: #333030;
+}
+
+.docHdrblClass{
+	margin-left: 1rem !important;
+    font-size: 0.85rem !important;
+    font-weight: bold;
+    color:#333030;
+}
+
+.processListHeaderStyleClass{
+	padding: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333333;
+    font-family: Open Sans !important;
+}
+
+.processListStyleClass{
+	padding: 1rem;
+    padding-bottom: 0.6rem;
+    padding-top: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #2b2b2b;
+    font-family: Open Sans !important;
+    width: 13rem;
+    cursor: pointer;
+}
+
+.processListItemBoxInActiveStyleClass:hover {
+    background: #f7f7f7;
+}
+
+.processListItemBoxActiveStyleClass{
+	background: #dcdcdc;
+}
+
+.slaHeaderBgStyleClass {
+    background: #f5f5f5;
+    border-bottom: 1.3px solid #cccccc;
+}
+
+.processConfigTitleStyleClass{
+	padding: 1rem;
+    padding-bottom: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #171717;
+    font-family: Open Sans !important;
+}
+
+.slaTableBorderClass .sapMListTblCell {
+    border-left: 1px solid #b7b7b7 !important;
+    border-top: 1px solid #b7b7b7 !important;
+    padding-bottom: 0.2rem;
+}
+
+.slaHeaderKeyStyleClass {
+    padding: 0rem;
+    padding-top: 0.7rem;
+    padding-right: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #3c3c3c;
+    font-family: Open Sans !important;
+    width: 7rem;
+}
+
+.slaHeaderValueStyleClass{
+    padding: 0rem;
+    padding-top: 0.7rem;
+    padding-right: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #9a9a9a;
+    font-family: Open Sans !important;
+}
+
+.ruleSearchGridLbl {
+    font-size: 1rem;
+    margin: 0.8rem;
+    font-weight: bold;
+    color: #333333;
+    font-family: Open Sans !important;
+}
+
+.slaDateStyle {
+	color: #000000;
+	font-family: Open Sans !important;
+	font-size: 0.8rem;
+	font-style: Italic;
+}
+
+
+
+.adminTableBorderClass .sapMListTblSelCol+.sapMListTblCell {
+	padding-left: 8px;
+}
+
+.adminTableBorderClass .sapMListTblSelCol {
+	border-right: 1px solid #e5e5e5 !important;
+}
+
+.adminTableBorderClass .sapMListTblCell {
+    border: 1px solid #b5b4b4 !important;
+}
+
+.adminOuterBoxStyleClass {
+	border: 1px solid gainsboro;
+    background: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    top: -1.3rem;
+}
+
+.sectionHeaderStyleClass{
+	width: 100%;
+ 	height: 2rem;
+    margin-left: 1rem !important;
+    margin-top: 1rem;
+    border: rgba(229, 229, 229, 0);
+}
+
+.sectionHeaderLabelStyleClass{
+    font-size: 0.8rem;
+    font-weight: bold !important;
+}
+
+.tableHeaderLblStyle {
+	font-size: 0.8rem !important;
+    color: #100101 !important;
+}
+
+.buttonRadiusStyleClass.sapUiSizeCompact .sapMBtnInner{
+	border-radius: 4px;
+}
+
+.workloadTitleStyleClass {
+	font-size: 0.9rem;
+    color: #6d6d6d;
+    font-weight: bold !important;
+    border-bottom-color: #6d6d6d;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-left: 0.3rem;
+    font-family: Open Sans !important;
+}
+
+.borderRadiusClass {
+	border-radius: 3px;
+}
+
+.sapUiSizeCompact .sapMInputBaseInner{
+	border-radius: 3px;
+}
+
+.lowWorkLoadLegendStyle {
+	width: 1.1rem;
+	height: 1.1rem;
+	background: #fcf2d1;
+	margin-top: 0.3rem;
+	border: 0.1rem solid #ffe9a0;
+}
+
+.normalWorkLoadLegendStyle {
+	width: 1.1rem;
+	height: 1.1rem;
+	background: #fff1b2;
+	margin-top: 0.3rem;
+	border: 0.1rem solid #fbe087;
+}
+
+.highWorkLoadLegendStyle {
+	width: 1.1rem;
+	height: 1.1rem;
+	background: #fdd183;
+	margin-top: 0.3rem;
+	border: 0.1rem solid #ffc400;
+}
+
+.workloadCountBoxClass {
+	margin-left: 1.4rem;
+}
+
+.gridStyleClass {
+	margin-bottom: -2rem;
+}
+
+.addButtonClass{
+	left:-0.5rem;
+	top:-0.2rem;
+}
+
+.addButtonClass .sapMBtnInner {
+	width: 2.15rem;
+    height: 2.15rem;
+    background-color: #008000 !important;
+    border-radius: 25px;
+}
+
+.addButtonClass .sapMBtnIcon {
+	color: #ffffff !important;
+    font-size: 1.500rem;
+    margin-right: 0.3rem !important;
+    margin-left: 0rem !important;
+    margin-top: 0.2rem !important;
+}
+
+.deleteButtonClass .sapMBtnIcon {
+	color: #af0000 !important;
+	font-size: 1.500rem;
+}
+
+.barClass{
+	background-color: #ffffff !important;
+    height: 3rem;
+    padding-left: 0.5rem;
+    background: transparent;
+    border-bottom: 2px solid #c0c0c0;
+}
+
+.barClass .sapMText{
+	color:#000000 !important;
+}
+
+.adminTableBorderClass.sapMListBGTranslucent .sapMLIB{
+	background: #e4e4e4 !important;
+}
+
+.adminTableBorderClass.tableHeader .sapMListTbl th {
+    background: #c1bfbf;
+    border-bottom: 2px solid #b3b3b3;
+}
+
+.UWLlabelStyle.sapMLabel{
+	color: #000000;
+}
+
+.popOverStyle .sapMPopoverArrLeft:after {
+	border-right-color: #dbdbdb;
+}
+
+.popOverStyle .sapMIBar-CTX.sapMFooter-CTX{
+	background-color: rgb(193, 193, 193) !important;
+}
+
+.popOverStyle.sapMPopup-CTX .sapMIBar.sapMHeader-CTX {
+    background-color: #c1c1c1;
+}
+
+.popOverStyle.sapMPopover{
+	background-color: #dbdbdb;
+}
+
+.userWorkLoadTabStyleClass .sapMITBSelected>.sapMITBContentArrow {
+	border-bottom-color: #0044b9;
+}
+
+.UWLtabBarClass .sapMITBSelected>.sapMITBContentArrow {
+	border-bottom-color: #0044b9;
+}
+
+.tabBarClass .sapMITBSelected>.sapMITBContentArrow {
+	border-bottom-color: #0044b9;
+}
+
+.commentStyle{
+    color: #616161 !important;
+}
+
+.addCommentBox {
+    border: 0.01rem solid grey;
+    background: rgba(173, 172, 172, 0.3);
+    border-radius: 5px;
+    margin: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commentBoxOutSideStyle .sapMInputBaseInner {
+    border: none;
+    background: transparent;
+    width: 20rem;
+    color: #000000;
+}
+
+.adminConsoleSidePanel{
+	border-right: 0.1px solid gainsboro;
+	width: 10rem;
+}
+
+.userAccessBarStyle{
+	background: #cbcccb;
+}
+
+.personalHeaderKeyStyleClass{
+	padding: 1rem;
+	padding-bottom: 0rem;
+	padding-left: 2.5rem;
+    font-weight: 600;
+    color: #000000;
+    width: 4rem;
+    font-family: Open Sans !important;
+}
+
+.personalHeaderValueStyleClass{
+	padding: 1rem;
+	padding-bottom: 0rem;
+    color: #000000;
+    font-family: Open Sans !important;
+}
+
+.dialogClass .sapMFooter-CTX {
+	background: #edecec !important;
+}
+
+.noDataTextStyleClass {
+	color: #000000 !important;
+}

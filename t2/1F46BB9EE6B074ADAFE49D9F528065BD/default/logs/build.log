@@ -1,0 +1,92 @@
+Development Component Build (2018-02-21 11:50:45 GMT+05:30 (IST))
+  Component name: pmc/admin/client/web
+  Component vendor: incture.com
+  SC compartment: incture.com_PMC_FRAMEWORK_1
+  Configuration: CWD_INC-PMC_D
+  Location: CWD_INC-PMC_D
+  Source code location: http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_FRAMEWORK/dev/inactive/DCs/incture.com/pmc/admin/client/web/_comp/
+  DC root folder: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\admin\client\web\_comp\
+  DC type: J2EE
+  DC subtype: WebModule
+  Host: INC00718
+
+DC Model check:
+   DC is available locally
+   validating dependency to build plugin "sap.com/tc/bi/bp/webmodule"
+   validating dependency to  public part "api" of DC "sap.com/engine.jee5.facade"
+   validating dependency to  public part "api" of DC "sap.com/ui/five"
+   DC model check OK
+
+Start build plugin:
+   using build plugin: sap.com/tc/bi/bp/webmodule
+   starting build plugin from : C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\bi\bp\webmodule\_comp\gen\default\public\web\
+
+
+
+Build Plugin 'WebModulePlugin', Version 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:51 +0200, CL239773)
+   development component:  pmc/admin/client/web (incture.com)
+      software component:  PMC_FRAMEWORK (incture.com)
+                location:  CWD_INC-PMC_D
+                    type:  J2EE, subtype WebModule
+           build variant:  default
+         source location:  http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_FRAMEWORK/dev/inactive/
+         output location:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1F46BB9EE6B074ADAFE49D9F528065BD\default
+       generation folder:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\1F46BB9EE6B074ADAFE49D9F528065BD
+       plugin start time:  2018-02-21 11:50:45 GMT+05:30 (IST)
+                 Java VM:  Java HotSpot(TM) 64-Bit Server VM, 25.91-b15 (1.8, Oracle Corporation)
+
+
+General options:
+  convert *.xlf to *.properties: yes
+  include sources for debugging: yes
+ 
+
+
+Package folder ".apt_generated" exists but is empty and will be ignored.
+Package folder "source" exists but is empty and will be ignored.
+Checking path lengths for sources
+Path length checks finished in 0.003 seconds
+ 
+Preparing data context..
+Data context preparation finished in 0.019 seconds
+ 
+Creating Ant build file..
+  Creating output file: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1F46BB9EE6B074ADAFE49D9F528065BD\default\logs\build.xml
+  Using Java class:     com.sap.tc.buildplugin.BuildWebModule
+Target "createPublicParts" has a dependency on "compile" but no such target exists. Dependency will be ignored.
+Build file creation finished in 0.02 seconds
+ 
+Starting Ant..
+  Using build file:     C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1F46BB9EE6B074ADAFE49D9F528065BD\default\logs\build.xml
+  Using build target:   build
+  Using Ant version:    1.7.1
+ 
+createPublicParts:
+  [pppacker] Packing public part 'war'
+  [pppacker] Packed  15 files for entity incture.com~pmc~admin~client~web (WAR)
+  [pppacker] Packed 1 entity for public part 'war'
+     [timer] Packing of public part 'war' finished in 0.06 seconds
+ 
+ 
+build:
+ 
+Ant runtime 0.08 seconds
+ 
+Ant build finished OK
+Checking package reservation
+Package reservation check finished in 0.001 seconds
+ 
+Build plugin finished at 2018-02-21 11:50:45 GMT+05:30 (IST)
+Total build plugin runtime: 0.339 seconds
+ 
+Build finished with WARNING
+
+==== Post-Processing ====   started at 2018-02-21 11:50:45.949 IST
+Comparison of previous and actual build results took: 0.009 seconds
+
+Copy the build results 
+  from: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\1F46BB9EE6B074ADAFE49D9F528065BD\default\
+  to:   C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\admin\client\web\_comp\gen\default\
+
+The build results of the following public parts were not copied, since they have not changed:
+  war

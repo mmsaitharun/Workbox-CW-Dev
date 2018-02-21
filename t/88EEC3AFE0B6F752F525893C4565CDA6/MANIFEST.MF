@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+DC-Name: pmc/client/web/ear
+DC-SubType: Enterprise Application
+DC-Type: J2EE
+DC-Vendor: incture.com
+Implementation-Title: pmc/client/web/ear
+Implementation-Vendor: incture.com
+Implementation-Version: CWD_INC-PMC_D 20180221062038
+SC-Name: PMC_FRAMEWORK
+SC-Vendor: incture.com
+
+Name: build-information
+Build-Counter: 20180221062038
+Build-Date: 2018-02-21
+Build-Location: CWD_INC-PMC_D
+Build-Time: 11:50:38 GMT+05:30 (IST)
+Created-By: DC BuildTool
+Source-Location: /ws/INC-PMC/incture.com_PMC_FRAMEWORK/dev/inactive/
+Source-Repository: http://INCTURECWD:50000/dtr
+

@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog showHeader="false" class="dialogClass e2eViewDialogClass">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label text="{oEndToEndFlowModel>/processDisplayName}" class="delegateLabelStyle mailTextStyle" />
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" press="onClosingTheE2Eview"></Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<HBox>
+			<Image src="data:image/png;base64,{oEndToEndFlowModel>/base64String}" />
+		</HBox>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,39 @@
+{
+	"navigationPages": [{
+		"name": "Unified Inbox",
+		"key": "Workbox",
+		"iconUrl": "sap-icon://inbox",
+		"imageUrl": "images/inboxIcon.png",
+		"roleName": ""
+	}, {
+		"name": "Task Management",
+		"key": "User_Workload_Tracker",
+		"iconUrl": "sap-icon://my-view",
+		"imageUrl": "images/multyUser.png",
+		"roleName":"CW_RL_WB_WM"
+	}, {
+		"name": "Process Tracker",
+		"key": "Process_Tracker",
+		"iconUrl": "sap-icon://process",
+		"imageUrl": "images/processAging.png",
+		"roleName":"CW_RL_WB_PT"
+	}, {
+		"name": "Rules Board",
+		"key": "SLA_Management",
+		"iconUrl": "sap-icon://fob-watch",
+		"imageUrl": "images/SLAicon.png",
+		"roleName":"CW_RL_WB_SLA"
+	}, {
+		"name": "Action Hub",
+		"key": "Rule_Maintenance",
+		"iconUrl": "sap-icon://action",
+		"imageUrl": "images/actionHub.png",
+		"roleName":"CW_RL_WB_SLA"
+	}, {
+		"name": "Settings",
+		"key": "Admin_Console",
+		"iconUrl": "sap-icon://key-user-settings",
+		"imageUrl": "images/actionHub.png",
+		"roleName": "CW_RL_WB_ADMIN"
+	}]
+}

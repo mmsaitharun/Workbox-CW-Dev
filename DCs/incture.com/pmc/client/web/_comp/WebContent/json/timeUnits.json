@@ -1,0 +1,19 @@
+{
+	"timeUnits": [{
+			"key":"",
+			"name":""
+		},
+		{
+			"key":"minute",
+			"name":"Min"
+		},
+		{
+			"key":"hours",
+			"name":"Hr"
+		},
+		{
+			"key":"days",
+			"name":"Day"
+		}
+	]
+}

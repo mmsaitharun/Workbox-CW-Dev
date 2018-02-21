@@ -1,0 +1,115 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<VBox class="processTableBorderStyleClass">
+		<Table class="tableBorderClass tableHeader sapUiSizeCompact">
+			<headerToolbar>
+				<Toolbar class="processHeaderToolBarStyleClass">
+					<Text text="Process List" class="userWorkloadBarLabelClass" />
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button text="{i18n>CANCEL}" type="Reject"
+						class="sapUiSizeCompact buttonRadiusStyleClass" press="onCancelPress"></Button>
+					<Button
+						class="sapUiSizeCompact buttonRadiusStyleClass secondaryBtnStyleClass"
+						icon="images/mSExcel.png" press="fragmentDownload" tooltip="{i18n>DOWNLOAD}"></Button>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column width="1rem"></Column>
+				<Column width="12%">
+					<Text text="{i18n>REQUEST_ID}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+				<Column width="15%">
+					<Text text="{i18n>PROCESS_NAME}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+				<Column width="35%">
+					<Text text="{i18n>SUBJECT}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+				<Column width="14%">
+					<Toolbar class="sortingStyleClass">
+						<Text text="{i18n>STARTED_AT}" class="userWorkLoadTableHeaderLblStyle" />
+						<ToolbarSpacer></ToolbarSpacer>
+						<core:Icon src="sap-icon://sort" press="onSort" />
+					</Toolbar>
+				</Column>
+				<Column width="14%">
+					<Text text="{i18n>STARTED_BY}" class="userWorkLoadTableHeaderLblStyle" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table inset="false" id="processListTable" mode="MultiSelect"
+			items="{oUserWorkLoadModel>/processEventsList}" class="tableBorderClass sapUiSizeCompact tableClass">
+			<columns>
+				<!-- <Column width="7%"></Column> -->
+				<Column width="12%">
+					<HBox>
+						<Input value="{oUserWorkLoadModel>/requestId}" submit="onFilterTableData"
+							width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+				<Column width="15%">
+					<HBox>
+						<Input value="{oUserWorkLoadModel>/processDisplayName}"
+							submit="onFilterTableData" width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+				<Column width="35%">
+					<HBox>
+						<Input value="{oUserWorkLoadModel>/subject}" submit="onFilterTableData"
+							class="filterColumnInputClass">
+							<layoutData>
+								<FlexItemData growFactor='1' />
+							</layoutData>
+						</Input>
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+				<Column width="14%">
+					<HBox>
+						<Input value="{oUserWorkLoadModel>/startedAt}" submit="onFilterTableData"
+							width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+				<Column width="14%">
+					<HBox>
+						<Input value="{oUserWorkLoadModel>/startedByDisplayName}"
+							submit="onFilterTableData" width="100%" class="filterColumnInputClass" />
+						<core:Icon src="sap-icon://filter" class="filterIconClass" />
+					</HBox>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onNavigateToTaskScreen">
+					<cells>
+						<!-- <RadioButton groupName="radioBtnGroup" select="onRadioBtnSelect"
+							class="radioButtonClass" /> -->
+						<Text text="{oUserWorkLoadModel>requestId}" />
+						<Text text="{oUserWorkLoadModel>processDisplayName}" />
+						<Text text="{oUserWorkLoadModel>subject}" />
+						<Text
+							text="{path:'oUserWorkLoadModel>startedAt', formatter:'pmc.util.formatter.fnFormatDate'}" />
+						<Text text="{oUserWorkLoadModel>startedByDisplayName}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<VBox justifyContent="Center" alignItems="Center">
+			<Label id="idCurrentPage" class="idSelectedPage" />
+			<HBox>
+				<Button id="idPrevButton" icon="sap-icon://close-command-field"
+					class="navigateButtonClass sapUiSizeCompact" press="onScrollLeft" />
+				<HBox items="{paginatedModel>/array}">
+					<Link text="{paginatedModel>text}" press="onPageClick" class="paginationNumbers" />
+				</HBox>
+				<Button id="idNextButton" icon="sap-icon://open-command-field"
+					class="navigateButtonClass  sapUiSizeCompact" press="onScrollRight" />
+			</HBox>
+		</VBox>
+	</VBox>
+</core:FragmentDefinition>

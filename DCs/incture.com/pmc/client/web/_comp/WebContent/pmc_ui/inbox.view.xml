@@ -1,0 +1,13 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="pmc_ui.inbox" xmlns:layout="sap.ui.layout"
+	xmlns:tnt="sap.tnt" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<core:HTML
+				content="&lt;div id=&quot;contentFrameDiv&quot;&gt;
+&lt;iframe id=&quot;contentFrameId&quot; width=&quot;100%&quot; height=&quot;100%&quot; seamless&gt;&lt;/iframe&gt;
+&lt;/div&gt;">
+			</core:HTML>
+		</content>
+	</Page>
+</core:View>

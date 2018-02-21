@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Process Management Cockpit</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>pmc</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.incture.pmc.rest</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pmc</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<ejb-local-ref>
+		<ejb-ref-name>UserWorkloadFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.UserWorkloadFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>UserManagementFacadeWsdlConsumerLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.UserManagementFacadeWsdlConsumerLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ConfigurationFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.ConfigurationFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ProcessFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.ProcessFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>TaskFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.TaskFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>PrincipalPropagationLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.poc.services.PrincipalPropagationLocal</local>
+	</ejb-local-ref>
+	<!-- <ejb-local-ref>
+		<ejb-ref-name>WorkboxFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.inbox.services.WorkboxFacadeLocal</local>
+	</ejb-local-ref> -->
+	
+	<ejb-local-ref>
+		<ejb-ref-name>InboxFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.inbox.services.InboxFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>SlaManagementFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.SlaManagementFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>RuleManagementFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.RuleManagementFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>WorkBoxActionFacadeWsdlConsumerLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.inbox.services.WorkBoxActionFacadeWsdlConsumerLocal</local>
+	</ejb-local-ref>
+
+	<ejb-local-ref>
+		<ejb-ref-name>ReportFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.ReportFacadeLocal</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ProcessActionFacadeWsdlConsumerLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.ProcessActionFacadeWsdlConsumerLocal</local>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+		<ejb-ref-name>NotificationFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.NotificationFacadeLocal</local>
+	</ejb-local-ref>
+	
+	<!-- <ejb-local-ref>
+		<ejb-ref-name>SubstitutionRuleFacadeWsdlConsumerLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.SubstitutionRuleFacadeWsdlConsumerLocal</local>
+	</ejb-local-ref>
+	
+		<ejb-local-ref>
+		<ejb-ref-name>SubstitutionProfileFacadeWsdlConsumerLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.SubstitutionProfileFacadeWsdlConsumerLocal</local>
+	</ejb-local-ref> -->
+	
+	<ejb-local-ref>
+		<ejb-ref-name>SubstitutionRuleFacadeWsdlConsumerLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.inbox.services.SubstitutionRuleFacadeWsdlConsumerLocal</local>
+	</ejb-local-ref>
+	
+		<ejb-local-ref>
+		<ejb-ref-name>SubstitutionProfileFacadeWsdlConsumerLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.inbox.services.SubstitutionProfileFacadeWsdlConsumerLocal</local>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+		<ejb-ref-name>AdminControlFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.AdminControlFacadeLocal</local>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+		<ejb-ref-name>CollaborationFacadeLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.services.CollaborationFacadeLocal</local>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+		<ejb-ref-name>E2EProcessViewServiceLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.incture.pmc.e2e.services.E2EProcessViewServiceLocal</local>
+	</ejb-local-ref>
+	
+	<security-constraint>
+		<display-name>PMC</display-name>
+		<web-resource-collection>
+			<web-resource-name />
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Everyone</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-role>
+		<role-name>Everyone</role-name>
+	</security-role>
+</web-app>

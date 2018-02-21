@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<content version="4">
+<metadata>
+<development-component>
+<name>inc/ext/libs/app</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</development-component>
+<public-part>
+<name>lib_PP</name>
+<purpose>compilation</purpose>
+</public-part>
+<dependencies>
+<dependency>
+<dc-ref>
+<name>inc/ext/libs</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>External Library</type>
+<sub-type/>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>inc/ext/libs</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>External Library</type>
+<sub-type/>
+</component-type>
+</dc-ref>
+<pp-ref purpose="assembly">archives</pp-ref>
+<at-build-time/>
+</dependency>
+</dependencies>
+</metadata>
+<source-components>
+<source-component>
+<id>1</id>
+<development-component>
+<name>inc/ext/libs</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>External Library</type>
+<sub-type/>
+</component-type>
+</development-component>
+<dependencies/>
+</source-component>
+</source-components>
+<archives>
+<archive location="apache-logging-log4j.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/apache-logging-log4j.jar</additional-path>
+</archive>
+<archive location="bcprov-1.45.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/bcprov-1.45.jar</additional-path>
+</archive>
+<archive location="com.google.code.gson-gson-2.4.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/com.google.code.gson-gson-2.4.jar</additional-path>
+</archive>
+<archive location="commons-codec-1.6.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/commons-codec-1.6.jar</additional-path>
+</archive>
+<archive location="commons-collections4-4.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/commons-collections4-4.1.jar</additional-path>
+</archive>
+<archive location="commons-io-1.3.2.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/commons-io-1.3.2.jar</additional-path>
+</archive>
+<archive location="commons-logging-1.1.3.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/commons-logging-1.1.3.jar</additional-path>
+</archive>
+<archive location="httpclient-4.3.3.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/httpclient-4.3.3.jar</additional-path>
+</archive>
+<archive location="httpcore-4.3.2.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/httpcore-4.3.2.jar</additional-path>
+</archive>
+<archive location="jackson-core-asl-1.9.2.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jackson-core-asl-1.9.2.jar</additional-path>
+</archive>
+<archive location="jackson-jaxrs-1.9.2.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jackson-jaxrs-1.9.2.jar</additional-path>
+</archive>
+<archive location="jackson-mapper-asl-1.9.2.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jackson-mapper-asl-1.9.2.jar</additional-path>
+</archive>
+<archive location="jackson-xc-1.9.2.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jackson-xc-1.9.2.jar</additional-path>
+</archive>
+<archive location="javaee-web-api-7.0.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/javaee-web-api-7.0.jar</additional-path>
+</archive>
+<archive location="javapns-jdk16-2.2.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/javapns-jdk16-2.2.1.jar</additional-path>
+</archive>
+<archive location="jersey-client-1.19.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jersey-client-1.19.1.jar</additional-path>
+</archive>
+<archive location="jersey-core-1.19.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jersey-core-1.19.1.jar</additional-path>
+</archive>
+<archive location="jersey-json-1.19.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jersey-json-1.19.1.jar</additional-path>
+</archive>
+<archive location="jersey-server-1.19.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jersey-server-1.19.1.jar</additional-path>
+</archive>
+<archive location="jersey-servlet-1.19.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jersey-servlet-1.19.1.jar</additional-path>
+</archive>
+<archive location="jettison-1.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jettison-1.1.jar</additional-path>
+</archive>
+<archive location="jsr311-api-1.1.1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/jsr311-api-1.1.1.jar</additional-path>
+</archive>
+<archive location="ngdbc.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/ngdbc.jar</additional-path>
+</archive>
+<archive location="org.apache.olingo-olingo-odata2-api-2.0.9.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/org.apache.olingo-olingo-odata2-api-2.0.9.jar</additional-path>
+</archive>
+<archive location="org.apache.olingo-olingo-odata2-api-annotation-2.0.9.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/org.apache.olingo-olingo-odata2-api-annotation-2.0.9.jar</additional-path>
+</archive>
+<archive location="org.apache.olingo-olingo-odata2-core-2.0.9.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/org.apache.olingo-olingo-odata2-core-2.0.9.jar</additional-path>
+</archive>
+<archive location="poi-3.16-beta1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/poi-3.16-beta1.jar</additional-path>
+</archive>
+<archive location="poi-ooxml-3.16-beta1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/poi-ooxml-3.16-beta1.jar</additional-path>
+</archive>
+<archive location="poi-ooxml-schemas-3.16-beta1.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/poi-ooxml-schemas-3.16-beta1.jar</additional-path>
+</archive>
+<archive location="sapjco3.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/sapjco3.jar</additional-path>
+</archive>
+<archive location="xmlbeans-2.6.0.jar" type="filesystem">
+<property key="attributes"/>
+<additional-path attributes="jar,java-library">lib/java/xmlbeans-2.6.0.jar</additional-path>
+</archive>
+</archives>
+<entities>
+<entity>
+<id>ebc805c1-25bd-11e7-8d2f-00059a3c7a00</id>
+<name/>
+<entity-type/>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<source-id>1</source-id>
+<fileset location="apache-logging-log4j.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/apache-logging-log4j.jar" source-path="apache-logging-log4j.jar"/>
+</fileset>
+<fileset location="bcprov-1.45.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/bcprov-1.45.jar" source-path="bcprov-1.45.jar"/>
+</fileset>
+<fileset location="com.google.code.gson-gson-2.4.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/com.google.code.gson-gson-2.4.jar" source-path="com.google.code.gson-gson-2.4.jar"/>
+</fileset>
+<fileset location="commons-codec-1.6.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/commons-codec-1.6.jar" source-path="commons-codec-1.6.jar"/>
+</fileset>
+<fileset location="commons-collections4-4.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/commons-collections4-4.1.jar" source-path="commons-collections4-4.1.jar"/>
+</fileset>
+<fileset location="commons-io-1.3.2.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/commons-io-1.3.2.jar" source-path="commons-io-1.3.2.jar"/>
+</fileset>
+<fileset location="commons-logging-1.1.3.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/commons-logging-1.1.3.jar" source-path="commons-logging-1.1.3.jar"/>
+</fileset>
+<fileset location="httpclient-4.3.3.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/httpclient-4.3.3.jar" source-path="httpclient-4.3.3.jar"/>
+</fileset>
+<fileset location="httpcore-4.3.2.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/httpcore-4.3.2.jar" source-path="httpcore-4.3.2.jar"/>
+</fileset>
+<fileset location="jackson-core-asl-1.9.2.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jackson-core-asl-1.9.2.jar" source-path="jackson-core-asl-1.9.2.jar"/>
+</fileset>
+<fileset location="jackson-jaxrs-1.9.2.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jackson-jaxrs-1.9.2.jar" source-path="jackson-jaxrs-1.9.2.jar"/>
+</fileset>
+<fileset location="jackson-mapper-asl-1.9.2.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jackson-mapper-asl-1.9.2.jar" source-path="jackson-mapper-asl-1.9.2.jar"/>
+</fileset>
+<fileset location="jackson-xc-1.9.2.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jackson-xc-1.9.2.jar" source-path="jackson-xc-1.9.2.jar"/>
+</fileset>
+<fileset location="javaee-web-api-7.0.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/javaee-web-api-7.0.jar" source-path="javaee-web-api-7.0.jar"/>
+</fileset>
+<fileset location="javapns-jdk16-2.2.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/javapns-jdk16-2.2.1.jar" source-path="javapns-jdk16-2.2.1.jar"/>
+</fileset>
+<fileset location="jersey-client-1.19.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jersey-client-1.19.1.jar" source-path="jersey-client-1.19.1.jar"/>
+</fileset>
+<fileset location="jersey-core-1.19.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jersey-core-1.19.1.jar" source-path="jersey-core-1.19.1.jar"/>
+</fileset>
+<fileset location="jersey-json-1.19.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jersey-json-1.19.1.jar" source-path="jersey-json-1.19.1.jar"/>
+</fileset>
+<fileset location="jersey-server-1.19.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jersey-server-1.19.1.jar" source-path="jersey-server-1.19.1.jar"/>
+</fileset>
+<fileset location="jersey-servlet-1.19.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jersey-servlet-1.19.1.jar" source-path="jersey-servlet-1.19.1.jar"/>
+</fileset>
+<fileset location="jettison-1.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jettison-1.1.jar" source-path="jettison-1.1.jar"/>
+</fileset>
+<fileset location="jsr311-api-1.1.1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/jsr311-api-1.1.1.jar" source-path="jsr311-api-1.1.1.jar"/>
+</fileset>
+<fileset location="ngdbc.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/ngdbc.jar" source-path="ngdbc.jar"/>
+</fileset>
+<fileset location="org.apache.olingo-olingo-odata2-api-2.0.9.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/org.apache.olingo-olingo-odata2-api-2.0.9.jar" source-path="org.apache.olingo-olingo-odata2-api-2.0.9.jar"/>
+</fileset>
+<fileset location="org.apache.olingo-olingo-odata2-api-annotation-2.0.9.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/org.apache.olingo-olingo-odata2-api-annotation-2.0.9.jar" source-path="org.apache.olingo-olingo-odata2-api-annotation-2.0.9.jar"/>
+</fileset>
+<fileset location="org.apache.olingo-olingo-odata2-core-2.0.9.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/org.apache.olingo-olingo-odata2-core-2.0.9.jar" source-path="org.apache.olingo-olingo-odata2-core-2.0.9.jar"/>
+</fileset>
+<fileset location="poi-3.16-beta1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/poi-3.16-beta1.jar" source-path="poi-3.16-beta1.jar"/>
+</fileset>
+<fileset location="poi-ooxml-3.16-beta1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/poi-ooxml-3.16-beta1.jar" source-path="poi-ooxml-3.16-beta1.jar"/>
+</fileset>
+<fileset location="poi-ooxml-schemas-3.16-beta1.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/poi-ooxml-schemas-3.16-beta1.jar" source-path="poi-ooxml-schemas-3.16-beta1.jar"/>
+</fileset>
+<fileset location="sapjco3.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/sapjco3.jar" source-path="sapjco3.jar"/>
+</fileset>
+<fileset location="xmlbeans-2.6.0.jar" source-location="DC" source-path="libraries">
+<file path="lib/java/xmlbeans-2.6.0.jar" source-path="xmlbeans-2.6.0.jar"/>
+</fileset>
+</entity>
+</entities>
+</content>

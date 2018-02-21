@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    development component
+                     name: pmc/po/adapter/services/app
+                   vendor: incture.com
+                     type: J2EE
+                 sub-type: Enterprise Application
+              type-vendor: sap.com
+
+       software component
+                     name: PMC_PO_ADAPTER
+                   vendor: incture.com
+
+                 location: CWD_INC-PMC_D
+          source location: http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/
+            build variant: default
+
+    building on INC00718, Windows 10/amd64, version 10.0
+    using Java VM 'Java HotSpot(TM) 64-Bit Server VM', version 25.91-b15 (Oracle Corporation)
+    build started at 2018-02-21 11:51:47 GMT+05:30 (IST)
+
+    Build Plugin 'EnterpriseApplicationPlugin', Version 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:24:14 +0200, CL239773)
+    detailed versions:
+    sap.com:tc/bi/anttasks#def                                   7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:41 +0200, CL239773)
+    sap.com:tc/bi/bp/enterpriseApplication#enterpriseApplication 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:24:14 +0200, CL239773)
+    sap.com:tc/bi/core#def                                       7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:27:09 +0200, CL239773)
+    sap.com:tc/bi/exception#def                                  7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:40 +0200, CL239773)
+    sap.com:tc/bi/extddicdb#def                                  7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:47 +0200, CL239773)
+    sap.com:tc/bi/extsql#def                                     7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:45 +0200, CL239773)
+    sap.com:tc/bi/framework#def                                  7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:21:29 +0200, CL239773)
+    sap.com:tc/bi/i18n#def                                       7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:37 +0200, CL239773)
+    sap.com:tc/bi/javatech#def                                   7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:43 +0200, CL239773)
+    sap.com:tc/bi/jdoc#def                                       7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:40 +0200, CL239773)
+    sap.com:tc/bi/jdoc/util#def                                  7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:25 +0200, CL239773)
+    sap.com:tc/bi/jlincbs#def                                    7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:52 +0200, CL239773)
+    sap.com:tc/bi/settings#version                               7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:23:45 +0200, CL239773)
+    sap.com:tc/bi/util#util                                      7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:21:55 +0200, CL239773)
+    sap.com:tc/bi/velocity#def                                   7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:37 +0200, CL239773)
+    sap.com:tc/bi/xml#def                                        7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:38 +0200, CL239773)
+ -->
+<project name="DC Deploy build"
+         default="packDeployArchive"
+         basedir=".">
+<taskdef name="jarsap" classname="com.sap.sdm.ant.JarSAP"/>
+<taskdef name="propertybag" classname="com.sap.tools.ant.taskdefs.PropertyBag"/>
+<taskdef name="srcpacker" classname="com.sap.tc.buildplugin.ant.taskdefs.SourceArchiveCreatorTask"/>
+<taskdef name="timer" classname="com.sap.tools.ant.taskdefs.Timer"/>
+<property name="dtr-workspace" value="http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/"/>
+
+<target name="packDeployArchive">
+<copy todir="C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\A2B99F643A721A7C04AB96B407DB7D12\sda\META-INF">
+<fileset dir="C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\app\_comp\META-INF"/>
+</copy>
+<timer/>
+<srcpacker destination="C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\A2B99F643A721A7C04AB96B407DB7D12\sda\src.zip" archiveLocation="srcarchive">
+<usedpublicpart dcname="pmc/po/adapter/services/ejb"
+                dcvendor="incture.com"
+                ppname="ejbjar"/>
+</srcpacker>
+<timer message="Source archive creation finished in "/>
+<timer/>
+<jarsap jarfile="C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\A2B99F643A721A7C04AB96B407DB7D12\default\deploy\incture.com~pmc~po~adapter~services~app.ear" deployfile="C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\A2B99F643A721A7C04AB96B407DB7D12\sda\META-INF\sda-dd.xml">
+<component vendor="incture.com"
+           name="pmc/po/adapter/services/app"
+           location="CWD_INC-PMC_D"
+           counter="20180221062147"
+           scvendor="incture.com"
+           scname="PMC_PO_ADAPTER"/>
+<dependency dependencytype="GLOBAL">
+<component specificationname="tc/bpem/facade/ear"
+           implementationtitle="tc/bpem/facade/ear"
+           implementationvendorid="sap.com"/>
+</dependency>
+<fileset dir="C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\A2B99F643A721A7C04AB96B407DB7D12\sda">
+<exclude name="**/*~"/>
+<exclude name="**/%*%"/>
+<exclude name="**/.#*"/>
+<exclude name="**/vssver.scc"/>
+<exclude name="**/.svn/**"/>
+<exclude name="**/.nfs*"/>
+<exclude name="**/CVS/**"/>
+<exclude name="**/._*"/>
+<exclude name="**/#*#"/>
+<exclude name="**/.cvsignore"/>
+<exclude name="**/SCCS/**"/>
+</fileset>
+<fileset dir="C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\ejb\_comp\gen\default\public\ejbjar\lib\java">
+<include name="incture.com~pmc~po~adapter~services~ejb.jar"/>
+<exclude name="**/*~"/>
+<exclude name="**/%*%"/>
+<exclude name="**/.#*"/>
+<exclude name="**/vssver.scc"/>
+<exclude name="**/.svn/**"/>
+<exclude name="**/.nfs*"/>
+<exclude name="**/CVS/**"/>
+<exclude name="**/._*"/>
+<exclude name="**/#*#"/>
+<exclude name="**/.cvsignore"/>
+<exclude name="**/SCCS/**"/>
+</fileset>
+</jarsap>
+<timer message="JarSAP finished in "/>
+</target>
+</project>

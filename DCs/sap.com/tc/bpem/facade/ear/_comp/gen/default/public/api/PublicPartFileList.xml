@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<content version="4">
+<metadata>
+<development-component>
+<name>tc/bpem/facade/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</development-component>
+<public-part>
+<name>api</name>
+<purpose>compilation</purpose>
+</public-part>
+<dependencies>
+<dependency>
+<dc-ref>
+<name>com.sap.bpem.him.pm.ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>com.sap.glx.adapter.app</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>com.sap.glx.adapter.app</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>com.sap.glx.process.ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<pp-ref purpose="compilation">archiving</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>com.sap.glx.process.ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>com.sap.glx.repository.ifc</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Interface</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>com.sap.glx.repository.ifc</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Interface</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bl/logging/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bl/logging/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/ana/pm/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/ana/pm/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/ana/tm/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/ana/tm/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/base/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">junitee</pp-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/base/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/base/lib</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="test">tests</pp-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/base/lib</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/facade/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>Java</type>
+<sub-type/>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/facade/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>Java</type>
+<sub-type/>
+</component-type>
+</dc-ref>
+<pp-ref purpose="assembly">assembly</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/facade/ejb</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>EJBModule</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="assembly">ejbjar</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/facade/ejb</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>EJBModule</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">test</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/index/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">junit</pp-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<pp-ref purpose="compilation">forwarding_api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/index/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/reporting/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="assembly">ejbjars</pp-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/reporting/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/reporting/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="assembly">ejbjars</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/tm/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">test</pp-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/appconfiguration/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Service</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/sdo21/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/sdo21/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+</dependencies>
+</metadata>
+<source-components>
+<source-component>
+<id>1</id>
+<development-component>
+<name>tc/bpem/facade/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>Java</type>
+<sub-type/>
+</component-type>
+</development-component>
+<dependencies>
+<dependency>
+<dc-ref>
+<name>engine.jee5.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">api</pp-ref>
+<pp-ref purpose="">apiwithoutjsf</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>engine.jee5.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>public.test.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>Java</type>
+<sub-type/>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>public.test.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>Java</type>
+<sub-type/>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">apimock</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/sdo21/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/sdo21/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/usermanagement/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">api</pp-ref>
+<at-deploy-time/>
+<at-runtime/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/usermanagement/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="">api</pp-ref>
+<at-build-time/>
+</dependency>
+</dependencies>
+</source-component>
+</source-components>
+<archives>
+<archive location="javalib" path="lib/java/sap.com~tc~bpem~facade~ear~api.jar" type="jar">
+<property key="attributes">jar,java-library</property>
+</archive>
+<archive location="jdoclet" path="doc/java/sap.com~tc~bpem~facade~api~api.jdar" type="zip">
+<property key="attributes">java-documentation-archive,solid</property>
+</archive>
+<archive location="srcarchive" path="src/java/src.zip" type="zip"/>
+</archives>
+<entities>
+<entity>
+<id>10033429-138a-11e2-a518-58946bc0becc</id>
+<name/>
+<entity-type/>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<source-id>1</source-id>
+<fileset location="javalib" source-location="gen" source-path="classes">
+<file path="com/sap/bpm/analytics/api/AnalyticsManager.class"/>
+<file path="com/sap/bpm/analytics/event/api/EventStatistics.class"/>
+<file path="com/sap/bpm/analytics/process/api/ProcessDurationStatistics.class"/>
+<file path="com/sap/bpm/analytics/process/api/ProcessStatusStatistics.class"/>
+<file path="com/sap/bpm/analytics/task/api/TaskDurationStatistics.class"/>
+<file path="com/sap/bpm/analytics/task/api/TaskStatusStatistics.class"/>
+<file path="com/sap/bpm/api/BPMFactory.class"/>
+<file path="com/sap/bpm/api/QueryResultParameters.class"/>
+<file path="com/sap/bpm/event/api/EventType.class"/>
+<file path="com/sap/bpm/exception/api/BPMException.class"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalAccessException.class"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalArgumentException.class"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalOperationException.class"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalStateException.class"/>
+<file path="com/sap/bpm/exception/api/BPMNotSupportedException.class"/>
+<file path="com/sap/bpm/exception/api/BPMTaskAlreadyClaimedByAnotherUserException.class"/>
+<file path="com/sap/bpm/helper/api/BPMIdHelper.class"/>
+<file path="com/sap/bpm/helper/api/BPMIdType.class"/>
+<file path="com/sap/bpm/jms/api/AbstractBPMMessageListener.class"/>
+<file path="com/sap/bpm/jms/api/BPMEventMessage.class"/>
+<file path="com/sap/bpm/jms/api/BPMEventType.class"/>
+<file path="com/sap/bpm/jms/api/BPMJmsManager.class"/>
+<file path="com/sap/bpm/jms/api/BPMProcessEventMessage.class"/>
+<file path="com/sap/bpm/jms/api/BPMTaskEventMessage.class"/>
+<file path="com/sap/bpm/message/api/EventTrigger.class"/>
+<file path="com/sap/bpm/message/api/MessageManager.class"/>
+<file path="com/sap/bpm/pm/api/ProcessDefinition.class"/>
+<file path="com/sap/bpm/pm/api/ProcessDefinitionManager.class"/>
+<file path="com/sap/bpm/pm/api/ProcessInstance.class"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceFilterCriteria.class"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceFilterOperator.class"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceManager.class"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceProperty.class"/>
+<file path="com/sap/bpm/pm/api/ProcessInstancePropertyName.class"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceQueryCriteria.class"/>
+<file path="com/sap/bpm/pm/api/ProcessModel.class"/>
+<file path="com/sap/bpm/pm/api/ProcessModelManager.class"/>
+<file path="com/sap/bpm/pm/api/ProcessStartEvent.class"/>
+<file path="com/sap/bpm/pm/api/ProcessStartManager.class"/>
+<file path="com/sap/bpm/pm/api/ProcessStatus.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSource.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceManager.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceNotFoundException.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceQueryException.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceSearchException.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingField.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldDataType.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldIncompatibilityException.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldNotFoundException.class"/>
+<file path="com/sap/bpm/reporting/api/ReportingResultSet.class"/>
+<file path="com/sap/bpm/tm/api/Attachment.class"/>
+<file path="com/sap/bpm/tm/api/CustomAction.class"/>
+<file path="com/sap/bpm/tm/api/CustomActionDefinition.class"/>
+<file path="com/sap/bpm/tm/api/CustomAttributeDefinition.class"/>
+<file path="com/sap/bpm/tm/api/Fault.class"/>
+<file path="com/sap/bpm/tm/api/File.class"/>
+<file path="com/sap/bpm/tm/api/FileContent.class"/>
+<file path="com/sap/bpm/tm/api/Note.class"/>
+<file path="com/sap/bpm/tm/api/Priority.class"/>
+<file path="com/sap/bpm/tm/api/Status.class"/>
+<file path="com/sap/bpm/tm/api/SubstitutionMode.class"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfile.class"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfileInfo.class"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfileManager.class"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRule.class"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRuleException.class"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRuleManager.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstract.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractAttribute.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesFilterCriteria$1.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesFilterCriteria$CustomAttributeTypeEnum.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesFilterCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesOrFilterCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesRangeFilterCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesValueFilterCriteria$TaskAbstractCustomAttributeDateFilterType.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesValueFilterCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFetchCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterProperty.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterPropertyName.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractModelCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractOwnerCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractQueryCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractSortCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractStatusCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractSubstitutionCriteria.class"/>
+<file path="com/sap/bpm/tm/api/TaskDefinition.class"/>
+<file path="com/sap/bpm/tm/api/TaskDefinitionManager.class"/>
+<file path="com/sap/bpm/tm/api/TaskDetail.class"/>
+<file path="com/sap/bpm/tm/api/TaskInstanceManager.class"/>
+<file path="com/sap/bpm/tm/api/TaskModel.class"/>
+<file path="com/sap/bpm/tm/api/TaskModelManager.class"/>
+<file path="com/sap/bpm/tm/api/URL.class"/>
+<file path="com/sap/bpm/tm/api/URLContent.class"/>
+</fileset>
+<fileset location="jdoclet" source-location="gen" source-path="javadoc/api">
+<file path=".digest"/>
+<file path=".log"/>
+<file path=".symbols"/>
+<file path="class-list"/>
+<file path="com/sap/bpm/analytics/api/AnalyticsManager.jdoc"/>
+<file path="com/sap/bpm/analytics/api/package-info.jdoc"/>
+<file path="com/sap/bpm/analytics/event/api/EventStatistics.jdoc"/>
+<file path="com/sap/bpm/analytics/event/api/package-info.jdoc"/>
+<file path="com/sap/bpm/analytics/process/api/ProcessDurationStatistics.jdoc"/>
+<file path="com/sap/bpm/analytics/process/api/ProcessStatusStatistics.jdoc"/>
+<file path="com/sap/bpm/analytics/process/api/package-info.jdoc"/>
+<file path="com/sap/bpm/analytics/task/api/TaskDurationStatistics.jdoc"/>
+<file path="com/sap/bpm/analytics/task/api/TaskStatusStatistics.jdoc"/>
+<file path="com/sap/bpm/analytics/task/api/package-info.jdoc"/>
+<file path="com/sap/bpm/api/BPMFactory.jdoc"/>
+<file path="com/sap/bpm/api/QueryResultParameters.jdoc"/>
+<file path="com/sap/bpm/api/package-info.jdoc"/>
+<file path="com/sap/bpm/event/api/EventType.jdoc"/>
+<file path="com/sap/bpm/event/api/package-info.jdoc"/>
+<file path="com/sap/bpm/exception/api/BPMException.jdoc"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalAccessException.jdoc"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalArgumentException.jdoc"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalOperationException.jdoc"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalStateException.jdoc"/>
+<file path="com/sap/bpm/exception/api/BPMNotSupportedException.jdoc"/>
+<file path="com/sap/bpm/exception/api/BPMTaskAlreadyClaimedByAnotherUserException.jdoc"/>
+<file path="com/sap/bpm/exception/api/package-info.jdoc"/>
+<file path="com/sap/bpm/helper/api/BPMIdHelper.jdoc"/>
+<file path="com/sap/bpm/helper/api/BPMIdType.jdoc"/>
+<file path="com/sap/bpm/helper/api/package-info.jdoc"/>
+<file path="com/sap/bpm/jms/api/AbstractBPMMessageListener.jdoc"/>
+<file path="com/sap/bpm/jms/api/BPMEventMessage.jdoc"/>
+<file path="com/sap/bpm/jms/api/BPMEventType.jdoc"/>
+<file path="com/sap/bpm/jms/api/BPMJmsManager.jdoc"/>
+<file path="com/sap/bpm/jms/api/BPMProcessEventMessage.jdoc"/>
+<file path="com/sap/bpm/jms/api/BPMTaskEventMessage.jdoc"/>
+<file path="com/sap/bpm/jms/api/package-info.jdoc"/>
+<file path="com/sap/bpm/message/api/EventTrigger.jdoc"/>
+<file path="com/sap/bpm/message/api/MessageManager.jdoc"/>
+<file path="com/sap/bpm/message/api/package-info.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessDefinition.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessDefinitionManager.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessInstance.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceFilterCriteria.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceFilterOperator.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceManager.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceProperty.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessInstancePropertyName.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceQueryCriteria.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessModel.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessModelManager.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessStartEvent.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessStartManager.jdoc"/>
+<file path="com/sap/bpm/pm/api/ProcessStatus.jdoc"/>
+<file path="com/sap/bpm/pm/api/package-info.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSource.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceManager.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceNotFoundException.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceQueryException.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceSearchException.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingField.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldDataType.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldIncompatibilityException.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldNotFoundException.jdoc"/>
+<file path="com/sap/bpm/reporting/api/ReportingResultSet.jdoc"/>
+<file path="com/sap/bpm/reporting/api/package-info.jdoc"/>
+<file path="com/sap/bpm/tm/api/Attachment.jdoc"/>
+<file path="com/sap/bpm/tm/api/CustomAction.jdoc"/>
+<file path="com/sap/bpm/tm/api/CustomActionDefinition.jdoc"/>
+<file path="com/sap/bpm/tm/api/CustomAttributeDefinition.jdoc"/>
+<file path="com/sap/bpm/tm/api/Fault.jdoc"/>
+<file path="com/sap/bpm/tm/api/File.jdoc"/>
+<file path="com/sap/bpm/tm/api/FileContent.jdoc"/>
+<file path="com/sap/bpm/tm/api/Note.jdoc"/>
+<file path="com/sap/bpm/tm/api/Priority.jdoc"/>
+<file path="com/sap/bpm/tm/api/Status.jdoc"/>
+<file path="com/sap/bpm/tm/api/SubstitutionMode.jdoc"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfile.jdoc"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfileInfo.jdoc"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfileManager.jdoc"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRule.jdoc"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRuleException.jdoc"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRuleManager.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstract.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractAttribute.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesFilterCriteria$CustomAttributeTypeEnum.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesFilterCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesOrFilterCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesRangeFilterCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesValueFilterCriteria$TaskAbstractCustomAttributeDateFilterType.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesValueFilterCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFetchCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterProperty.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterPropertyName.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractModelCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractOwnerCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractQueryCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractSortCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractStatusCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractSubstitutionCriteria.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskDefinition.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskDefinitionManager.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskDetail.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskInstanceManager.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskModel.jdoc"/>
+<file path="com/sap/bpm/tm/api/TaskModelManager.jdoc"/>
+<file path="com/sap/bpm/tm/api/URL.jdoc"/>
+<file path="com/sap/bpm/tm/api/URLContent.jdoc"/>
+<file path="com/sap/bpm/tm/api/package-info.jdoc"/>
+<file path="publisher-doc/sapcm.dc/sap.com/tc/bpem/facade/api/publisher-info.jdoc"/>
+<file path="publisher-doc/sapcm.pp/sap.com/tc/bpem/facade/api/api/publisher-info.jdoc"/>
+</fileset>
+<fileset location="srcarchive" source-location="DC" source-path="src">
+<file path="com/sap/bpm/analytics/api/AnalyticsManager.java"/>
+<file path="com/sap/bpm/analytics/event/api/EventStatistics.java"/>
+<file path="com/sap/bpm/analytics/process/api/ProcessDurationStatistics.java"/>
+<file path="com/sap/bpm/analytics/process/api/ProcessStatusStatistics.java"/>
+<file path="com/sap/bpm/analytics/task/api/TaskDurationStatistics.java"/>
+<file path="com/sap/bpm/analytics/task/api/TaskStatusStatistics.java"/>
+<file path="com/sap/bpm/api/BPMFactory.java"/>
+<file path="com/sap/bpm/api/QueryResultParameters.java"/>
+<file path="com/sap/bpm/api/package-info.java"/>
+<file path="com/sap/bpm/event/api/EventType.java"/>
+<file path="com/sap/bpm/exception/api/BPMException.java"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalAccessException.java"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalArgumentException.java"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalOperationException.java"/>
+<file path="com/sap/bpm/exception/api/BPMIllegalStateException.java"/>
+<file path="com/sap/bpm/exception/api/BPMNotSupportedException.java"/>
+<file path="com/sap/bpm/exception/api/BPMTaskAlreadyClaimedByAnotherUserException.java"/>
+<file path="com/sap/bpm/exception/api/package-info.java"/>
+<file path="com/sap/bpm/helper/api/BPMIdHelper.java"/>
+<file path="com/sap/bpm/helper/api/BPMIdType.java"/>
+<file path="com/sap/bpm/helper/api/package-info.java"/>
+<file path="com/sap/bpm/jms/api/AbstractBPMMessageListener.java"/>
+<file path="com/sap/bpm/jms/api/BPMEventMessage.java"/>
+<file path="com/sap/bpm/jms/api/BPMEventType.java"/>
+<file path="com/sap/bpm/jms/api/BPMJmsManager.java"/>
+<file path="com/sap/bpm/jms/api/BPMProcessEventMessage.java"/>
+<file path="com/sap/bpm/jms/api/BPMTaskEventMessage.java"/>
+<file path="com/sap/bpm/jms/api/package.html"/>
+<file path="com/sap/bpm/message/api/EventTrigger.java"/>
+<file path="com/sap/bpm/message/api/MessageManager.java"/>
+<file path="com/sap/bpm/pm/api/ProcessDefinition.java"/>
+<file path="com/sap/bpm/pm/api/ProcessDefinitionManager.java"/>
+<file path="com/sap/bpm/pm/api/ProcessInstance.java"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceFilterCriteria.java"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceFilterOperator.java"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceManager.java"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceProperty.java"/>
+<file path="com/sap/bpm/pm/api/ProcessInstancePropertyName.java"/>
+<file path="com/sap/bpm/pm/api/ProcessInstanceQueryCriteria.java"/>
+<file path="com/sap/bpm/pm/api/ProcessModel.java"/>
+<file path="com/sap/bpm/pm/api/ProcessModelManager.java"/>
+<file path="com/sap/bpm/pm/api/ProcessStartEvent.java"/>
+<file path="com/sap/bpm/pm/api/ProcessStartManager.java"/>
+<file path="com/sap/bpm/pm/api/ProcessStatus.java"/>
+<file path="com/sap/bpm/pm/api/package-info.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSource.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceManager.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceNotFoundException.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceQueryException.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingDataSourceSearchException.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingField.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldDataType.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldIncompatibilityException.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingFieldNotFoundException.java"/>
+<file path="com/sap/bpm/reporting/api/ReportingResultSet.java"/>
+<file path="com/sap/bpm/reporting/api/package-info.java"/>
+<file path="com/sap/bpm/tm/api/Attachment.java"/>
+<file path="com/sap/bpm/tm/api/CustomAction.java"/>
+<file path="com/sap/bpm/tm/api/CustomActionDefinition.java"/>
+<file path="com/sap/bpm/tm/api/CustomAttributeDefinition.java"/>
+<file path="com/sap/bpm/tm/api/Fault.java"/>
+<file path="com/sap/bpm/tm/api/File.java"/>
+<file path="com/sap/bpm/tm/api/FileContent.java"/>
+<file path="com/sap/bpm/tm/api/Note.java"/>
+<file path="com/sap/bpm/tm/api/Priority.java"/>
+<file path="com/sap/bpm/tm/api/Status.java"/>
+<file path="com/sap/bpm/tm/api/SubstitutionMode.java"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfile.java"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfileInfo.java"/>
+<file path="com/sap/bpm/tm/api/SubstitutionProfileManager.java"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRule.java"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRuleException.java"/>
+<file path="com/sap/bpm/tm/api/SubstitutionRuleManager.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstract.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractAttribute.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesFilterCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesOrFilterCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesRangeFilterCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractCustomAttributesValueFilterCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFetchCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterProperty.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractFilterPropertyName.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractModelCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractOwnerCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractQueryCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractSortCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractStatusCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskAbstractSubstitutionCriteria.java"/>
+<file path="com/sap/bpm/tm/api/TaskDefinition.java"/>
+<file path="com/sap/bpm/tm/api/TaskDefinitionManager.java"/>
+<file path="com/sap/bpm/tm/api/TaskDetail.java"/>
+<file path="com/sap/bpm/tm/api/TaskInstanceManager.java"/>
+<file path="com/sap/bpm/tm/api/TaskModel.java"/>
+<file path="com/sap/bpm/tm/api/TaskModelManager.java"/>
+<file path="com/sap/bpm/tm/api/URL.java"/>
+<file path="com/sap/bpm/tm/api/URLContent.java"/>
+<file path="com/sap/bpm/tm/api/package-info.java"/>
+</fileset>
+</entity>
+</entities>
+</content>

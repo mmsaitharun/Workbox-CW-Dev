@@ -1,0 +1,118 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:layout="sap.ui.layout" controllerName="pmc_ui.ruleMaintenance"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>title}" showHeader="false" class="pmcBackGroundColor">
+		<content>
+			<HBox class="actionButtonBoxStyleClass">
+				<Button text="{i18n>RESET}"
+					class="sapUiSizeCompact resetButtonStyleClass customButtonMarginStyle buttonRadiusStyleClass"
+					press="onResetTheRule" />
+				<Button text="{i18n>SUBMIT}"
+					class="sapUiSizeCompact processButtonStyleClass customButtonMarginStyle buttonRadiusStyleClass"
+					press="onSubmit" />
+			</HBox>
+			<HBox class="headerDataStyle">
+				<Text text="{i18n>PROCESS_NAME}" class="ruleSearchGridLbl" />
+				<Select selectedKey="{oFilterModel>/updateStatus}" id="idRuleProcessName"
+					class="sapUiSizeCompact dropDownSelectStyleClass" items="{oProcessNameModel>/slaProcessNames}"
+					change="onProcessNameSelection">
+					<core:Item key="{oProcessNameModel>processName}" text="{oProcessNameModel>processDisplayName}" />
+				</Select>
+			</HBox>
+			<VBox class="rulesOuterBoxStyleClass">
+				<Toolbar>
+					<SegmentedButton id="idTaskTypeBtn"  select="handleProcessTaskSelection"
+						class="sapUiSizeCompact segmentedBtnStyle">
+						<items>
+							<SegmentedButtonItem text="{i18n>PROCESSES}"
+								key="PROCESS" class="readyButtonRadiusStyle"  />
+							<SegmentedButtonItem text="{i18n>TASKS}" key="TASK"
+								class="readyButtonRadiusStyle"/>
+						</items>
+					</SegmentedButton>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Image tooltip="{i18n>REVERT_DELETE}" src="images/undelete.png"
+						press="onUnDelete" width="2.5rem" />
+					<Image tooltip="{i18n>DELETE_RULES}" src="images/deleteIcon.png"
+						press="onDelete" width="1.8rem" />
+					<!-- <Button text="{i18n>ADD_NEW_RULE}" type="Emphasized" class="sapUiSizeCompact"
+						press="onAddingNewRule" /> -->
+					<Image tooltip="{i18n>ADD_NEW_RULE}" src="images/add_white.png" class="sapUiTinyMarginEnd"
+						press="onAddingNewRule" width="1.8rem" />
+				</Toolbar>
+				<Table class="tableBorderClass tableHeader sapUiSizeCompact"
+					mode="MultiSelect" inset="false" items="{oRuleDataModel>/ruleManagementDtos}"
+					id="idRuleTable">
+					<columns>
+						<Column width="18%" id="processNameColumn">
+							<Text text="{i18n>PROCESS_NAME}" class="userWorkLoadTableHeaderLblStyle" />
+						</Column>
+						<Column width="18%" id="taskNameColumn">
+							<Text text="{i18n>TASK_NAME}" class="userWorkLoadTableHeaderLblStyle" />
+						</Column>
+						<Column width="10%">
+							<Text text="{i18n>MILESTONE}" class="userWorkLoadTableHeaderLblStyle" />
+						</Column>
+						<Column width="13%">
+							<Text text="{i18n>THRESHOLD_LIMIT}" class="userWorkLoadTableHeaderLblStyle" />
+						</Column>
+						<Column width="25%">
+							<Text text="{i18n>ACTION}" class="userWorkLoadTableHeaderLblStyle" />
+						</Column>
+						<Column width="8%">
+							<Text text="{i18n>STATUS}" class="userWorkLoadTableHeaderLblStyle" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{oRuleDataModel>processDisplayName}" class="sapUiSizeCompact taskNameStyleClass" />
+								<HBox>
+									<Text text="{oRuleDataModel>taskName}"
+										visible="{path: 'oRuleDataModel>change', formatter:'pmc.util.formatter.fnTaskNameEnable'}"
+										class="sapUiSizeCompact taskNameStyleClass" editable="false" />
+									<Select selectedKey="{oRuleDataModel>taskName}" items="{oRuleDataModel>/taskList}"
+										visible="{path: 'oRuleDataModel>change', formatter:'pmc.util.formatter.fnTaskNameDisable'}"
+										class="rulesNmaeSelectStyleClass sapUiSizeCompact" change="onSelectTask">
+										<core:Item key="{oRuleDataModel>taskName}" text="{oRuleDataModel>taskName}" />
+									</Select>
+								</HBox>
+								<Text text="{oRuleDataModel>slaCount} {oRuleDataModel>slaUnit}"
+									class="sapUiSizeCompact taskNameStyleClass" />
+								<HBox>
+									<Input value="{oRuleDataModel>thresholdLimitCount}"
+										liveChange="onValidateRule"
+										enabled="{ parts:['oRuleDataModel>change','oRuleDataModel>status','oRuleDataModel>slaCount'], formatter:'pmc.util.formatter.fnGetEditable' }"
+										class="slaInputStyleClass sapUiSizeCompact" />
+									<Select selectedKey="{oRuleDataModel>thresholdLimitUnit}"
+										enabled="{ parts:['oRuleDataModel>change','oRuleDataModel>status','oRuleDataModel>slaCount'], formatter:'pmc.util.formatter.fnGetEditable' }"
+										change="onUpdateRule" items="{oModel>/timeUnits}"
+										class="slaSelectStyleClass sapUiSizeCompact ruleThresholdSelect">
+										<core:Item key="{oModel>key}" text="{oModel>name}" />
+									</Select>
+								</HBox>
+								<Select class="ruleActionSelectStyleClass sapUiSizeCompact"
+									change="onUpdateAction" items="{oRuleDataModel>/actionDto}"
+									enabled="{ parts:['oRuleDataModel>change','oRuleDataModel>status','oRuleDataModel>slaCount'], formatter:'pmc.util.formatter.fnGetEditable' }"
+									width="100%" selectedKey="{oRuleDataModel>action}">
+									<core:Item key="{oRuleDataModel>action}" text="{oRuleDataModel>action}" />
+								</Select>
+								<VBox>
+									<Switch
+										visible="{path:'oRuleDataModel>statusEnabled', formatter:'pmc.util.formatter.fnShowSwitch'}"
+										enabled="{path:'oRuleDataModel>slaCount', formatter:'pmc.util.formatter.fnEnableSwitch'}"
+										state="{path:'oRuleDataModel>status', formatter:'pmc.util.formatter.fnStatusOnOff'}"
+										tooltip="Active/Paused" change="onSwitchChange"
+										class="sapUiSizeCompact rulesStatusSwitchClass" />
+									<Image tooltip="Marked for deletion"
+										visible="{path: 'oRuleDataModel>statusEnabled', formatter:'pmc.util.formatter.fnDelSwitch'}"
+										src="images/delete.png" class="markForDeletionStyle" />
+								</VBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

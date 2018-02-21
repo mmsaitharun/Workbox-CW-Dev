@@ -1,0 +1,63 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog showHeader="false" class="dialogClass" contentWidth="30%">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label text="User Group" class="delegateLabelStyle mailTextStyle" />
+				</contentMiddle>
+				<!-- <contentRight>
+					<Button icon="sap-icon://decline" press="onSelectionCriteriaClose"></Button>
+				</contentRight> -->
+			</Bar>
+		</customHeader>
+		<subHeader>
+			<Bar>
+				<contentMiddle>
+					<SearchField search="handleGrpSearch" class="sapUiSizeCompact searchFldClass" width="100%"/>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<!-- <HBox width="100%" background="#ffffff">
+			<SearchField search="handleGrpSearch" class="sapUiSizeCompact searchFldClass" width="100%"/>
+		</HBox>
+		<VBox height="2rem"/> -->
+		<Table class="sapUiSizeCompact listTblClass" id="idGrpList"
+			items="{oUserGroupModel>/userGroupDtos}" mode="MultiSelect">
+			<columns>
+				<Column>
+					<Label text="Select All"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onClickItem"
+					selected="{oUserGroupModel>isSelected}">
+					<cells>
+						<Text text="{oUserGroupModel>groupName}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<buttons>
+			<Button text="OK" press="onUserGrpSubmit"  type="Transparent"
+				class="sapUiSizeCompact normalBtnClass" />
+			<Button text="Cancel" press="onUserGrpClose"  type="Transparent"
+				class="sapUiSizeCompact normalBtnClass" />
+		</buttons>
+	</Dialog>
+	<!-- <SelectDialog
+		noDataText="No Groups Found"
+		title="User Group" 
+		multiSelect="true"
+		search="handleSearch"
+		confirm="onUserGrpSubmit"
+		cancel="onUserGrpClose"
+		items="{oUserGroupModel>/userGroupDtos}" 
+		class="sapUiSizeCompact dialogClass"
+		contentWidth="30%">
+		<StandardListItem 
+			selected="{oUserGroupModel>isSelected}"
+			title="{oUserGroupModel>groupName}"
+			type="Active" />
+	</SelectDialog> -->
+</core:FragmentDefinition>

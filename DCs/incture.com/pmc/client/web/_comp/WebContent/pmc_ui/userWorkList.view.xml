@@ -1,0 +1,181 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="pmc_ui.userWorkList" xmlns:layout="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" showHeader="false" class="pmcBackGroundColor">
+		<content>
+			<IconTabBar expandable="false" id="idReportSwitch" select="onSwitchReport" class="UWLtabBarClass">
+				<items>
+					<IconTabFilter text="{i18n>USER_LIST}" key="LIST"/>
+					<IconTabFilter text="{i18n>TASK_AGEING}" key="AGEING"/>
+				</items>
+			</IconTabBar>
+			<Panel expandable="true" expanded="true" headerText="SEARCH_TITLE"
+				class="sapUiResponsiveMargin panelBoxStyleClass">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>SEARCH_TITLE}" />
+						<ToolbarSpacer />
+						<Button text="Search" press="fnUserData" class="sapUiSizeCompact sapUiTinyMarginEnd" 
+							type="Emphasized"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<layout:Grid defaultSpan="L3 M4 S6" vSpacing="0">
+						<layout:content>
+							<VBox>
+								<Label text="{i18n>PROCESS_NAME}" class="UWLlabelStyle" />
+								<Select id="idProcessNameSelection" items="{oProcessNameModel>/processConfigDtos}"
+									change="onProcessNameSelection" class="sapUiSizeCompact dropDownPmcStyle" width="80%">
+									<core:Item key="{oProcessNameModel>key}"
+										text="{oProcessNameModel>processDisplayName}" />
+								</Select>
+							</VBox>
+							<VBox>
+								<Label text="{i18n>USER_GROUP}" class="UWLlabelStyle"/>
+								<Select id="idGroupNameSelection" items="{oUserGroupModel>/userGroupDto}"
+									class="sapUiSizeCompact dropDownPmcStyle" width="80%">
+									<core:Item key="{oUserGroupModel>groupName}" text="{oUserGroupModel>groupName}" />
+								</Select>
+							</VBox>
+							<VBox>
+								<Label text="{i18n>REQUEST_ID}" class="UWLlabelStyle"/>
+								<Input id="idRequestId" class="sapUiSizeCompact" width="80%"/>
+							</VBox>
+							<VBox>
+								<Label id="idDynamicLabel" visible="{oUserDefaultModel>/enable}" class="UWLlabelStyle"/>
+								<Input id="idDynamicField" class="sapUiSizeCompact" width="80%" 
+									visible="{oUserDefaultModel>/enable}"/>
+							</VBox>
+						</layout:content>
+					</layout:Grid>
+				</content>
+			</Panel>
+			<!-- <VBox class="outerBoxStyleClass">
+				<Toolbar class="searchBarHeaderStyleClass">
+					<content>
+						<Label text="{i18n>SEARCH_TITLE}" class="searchBarHeaderLblStyleClass"></Label>
+					</content>
+				</Toolbar>
+				<fb:FilterBar id="idSearchFilterBar" search="fnUserData"
+					clear="onClear" showClearButton="true" vSpacing="0" hSpacing="1"
+					filterContainerWidth="15rem" position="Right" class="filterBarStyleClass">
+					<fb:filterItems>
+						<fb:FilterItem name="A" label="{i18n>PROCESS_NAME}">
+							<fb:control>
+								<Select id="idProcessNameSelection" items="{oProcessNameModel>/processConfigDto}"
+									change="onProcessNameSelection"
+									class="sapUiSizeCompact dropDownPmcStyle">
+									<core:Item key="{oProcessNameModel>processName}"
+										text="{oProcessNameModel>processDisplayName}" />
+								</Select>
+							</fb:control>
+						</fb:FilterItem>
+						<fb:FilterItem name="B" label="{i18n>USER_GROUP}">
+							<fb:control>
+								<Select id="idGroupNameSelection" items="{oUserGroupModel>/userGroupDto}"
+									class="sapUiSizeCompact dropDownPmcStyle">
+									<core:Item key="{oUserGroupModel>groupName}" text="{oUserGroupModel>groupName}" />
+								</Select>
+							</fb:control>
+						</fb:FilterItem>
+						<fb:FilterItem name="E" label="{i18n>REQUEST_ID}">
+							<fb:control>
+								<Input id="idRequestId">
+								</Input>
+							</fb:control>
+						</fb:FilterItem>
+						<fb:FilterItem id="idDynamicLabel" name="D"
+							visible="{oUserDefaultModel>/enable}">
+							<fb:control>
+								<Input id="idDynamicField">
+								</Input>
+							</fb:control>
+						</fb:FilterItem>
+					</fb:filterItems>
+				</fb:FilterBar>
+			</VBox> -->
+			<VBox class="outerBoxStyleClass">
+				<Toolbar class="searchBarHeaderStyleClass">
+					<SegmentedButton id="idTaskTypeBtn" selectedKey="RESERVED"
+						class="sapUiSizeCompact segmentedBtnStyle">
+						<items>
+							<SegmentedButtonItem text="{i18n>RESERVED_TASKS}"
+								key="RESERVED" class="readyButtonRadiusStyle" press="onSearch" />
+							<SegmentedButtonItem text="{i18n>READY_TASKS}"
+								key="READY" class="readyButtonRadiusStyle" press="onSearch" />
+							<SegmentedButtonItem text="{i18n>ALL_S}" key="ALL"
+								class="readyButtonRadiusStyle" press="onSearch" />
+						</items>
+					</SegmentedButton>
+					<ToolbarSpacer></ToolbarSpacer>
+					<!-- <SegmentedButton id="idReportSwitch" selectedKey="LIST"
+						class="sapUiSizeCompact segmentedBtnStyle" visible="true">
+						<items>
+							<SegmentedButtonItem text="{i18n>USER_LIST}"
+								key="LIST" class="readyButtonRadiusStyle" press="onSwitchReport" />
+							<SegmentedButtonItem text="{i18n>TASK_AGEING}"
+								key="AGEING" class="readyButtonRadiusStyle" press="onSwitchReport" />
+						</items>
+					</SegmentedButton> -->
+					<Select placeHolder="Sort by" id="sortingTask" change="onSortingUser"
+						selectedKey="Descending tasks"
+						class="sapUiTinyMarginBegin sapUiSizeCompact sortingSelectionStyle">
+						<core:Item text="{i18n>ASCENDING}" key="Ascending tasks" />
+						<core:Item text="{i18n>DESCENDING}" key="Descending tasks" />
+						<core:Item text="{i18n>ALPHABETICAL}" key="Alphabetical" />
+					</Select>
+					<Button tooltip="{i18n>DOWNLOAD}" id="taskDownload"
+						class="sapUiSizeCompact buttonRadiusStyleClass secondaryBtnStyleClass"
+						icon="images/mSExcel.png" press="onTaskDownload"></Button>
+				</Toolbar>
+				<Label id="idNoDataText" class="noDataTextStyleClass" visible="true" />
+				<layout:Grid defaultSpan="L4 M4 S6" vSpacing="0"
+					id="userListGrid" content='{oUserListModel>/userWorkloadDtos}'
+					class="userWorkListGridStyleClass">
+					<layout:content>
+						<HBox id="eachUserDetail">
+							<VBox justifyContent="Center" alignItems="Center"
+								class="taskCountCirclStyle">
+								<Label
+									text="{path:'oUserListModel>noOfTask', formatter:'pmc.util.formatter.fnGetTheWorkLoadColor'}"
+									class="userTaskCountStyle" />
+								<Label text="{i18n>TASKS}" class="userTaskCountLblStyle" />
+							</VBox>
+							<VBox>
+								<Label text="{oUserListModel>userName}" class="userNameStyle" />
+								<HBox class="userNameDetailsStyle"
+									visible="{path:'oUserListModel>userGroup', formatter:'pmc.util.formatter.fnShowUserGroup'}">
+									<Label text="{i18n>USER_GROUP} : " class="userPlantLblStyle" />
+									<Label text="{oUserListModel>userGroup}" tooltip="{oUserListModel>userGroup}"
+										class="userGroupFldStyle" />
+								</HBox>
+							</VBox>
+						</HBox>
+					</layout:content>
+				</layout:Grid>
+				<Table inset="false" id="PMC_TASK_AGING_TABLE"
+					class="tableBorderClass tableHeader sapUiSizeCompact">
+				</Table>
+				<Toolbar class="legendBarStyle" id="idWorkLoadRange">
+					<ToolbarSpacer></ToolbarSpacer>
+					<HBox>
+						<HBox class="highWorkLOadLegendStyle" />
+						<Label
+							text="{i18n>HIGH_WORKLOAD} ({oUserDefaultModel>/highWorkLoadCount})"
+							class="processLegendTextClass" />
+						<HBox class="normalWorkLOadLegendStyle" />
+						<Label
+							text="{i18n>NORMAL_WORKLOAD} ({oUserDefaultModel>/normalWorkLoadCount})"
+							class="processLegendTextClass" />
+						<HBox class="lowWorkLOadLegendStyle" />
+						<Label
+							text="{i18n>LOW_WORKLOAD} ({oUserDefaultModel>/lowWorkLoadCount})"
+							class="processLegendTextClass" />
+						<Label text="{i18n>Total} ({oUserDefaultModel>/totalWorkLoadCount})"
+							class="totalLegendTextClass" />
+					</HBox>
+				</Toolbar>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

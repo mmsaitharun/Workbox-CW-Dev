@@ -1,0 +1,146 @@
+Development Component Build (2018-02-21 11:51:49 GMT+05:30 (IST))
+  Component name: pmc/po/adapter/services/ejb
+  Component vendor: incture.com
+  SC compartment: incture.com_PMC_PO_ADAPTER_1
+  Configuration: CWD_INC-PMC_D
+  Location: CWD_INC-PMC_D
+  Source code location: http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/DCs/incture.com/pmc/po/adapter/services/ejb/_comp/
+  DC root folder: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\ejb\_comp\
+  DC type: J2EE
+  DC subtype: EJBModule
+  Host: INC00718
+
+DC Model check:
+   DC is available locally
+   validating dependency to build plugin "sap.com/tc/bi/bp/ejbmodule"
+   validating dependency to  public part "client" of DC "incture.com/pmc/po/adapter/entities/ejb"
+   validating dependency to  public part "ejbjar" of DC "incture.com/pmc/po/adapter/entities/ejb"
+   validating dependency to  public part "api" of DC "sap.com/engine.jee5.facade"
+   validating dependency to  public part "api" of DC "sap.com/tc/bpem/facade/ear"
+   validating dependency to  public part "api" of DC "sap.com/tc/esi/esp/wsrm/facade"
+   validating dependency to  public part "api" of DC "sap.com/tc/je/sdo21/api"
+   validating dependency to  public part "api" of DC "sap.com/tc/je/usermanagement/api"
+   validating dependency to  public part "api" of DC "sap.com/tc/je/webservices/api"
+   DC model check OK
+
+Start build plugin:
+   using build plugin: sap.com/tc/bi/bp/ejbmodule
+   starting build plugin from : C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\bi\bp\ejbmodule\_comp\gen\default\public\ejb\
+
+
+
+Build Plugin 'EJBModulePlugin', Version 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:26:50 +0200, CL239773)
+   development component:  pmc/po/adapter/services/ejb (incture.com)
+      software component:  PMC_PO_ADAPTER (incture.com)
+                location:  CWD_INC-PMC_D
+                    type:  J2EE, subtype EJBModule
+           build variant:  default
+         source location:  http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/
+         output location:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\7E0664007690E963752386BC69F6B4F8\default
+       generation folder:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\7E0664007690E963752386BC69F6B4F8
+       plugin start time:  2018-02-21 11:51:49 GMT+05:30 (IST)
+                 Java VM:  Java HotSpot(TM) 64-Bit Server VM, 25.91-b15 (1.8, Oracle Corporation)
+
+
+General options:
+  convert *.xlf to *.properties: yes
+  include sources for debugging: yes
+ 
+
+
+Checking path lengths for sources
+This component contains long pathnames, this may lead to build errors or unexpected results. (For example: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\ejb\_comp\ejbModule\META-INF\wsdl\com\oneapp\incture\pmc\poadapter\services\rootwsdl_PMCProcessManagementFacadeService\rootwsdl_PMCProcessManagementFacadeService.wsdl )
+Path length checks finished in 0.015 seconds
+ 
+Preparing data context..
+Using custom manifest file "ejbModule/META-INF/MANIFEST.MF"
+Data context preparation finished in 0.025 seconds
+ 
+Creating Ant build file..
+  Creating output file: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\7E0664007690E963752386BC69F6B4F8\default\logs\build.xml
+  Using Java class:     com.sap.tc.buildplugin.BuildEJBModule
+Build file creation finished in 0.055 seconds
+ 
+Starting Ant..
+  Using build file:     C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\7E0664007690E963752386BC69F6B4F8\default\logs\build.xml
+  Using build target:   build
+  Using Ant version:    1.7.1
+ 
+compile:
+      [echo] Forking Java compiler as a new process: C:\Program Files\Java\jdk1.8.0_131\bin\javac.exe
+      [echo] Settings:
+      [echo]         debug: on
+      [echo]      optimize: off
+      [echo]   deprecation: default
+      [echo]       verbose: default
+      [echo]      encoding: UTF-8
+      [echo]        source: 1.6
+      [echo]        target: 1.6
+      [echo]  source paths: 
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\ejb\_comp\ejbModule
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\ejb\_comp\.apt_generated
+      [echo]    class path:
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\je\sdo21\api\_comp\gen\default\public\api\lib\java\sdo.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\je\sdo21\api\_comp\gen\default\public\api\lib\java\tc~je~sdo21~api.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\je\usermanagement\api\_comp\gen\default\public\api\lib\java\tc~je~usermanagement~api.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\bpem\facade\ear\_comp\gen\default\public\api\lib\java\sap.com~tc~bpem~facade~ear~api.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\je\webservices\api\_comp\gen\default\public\api\lib\java\tc~je~webservices~api.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\esi\esp\wsrm\facade\_comp\gen\default\public\api\lib\java\tc~esi~esp~wsrm~facade~api.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\entities\ejb\_comp\gen\default\public\client\lib\java\incture.com~pmc~po~adapter~entities~ejb~client.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\ec~java~jsf~api.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\engine.jee5.facade.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\orpersistence_client_lib_filtered.jar
+      [echo]    output dir: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\7E0664007690E963752386BC69F6B4F8\classes
+     [javac] Compiling 50 source files to C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\7E0664007690E963752386BC69F6B4F8\classes
+     [javac] Reading options and classpath from file C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\7E0664007690E963752386BC69F6B4F8\default\logs\options4543085098656671705.tmp
+     [javac] Reading list of classes to be compiled from file C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\7E0664007690E963752386BC69F6B4F8\default\logs\classes7454467951584580447.tmp
+     [javac] WARNING: warning: [options] bootstrap class path not set in conjunction with -source 1.6
+     [javac] 1 warning
+     [timer] Java compilation finished in 2.749 seconds
+ 
+      [echo] Start XLF conversion
+  [xlf2prop] Found 0 XLF files to convert in folder "ejbModule"
+  [xlf2prop] Found 0 XLF files to convert in folder ".apt_generated"
+     [timer] XLF conversion finished in 0.008 seconds
+ 
+ 
+createPublicParts:
+  [pppacker] Packing public part 'client'
+  [pppacker] Packed   2 files for entity CustomAttributesService (Java Class/Class, com/incture/pmc/poadapter/services/)
+  [pppacker] Packed   2 files for entity CustomAttributesServiceLocal (Java Class/Class, com/incture/pmc/poadapter/services/)
+  [pppacker] Packed   6 files for entity com.incture.pmc.poadapter.dto (Java Package/Class, com/incture/pmc/poadapter/dto/)
+  [pppacker] Packed  64 files for entity com.incture.pmc.poadapter.services (Java Package/Class, com/incture/pmc/poadapter/services/)
+  [pppacker] Packed 4 entities for public part 'client'
+     [timer] Packing of public part 'client' finished in 0.25 seconds
+ 
+  [pppacker] Packing public part 'ejbjar'
+  [pppacker] Packed 104 files for entity incture.com~pmc~po~adapter~services~ejb (EJB-JAR)
+  [pppacker] Packed   6 files for entity com.incture.pmc.poadapter.dto (Java Package/Class, com/incture/pmc/poadapter/dto/)
+  [pppacker] Packed  64 files for entity com.incture.pmc.poadapter.services (Java Package/Class, com/incture/pmc/poadapter/services/)
+  [pppacker] Packed 3 entities for public part 'ejbjar'
+     [timer] Packing of public part 'ejbjar' finished in 0.228 seconds
+ 
+ 
+build:
+ 
+Ant runtime 3.313 seconds
+ 
+Ant build finished with WARNINGS
+Checking package reservation
+Package reservation check finished in 0.014 seconds
+ 
+Build plugin finished at 2018-02-21 11:51:53 GMT+05:30 (IST)
+Total build plugin runtime: 3.768 seconds
+ 
+Build finished with WARNING
+
+==== Post-Processing ====   started at 2018-02-21 11:51:53.359 IST
+Comparison of previous and actual build results took: 0.063 seconds
+
+Copy the build results 
+  from: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\7E0664007690E963752386BC69F6B4F8\default\
+  to:   C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\ejb\_comp\gen\default\
+
+The build results of the following public parts were not copied, since they have not changed:
+  ejbjar
+  client

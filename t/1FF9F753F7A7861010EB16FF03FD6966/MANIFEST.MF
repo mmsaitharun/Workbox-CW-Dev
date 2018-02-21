@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+DC-Name: pmc/po/adapter/rest/app
+DC-SubType: Enterprise Application
+DC-Type: J2EE
+DC-Vendor: incture.com
+Implementation-Title: pmc/po/adapter/rest/app
+Implementation-Vendor: incture.com
+Implementation-Version: CWD_INC-PMC_D 20180221062141
+SC-Name: PMC_PO_ADAPTER
+SC-Vendor: incture.com
+
+Name: build-information
+Build-Counter: 20180221062141
+Build-Date: 2018-02-21
+Build-Location: CWD_INC-PMC_D
+Build-Time: 11:51:41 GMT+05:30 (IST)
+Created-By: DC BuildTool
+Source-Location: /ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/
+Source-Repository: http://INCTURECWD:50000/dtr
+

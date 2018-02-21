@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://incture.com/pmc/poadapter/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://incture.com/pmc/poadapter/services/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://incture.com/pmc/poadapter/services/" version="1.0">
+<xs:element name="addNote" type="tns:addNote"/>
+<xs:element name="addNoteResponse" type="tns:addNoteResponse"/>
+<xs:element name="claimTask" type="tns:claimTask"/>
+<xs:element name="claimTaskResponse" type="tns:claimTaskResponse"/>
+<xs:element name="complete" type="tns:complete"/>
+<xs:element name="completeResponse" type="tns:completeResponse"/>
+<xs:element name="delegate" type="tns:delegate"/>
+<xs:element name="delegateResponse" type="tns:delegateResponse"/>
+<xs:element name="release" type="tns:release"/>
+<xs:element name="releaseResponse" type="tns:releaseResponse"/>
+<xs:complexType name="claimTask">
+<xs:sequence>
+<xs:element minOccurs="0" name="taskInstanceId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="claimTaskResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="release">
+<xs:sequence>
+<xs:element minOccurs="0" name="taskInstanceId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="releaseResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="delegate">
+<xs:sequence>
+<xs:element minOccurs="0" name="taskInstanceId" type="xs:string"/>
+<xs:element minOccurs="0" name="userId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="delegateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addNote">
+<xs:sequence>
+<xs:element minOccurs="0" name="taskInstanceId" type="xs:string"/>
+<xs:element minOccurs="0" name="content" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addNoteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="complete">
+<xs:sequence>
+<xs:element minOccurs="0" name="taskInstanceId" type="xs:string"/>
+<xs:element minOccurs="0" name="taskOutputData" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="completeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="claimTaskIn">
+<wsdl:part element="tns:claimTask" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="claimTaskOut">
+<wsdl:part element="tns:claimTaskResponse" name="claimTaskResponse"/>
+</wsdl:message>
+<wsdl:message name="releaseIn">
+<wsdl:part element="tns:release" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="releaseOut">
+<wsdl:part element="tns:releaseResponse" name="releaseResponse"/>
+</wsdl:message>
+<wsdl:message name="delegateIn">
+<wsdl:part element="tns:delegate" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="delegateOut">
+<wsdl:part element="tns:delegateResponse" name="delegateResponse"/>
+</wsdl:message>
+<wsdl:message name="addNoteIn">
+<wsdl:part element="tns:addNote" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="addNoteOut">
+<wsdl:part element="tns:addNoteResponse" name="addNoteResponse"/>
+</wsdl:message>
+<wsdl:message name="completeIn">
+<wsdl:part element="tns:complete" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="completeOut">
+<wsdl:part element="tns:completeResponse" name="completeResponse"/>
+</wsdl:message>
+<wsdl:portType name="WorkBoxActionFacade">
+<wsdl:operation name="claimTask" parameterOrder="parameters">
+<wsdl:input message="tns:claimTaskIn"/>
+<wsdl:output message="tns:claimTaskOut"/>
+</wsdl:operation>
+<wsdl:operation name="release" parameterOrder="parameters">
+<wsdl:input message="tns:releaseIn"/>
+<wsdl:output message="tns:releaseOut"/>
+</wsdl:operation>
+<wsdl:operation name="delegate" parameterOrder="parameters">
+<wsdl:input message="tns:delegateIn"/>
+<wsdl:output message="tns:delegateOut"/>
+</wsdl:operation>
+<wsdl:operation name="addNote" parameterOrder="parameters">
+<wsdl:input message="tns:addNoteIn"/>
+<wsdl:output message="tns:addNoteOut"/>
+</wsdl:operation>
+<wsdl:operation name="complete" parameterOrder="parameters">
+<wsdl:input message="tns:completeIn"/>
+<wsdl:output message="tns:completeOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="WorkBoxActionFacadeBinding" type="tns:WorkBoxActionFacade">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="claimTask">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="release">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="delegate">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="addNote">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="complete">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="WorkBoxActionFacadeService">
+<wsdl:port binding="tns:WorkBoxActionFacadeBinding" name="WorkBoxActionFacadePort">
+<soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://incturecwd:50000/WorkBoxActionFacadeService/WorkBoxActionFacade"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

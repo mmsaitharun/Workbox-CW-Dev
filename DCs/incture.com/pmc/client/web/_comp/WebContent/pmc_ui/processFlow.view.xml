@@ -1,0 +1,173 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="pmc_ui.processFlow" xmlns:t="sap.suite.ui.commons"
+	xmlns:mt="pmc.util" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" showHeader="false" class="processFlowPage">
+		<content>
+			<HBox>
+				<VBox width="70%" class="">
+					<HBox justifyContent="Center" alignItems="Center">
+						<Label text="{oProcessDetailModel>/processDisplayName}"
+							class="processNameHeadingStyleClass" />
+					</HBox>
+					<l:VerticalLayout content="{oProcessTaskModel>/taskEventDtos}"
+						width="100%" class="processFlowMainStyleClass">
+						<l:content>
+							<VBox>
+								<HBox>
+									<Image
+										src="{path:'oProcessTaskModel>status', formatter:'pmc.util.formatter.fnGetTheTaskStatusIcon'}"
+										class="completedIcon" />
+									<Label
+										text="{ parts:['oProcessTaskModel>completedAtInString','oProcessTaskModel>status'], formatter:'pmc.util.formatter.fnShowDateFormat' }"
+										class="statusHeaderTextStyle" />
+									<HBox class="processFlowButtonPositionClass processHeaderClass"
+										visible="{path:'oProcessTaskModel>status', formatter:'pmc.util.formatter.fnShowForwardButton'}">
+										<Label
+											text="{ parts:['oProcessTaskModel>slaDisplayDate','oProcessTaskModel>status'], formatter:'pmc.util.formatter.fnShowDueDateFormat' }"
+											class="slaDateStyle sapUiTinyMargin" />
+										<Button icon="sap-icon://open-command-field" text="Forward"
+											type="Accept" class="delegateButtonClass sapUiSizeCompact"
+											press="onDelegatePress"></Button>
+									</HBox>
+								</HBox>
+								<HBox id="processTaskBox" class="processFlowLineStyle">
+									<Image src="images/bar.png" width="100%" height="100%" />
+									<VBox width="93%" class="taskBoxStyle">
+										<VBox
+											visible="{ parts:['oProcessTaskModel>status','oProcessTaskModel>taskType'], formatter:'pmc.util.formatter.fnGetTheTaskColor' }">
+											<Bar class="timeLineTaskHeaderBarStyleClass">
+												<contentLeft>
+													<Text text="{oProcessTaskModel>subject}" tooltip="{oProcessTaskModel>subject}"
+														class="timeLineSubjectTextStyle" />
+												</contentLeft>
+												<contentRight>
+													<Text
+														text="{i18n>STARTED_ON} {oProcessTaskModel>createdAtInString}"
+														class="timeLineStartedTextStyle" />
+												</contentRight>
+											</Bar>
+											<Text text="{oProcessTaskModel>description}" class="timeLineDescrptionTextStyle" />
+											<HBox justifyContent="SpaceBetween" width="100%">
+												<VBox
+													visible="{path:'oProcessTaskModel>taskType', formatter:'pmc.util.formatter.fnDisplayUserData'}">
+													<VBox
+														visible="{path:'oProcessTaskModel>status', formatter:'pmc.util.formatter.fnGetTaskCompletionUser'}">
+														<Label text="{i18n>COMPLETED_BY}" class="timeLineStatusUserStyle" />
+														<Text text="{oProcessTaskModel>ownersName}" tooltip="{oProcessTaskModel>ownersName}"
+															class="timeLineStatusUserNameStyle" />
+													</VBox>
+													<VBox
+														visible="{path:'oProcessTaskModel>status', formatter:'pmc.util.formatter.fnGetUserGroup'}">
+														<Label text="{i18n>OWNERS}" class="timeLineStatusUserStyle" />
+														<Text text="{oProcessTaskModel>ownersName}" tooltip="{oProcessTaskModel>ownersName}"
+															class="timeLineStatusUserNameStyle userNameWrapStyleClass"
+															wrapping="false" />
+													</VBox>
+												</VBox>
+												<VBox
+													visible="{path:'oProcessTaskModel>forwardedBy', formatter:'pmc.util.formatter.fnDisplayForwardedBy'}">
+													<Label text="" class="timeLineStatusUserStyle" />
+													<HBox>
+														<Image src="images/delegate.png" class="forwardIconClass sapUiSizeCompact" />
+														<Text
+															text="{oProcessTaskModel>forwardedBy} {i18n>FORWARDED_AT} {oProcessTaskModel>forwardedAtInString}"
+															tooltip="{oProcessTaskModel>ownersName}" class="timeLineForwardedTextStyle" />
+													</HBox>
+												</VBox>
+												<VBox
+													visible="{path:'oProcessTaskModel>statusFlag', formatter:'pmc.util.formatter.fnDisplayReject'}">
+													<Label text="" class="timeLineStatusUserStyle" />
+													<HBox>
+														<Image src="images/rejectIcon.png" tooltip="{i18n>REJECTED_TASK}"
+															class="rejectedTaskBtnStyle sapUiSizeCompact" />
+													</HBox>
+												</VBox>
+											</HBox>
+										</VBox>
+										<HBox class="taskSeperatorStyle" width="100%" />
+									</VBox>
+								</HBox>
+							</VBox>
+						</l:content>
+					</l:VerticalLayout>
+				</VBox>
+				<VBox width="40%" class="processHeaderStyle">
+					<HBox>
+						<Label text="{i18n>MORE_INFORMATION}" class="taskRightHeaderLblClass" />
+					</HBox>
+					<HBox class="processFlowMarginStyleClass">
+						<Label text="{i18n>REQUEST_ID}" class="taskHeaderLblClass" />
+						<Text text="{oProcessDetailModel>/requestId}" class="taskHeaderFieldClass" />
+					</HBox>
+					<HBox>
+						<Label text="{i18n>PROCESS_Name}" class="taskHeaderLblClass" />
+						<Text text="{oProcessDetailModel>/processDisplayName}" class="taskHeaderFieldClass" />
+					</HBox>
+					<HBox>
+						<Label text="{i18n>SUBJECT}" class="taskHeaderLblClass" />
+						<Text text="{oProcessDetailModel>/subject}" class="taskHeaderFieldClass" />
+					</HBox>
+					<HBox>
+						<Label text="{i18n>STARTED_AT}" class="taskHeaderLblClass" />
+						<Text text="{oProcessDetailModel>/startedAtInString}" class="taskHeaderFieldClass" />
+					</HBox>
+					<HBox>
+						<Label text="{i18n>STARTED_BY}" class="taskHeaderLblClass" />
+						<Text text="{oProcessDetailModel>/startedByDisplayName}"
+							class="taskHeaderFieldClass" />
+					</HBox>
+					<HBox>
+						<Label text="{i18n>STATUS}" class="taskHeaderLblClass" />
+						<HBox>
+							<Text class="taskHeaderStatusClass"
+								text="{path:'oProcessDetailModel>/status', formatter:'pmc.util.formatter.fnShowStausOfProcess'}" />
+						</HBox>
+					</HBox>
+					<HBox class="processActionBoxStyle">
+						<Label text="" class="taskHeaderLblClass" />
+						<Button text="{i18n>PROCESS_VIEW}"
+							class="sapUiSizeCompact processButtonStyleClass1 customButtonMarginStyle"
+							press="onE2EView" tooltip="{i18n>PROCESS_VIEW}"></Button>
+						<Button text="{i18n>CANCEL}" type="Reject"
+							class="sapUiSizeCompact buttonRadiusStyleClass customButtonMarginStyle"
+							press="onCancelPress" tooltip="{i18n>CANCEL_PROCESS}" />
+					</HBox>
+					<HBox class="processFlowBorderStyleClass"></HBox>
+					<layout:Grid defaultSpan="L12 M12 S12" vSpacing="0"
+						id="messageListGrid" content='{oMessageModel>/responseDtos/messageDtos}'
+						class="inboxOuterBoxStyle userWorkListGridStyleClass">
+						<layout:content>
+							<VBox class="messageBoxStyleClass">
+								<HBox class="commentBoxStyle">
+									<Image src="./images/placeholder.png" class="commentUserStyleClass" />
+									<VBox class="commentUserSection">
+										<HBox>
+											<Text text="{oMessageModel>userDisplayName}" class="msgNameStyleClass" />
+											<Text text=" @ {oMessageModel>createdAtDisplayDate}"
+												class="msgTimeStyleClass" />
+										</HBox>
+										<Text text="{oMessageModel>message}" class="commentStyle" />
+									</VBox>
+								</HBox>
+							</VBox>
+						</layout:content>
+					</layout:Grid>
+					<HBox class="addCommentBox">
+						<Input value="{oMessageModel>/textMessage}" rows="1"
+							suggest="onChangeTagSugg" cols="200" placeholder="Write Message"
+							maxLength="250" class="commentBoxOutSideStyle" id="idProcessTextMessage"
+							suggestionItemSelected="onSuggestionItemSelected"
+							maxSuggestionWidth="16rem" startSuggestion="4" showSuggestion="true"
+							filterSuggests="false" />
+						<!-- <Input value="{oMessageModel>/textMessage}" rows="1" submit="onAddMessage" 
+							cols="200" placeholder="Write Message" maxLength="250" class="commentBoxOutSideStyle" 
+							id="idProcessTextMessage" /> -->
+						<Button icon="sap-icon://paper-plane" class="msgSendBtnStyle"
+							press="onAddMessage" type="Transparent" />
+					</HBox>
+				</VBox>
+			</HBox>
+		</content>
+	</Page>
+</core:View>

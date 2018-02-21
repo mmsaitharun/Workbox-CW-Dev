@@ -1,0 +1,281 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core">
+	<VBox class="configPagePositionStyle">
+		<HBox class="adminOuterBoxStyleClass"
+			visible="{path:'oUserDefaultModel>/selectedConfig', formatter:'pmc.util.formatter.fnDisplayAuthConfig'}">
+			<VBox class="adminConsoleSidePanel">
+				<!-- <VBox class="processListHeaderBgStyleClass"> <Label text="" class="processListHeaderStyleClass 
+					configHeadStyle" /> </VBox> -->
+				<VBox items="{oConfigModel>/authConfig}">
+					<HBox id="idAuthConfigItem" class="processListItemBoxInActiveStyleClass"
+						visible="{parts:['oUserDefaultModel>/selectedSubConfig','oConfigModel>config'], formatter:'pmc.util.formatter.changeClassSideList'}">
+						<Label text="{oConfigModel>config}" class="processListStyleClass" />
+					</HBox>
+				</VBox>
+			</VBox>
+			<VBox width="100%"
+				visible="{path:'oUserDefaultModel>/selectedSubConfig', formatter:'pmc.util.formatter.displayUserAccessConfigScreen'}">
+				<VBox items="{oConfigModel>/processConfigDtos}">
+					<VBox class="userAccessBarStyle" visible="{= ${oConfigModel>isDeleted} !== true}">
+						<HBox>
+							<HBox width="40%">
+								<Label text="Process Name:" class="userAccessKeyStyle"></Label>
+								<Text text="{oConfigModel>processDisplayName}" class="processNameTextStyle" />
+							</HBox>
+							<HBox>
+								<Label text="Selection Criteria:" class="userAccessKeyStyle"></Label>
+								<Select class="sapUiSizeCompact borderRadiusClass selectClass"
+									height="1.67rem">
+									<core:Item key="User Group" text="User Group" />
+									<core:Item key="User Role" text="User Role" />
+									<core:Item key="User Name" text="User Name" />
+								</Select>
+								<Button text="Go"
+									class="sapUiSizeCompact goButtonStyleClass customButtonMarginStyle buttonRadiusStyleClass accessGoStyleClass"
+									press="onSelectionGo"></Button>
+							</HBox>
+						</HBox>
+						<HBox>
+							<Label text="Process Access:" class="selectedUserNameStyle" />
+							<Label text="{oConfigModel>userRole}" tooltip="{oConfigModel>userRole}"
+								class="userRoleListStyleClass" />
+							<Button icon="images/userGroupBlue.png" tooltip=""
+								type="Transparent" class="selectedUsersBtnClass sapUiSizeCompact"
+								press="onSelectedUsersLinkPress" />
+						</HBox>
+					</VBox>
+				</VBox>
+			</VBox>
+		</HBox>
+		<HBox class="adminOuterBoxStyleClass"
+			visible="{path:'oUserDefaultModel>/selectedConfig', formatter:'pmc.util.formatter.fnDisplayGeneralConfig'}">
+			<VBox class="adminConsoleSidePanel">
+				<VBox class="processListHeaderBgStyleClass">
+					<Label text="" class="processListHeaderStyleClass configHeadStyle" />
+				</VBox>
+				<VBox items="{oConfigModel>/generalConfig}">
+					<items>
+						<HBox id="idAgeingConfigItem" class="processListItemBoxInActiveStyleClass"
+							visible="{parts:['oUserDefaultModel>/selectedSubConfig','oConfigModel>config'], formatter:'pmc.util.formatter.changeClassSideList'}">
+							<Label text="{oConfigModel>config}" class="processListStyleClass" />
+						</HBox>
+					</items>
+				</VBox>
+			</VBox>
+			<VBox class="workloadConfiStyle"
+				visible="{path:'oUserDefaultModel>/selectedSubConfig', formatter:'pmc.util.formatter.displayWorkLoadConfigScreen'}">
+				<Toolbar class="barClass">
+					<Text text="{oUserDefaultModel>/selectedSubConfig}" class="sectionHeaderLabelStyleClass sapUiSmallMargin " />
+					<Image
+						src="{path:'oUserDefaultModel>/theme', formatter:'pmc.util.formatter.fnGetInfoImage'}"
+						tooltip="Information" class="infoStyleClass" press="onClickHelpLink" />
+					<ToolbarSpacer></ToolbarSpacer>
+				</Toolbar>
+				<layout:Grid defaultSpan="L4 M12 S12" vSpacing="1"
+					class="gridStyleClass">
+					<layout:content>
+						<VBox class="sapUiSmallMargin">
+							<HBox>
+								<HBox class="lowWorkLoadLegendStyle" />
+								<Text text="Low" class=" workloadTitleStyleClass" />
+							</HBox>
+							<HBox class="sapUiTinyMarginTop workloadCountBoxClass"
+								marginLeft="1.4rem">
+								<VBox>
+									<Label text="Threshold" class="tableHeaderLblStyle thresholdLblStyle" />
+								</VBox>
+								<VBox>
+									<Input value="{oConfigModel>/countDetails/lmax}"
+										maxLength="4" liveChange="countAutoPopulate" class="sapUiSizeCompact"
+										width="50%" name="lmax"></Input>
+								</VBox>
+							</HBox>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<HBox>
+								<HBox class="normalWorkLoadLegendStyle" />
+								<Text text="Normal" class=" workloadTitleStyleClass" />
+							</HBox>
+							<HBox class="sapUiTinyMarginTop workloadCountBoxClass"
+								marginLeft="1.4rem">
+								<VBox>
+									<Label text="Threshold" class="tableHeaderLblStyle thresholdLblStyle" />
+								</VBox>
+								<VBox>
+									<Input value="{oConfigModel>/countDetails/nmax}"
+										maxLength="4" liveChange="countAutoPopulate" class="sapUiSizeCompact"
+										width="50%" name="nmax"></Input>
+								</VBox>
+							</HBox>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<HBox>
+								<HBox class="highWorkLoadLegendStyle" />
+								<Text text="High" class="workloadTitleStyleClass" />
+							</HBox>
+							<HBox class="sapUiTinyMarginTop workloadCountBoxClass"
+								marginLeft="1.4rem">
+								<VBox>
+									<Label text="Threshold" class="tableHeaderLblStyle thresholdLblStyle" />
+								</VBox>
+								<VBox>
+									<Input value="> {oConfigModel>/countDetails/hmin}"
+										enabled="false" class="sapUiSizeCompact" width="50%"></Input>
+								</VBox>
+							</HBox>
+						</VBox>
+					</layout:content>
+				</layout:Grid>
+			</VBox>
+			<VBox width="100%"
+				visible="{path:'oUserDefaultModel>/selectedSubConfig', formatter:'pmc.util.formatter.displayProcessConfigScreen'}">
+				<Toolbar class="barClass">
+					<Text text="{oUserDefaultModel>/selectedSubConfig}" class="sectionHeaderLabelStyleClass sapUiSmallMargin " />
+					<Image
+						src="{path:'oUserDefaultModel>/theme', formatter:'pmc.util.formatter.fnGetInfoImage'}"
+						tooltip="Information" class="infoStyleClass" press="onClickHelpLink" />
+					<ToolbarSpacer></ToolbarSpacer>
+					<Image src="images/add.png" class="addImageClass" press="onAddProcessNamePress" />
+				</Toolbar>
+				<VBox items="{oConfigModel>/processConfigDtos}">
+					<VBox class="userAccessBarStyle" visible="{= ${oConfigModel>isDeleted} !== true}">
+						<HBox justifyContent="SpaceBetween">
+							<HBox>
+								<Label text="Process Name:" class="adminLabelOneStyle"></Label>
+								<Text text="{oConfigModel>processName}" class="adminValueOneStyle" 
+									visible="{= ${oConfigModel>isNew} !== true}"/>
+								<Input value="{oConfigModel>processName}" class="sapUiSizeCompact sapUiTinyMarginTop"
+									visible="{= ${oConfigModel>isNew} === true}" height="2.5rem"
+									liveChange="onChangeAnything"/>
+							</HBox>
+							<Button icon="sap-icon://delete" press="onDeletePress" class="sapUiSizeCompact sapUiTinyMarginEnd"
+								type="Transparent"/>
+						</HBox>
+						<HBox>
+							<HBox>
+								<Label text="Process Display Name:" class="adminLabelTwoStyle"></Label>
+								<Input value="{oConfigModel>processDisplayName}" class="sapUiSizeCompact" 
+									liveChange="onChangeAnything"/>
+							</HBox>
+							<HBox>
+								<Label text="Buisness Id:" class="adminLabelTwoStyle"></Label>
+								<Input value="{oConfigModel>labelName}" class="sapUiSizeCompact" 
+									liveChange="onChangeAnything"/>
+							</HBox>
+						</HBox>
+						<HBox class="selectedUserGroupMarginStyle">
+							<Label text="Selected Group(s):" class="adminLabelThreeStyle" />
+							<Text text="{oConfigModel>userGroup}"></Text>
+							<Button icon="images/userGroupOrange.png" tooltip=""
+								class="listBtnClass" type="Transparent" press="onClickSelectGroup" />
+						</HBox>
+					</VBox>
+				</VBox>
+			</VBox>
+			<VBox items="{oConfigModel>/reportDto}" width="100%"
+				visible="{path:'oUserDefaultModel>/selectedSubConfig', formatter:'pmc.util.formatter.displayProcessAgeConfigScreen'}">
+			<VBox width="100%">
+					<Toolbar class="barClass">
+						<Text text="{path:'oConfigModel>reportName', formatter:'pmc.util.formatter.fnGetDisplayReportName'}" class="sectionHeaderLabelStyleClass" />
+						<Image
+							src="{path:'oUserDefaultModel>/theme', formatter:'pmc.util.formatter.fnGetInfoImage'}"
+							tooltip="Information" class="infoStyleClass" press="onClickHelpLink" />
+						<ToolbarSpacer></ToolbarSpacer>
+						<HBox items="{oConfigModel>/agingRangeConfigDto}">
+							<HBox
+								visible="{parts:['oConfigModel>reportName'], formatter:'pmc.util.formatter.displayEndRangeNo'}">
+								<Text text="Range for last " class="sapUiTinyMarginEnd sapUiTinyMarginTop" />
+								<Select class="slaSelectStyleClass sapUiSizeCompact" selectedKey="{oConfigModel>agingRange}"
+									change="onChangeAnything">
+									<core:Item key="30" text="30" />
+									<core:Item key="60" text="60" />
+									<core:Item key="90" text="90" />
+								</Select>
+								<Text text="days" class="sapUiTinyMarginBeginEnd sapUiTinyMarginTop" />
+							</HBox>
+						</HBox>
+						<Image src="images/add.png" class="addImageClass" press="onRangeTableAddPress" />
+					</Toolbar>
+				<HBox class="rangeBgClass">
+					<VBox>
+						<HBox class="rangeTextClass" width="6.25rem">
+							<Text text="From - To (Days)"/>
+						</HBox>
+						<HBox class="rangeDisplayClass" width="6.25rem">
+							<Text text="Display Name"/>
+						</HBox>
+					</VBox>
+					<layout:Grid defaultSpan="L2 M6 S12" vSpacing="0" content="{oConfigModel>reportDtoList}"
+						class="rangeGridClass">
+					<layout:content>
+						<HBox  class="rangeVBoxClass">
+							<VBox justifyContent="Center">
+								<HBox alignItems="Center" class="sapUiTinyMarginBottom">
+									<Input value="{oConfigModel>lowerSegment}" width="100%" class="sapUiSizeCompact rangeInputStyle"
+										liveChange="rangeCheck" name="lowerSegment" enabled="false"/>
+									<Text text=" - " class="rangeMarginStyle" margin-bottom="1rem"/>
+									<Input value="{oConfigModel>higherSegment}" width="100%" class="sapUiSizeCompact rangeInputStyle"
+										liveChange="onRangeChange" name="higherSegment" />
+								</HBox>
+								<VBox>
+									<Input value="{oConfigModel>displayName}" width="100%" class="sapUiSizeCompact rangeInputStyle"
+										liveChange="onChangeAnything"/>
+								</VBox>
+							</VBox>
+							<VBox class="sapMFlexBoxJustifyEnd" visible="{oConfigModel>isLast}" width="0rem">
+								<Button icon="images/close_2.png" type="Transparent" press="onDeleteRow"
+								 class="sapUiSizeCompact deleteIconClass"/>
+							</VBox>
+						</HBox>
+					</layout:content>
+					</layout:Grid>
+				</HBox>
+				</VBox>
+			</VBox>
+		</HBox>
+		<HBox class="adminOuterBoxStyleClass"
+			visible="{path:'oUserDefaultModel>/selectedConfig', formatter:'pmc.util.formatter.fnDisplayProfileConfig'}">
+			<VBox class="adminConsoleSidePanel">
+				<!-- <VBox class="processListHeaderBgStyleClass"> <Label text="" class="processListHeaderStyleClass 
+					configHeadStyle" /> </VBox> -->
+				<VBox items="{oConfigModel>/personalConfig}">
+					<HBox id="idProfileListItem" class="processListItemBoxInActiveStyleClass"
+						visible="{parts:['oUserDefaultModel>/selectedSubConfig','oConfigModel>config'], formatter:'pmc.util.formatter.changeClassSideList'}">
+						<Label text="{oConfigModel>config}" class="processListStyleClass" />
+					</HBox>
+				</VBox>
+			</VBox>
+			<VBox width="100%">
+				<HBox justifyContent="End" class="personalApplyStyleClass">
+					<Button text="Apply" press="callSettingsFunction" width="4rem"
+						class="sapUiSizeCompact buttonRadiusStyleClass processButtonStyleClass" />
+				</HBox>
+				<HBox>
+					<Label text="Name:" class="personalHeaderKeyStyleClass" />
+					<Label text="{oUserDefaultModel>/loggedInUser}" class="personalHeaderValueStyleClass" />
+				</HBox>
+				<HBox>
+					<Label text="User Id:" class="personalHeaderKeyStyleClass" />
+					<Label text="{oUserDefaultModel>/loggedInUserId}" class="personalHeaderValueStyleClass" />
+				</HBox>
+				<HBox>
+					<Label text="Email Id:" class="personalHeaderKeyStyleClass" />
+					<Label text="{oUserDefaultModel>/userMailId}" class="personalHeaderValueStyleClass" />
+				</HBox>
+				<HBox>
+					<Label text="Theme:" class="personalHeaderKeyStyleClass" />
+					<HBox id="idLightThemeBox" class="themeBoxBgClass" tooltip="Light Theme"
+						visible="{path:'oUserDefaultModel>/theme', formatter:'pmc.util.formatter.fnLightThemeActive'}">
+						<VBox class="whiteThemeBoxClass" />
+						<VBox class="blueThemeBoxClass" />
+					</HBox>
+					<HBox id="idDarkThemeBox" class="themeBoxBgClass" tooltip="Dark Theme"
+						visible="{path:'oUserDefaultModel>/theme', formatter:'pmc.util.formatter.fnDarkThemeActive'}">
+						<VBox class="blackThemeBoxClass" />
+						<VBox class="blueThemeBoxClass" />
+					</HBox>
+				</HBox>
+			</VBox>
+		</HBox>
+	</VBox>
+</core:FragmentDefinition>

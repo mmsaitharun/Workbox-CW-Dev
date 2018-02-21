@@ -1,0 +1,70 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog showHeader="false" class="dialogClass" contentWidth="30%">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label text="{oUserDefaultModel>/selectedCriteria}" class="delegateLabelStyle mailTextStyle" />
+				</contentMiddle>
+				<!-- <contentRight>
+					<Button icon="sap-icon://decline" press="onSelectionCriteriaClose"></Button>
+				</contentRight> -->
+			</Bar>
+		</customHeader>
+		<HBox width="100%" background="#ffffff">
+			<SearchField id="idSearchFld" search="handleGrpSearch" class="sapUiSizeCompact searchFldClass" width="100%"/>
+		</HBox>
+		<VBox height="2rem"/>
+		<Table class="sapUiSizeCompact listTblClass" id="idGrpTbl" 
+			visible="{path:'oUserDefaultModel>/selectedCriteria', formatter:'pmc.util.formatter.showGrpTbl'}"
+			items="{oUserGroupModel>/userGroupDtos}" mode="MultiSelect"
+			itemPress="onClickItem">
+			<columns>
+				<Column>
+					<Label text="Select All"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onClickItem">
+					<cells>
+						<Text text="{oUserGroupModel>groupName}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table class="sapUiSizeCompact listTblClass" id="idRoleTable"
+			visible="{path:'oUserDefaultModel>/selectedCriteria', formatter:'pmc.util.formatter.showRoleTbl'}"
+			items="{oRoleModel>/roleInfoDtos}" mode="MultiSelect">
+			<columns>
+				<Column/>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onClickItem"><!--  selected="{oUserGroupModel>isSelected}" -->
+					<cells>
+						<Text text="{oRoleModel>roleUniqName}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table class="sapUiSizeCompact listTblClass" id="idUserTable"
+			visible="{path:'oUserDefaultModel>/selectedCriteria', formatter:'pmc.util.formatter.showUserTbl'}"
+			items="{oAllUserModel>/userDto}" mode="MultiSelect">
+			<columns>
+				<Column/>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onClickItem">
+					<cells>
+						<Text text="{oAllUserModel>firstName} {oAllUserModel>lastName} - {oAllUserModel>loginId}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<buttons>
+			<Button text="OK" press="onSelectionCriteriaSubmit"  type="Transparent"
+				class="sapUiSizeCompact normalBtnClass" />
+			<Button text="Cancel" press="onSelectionCriteriaClose"  type="Transparent"
+				class="sapUiSizeCompact normalBtnClass" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

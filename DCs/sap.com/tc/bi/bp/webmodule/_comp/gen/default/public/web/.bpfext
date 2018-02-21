@@ -1,0 +1,22 @@
+<technologies version="1">
+  <technology name="sap.com/tc/bi/bp/webmodule">
+    <uses>sap.com/tc/bi/javatech</uses>
+    <buildfile-creators>
+      <creator>
+        <classname>com.sap.tc.buildplugin.BuildWebModule</classname>
+        <step>build</step>
+        <sequence>build</sequence>
+      </creator>
+    </buildfile-creators>
+    <definition>
+      <folder-attributes path="META-INF" attribute="meta-inf"/>
+    </definition>
+    <exchange-models>
+        <selector>
+            <filepattern>*.swf</filepattern>
+            <filepattern>*.swc</filepattern>
+            <attributes>war-content</attributes>
+        </selector>
+    </exchange-models>
+  </technology>
+</technologies>

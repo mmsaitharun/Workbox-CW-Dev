@@ -1,0 +1,125 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="detailPage.bpmInboxDetail" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Page class="reportPageClass" showHeader="false">
+		<content>
+			<Panel expandable="false" expanded="true" class="salesReportHdrBoxClass">
+				<headerToolbar>
+					<Toolbar class="tabClass">
+						<Label text="{oDetailModel>/process}" design="Bold"
+							class="matTblLblClass" />
+						<ToolbarSpacer></ToolbarSpacer>
+					</Toolbar>
+				</headerToolbar>
+				<VBox class="detailGridClass">
+					<VBox visible="{oModifyModel>/editable}" class="titleClassDetail">
+						<Label text="Process Name:" hAlign="Right" class="gridLblClass" />
+						<Select id="process" enabled="{oModifyModel>/editable}"
+							change="onProcessChange" class="detailProcessNameStyleClass">
+							<core:Item key="PoHeader" text="Purchase Order" />
+							<core:Item key="InvoiceContext" text="Invoice Validation" />
+							<core:Item key="PriceData" text="Price Update" />
+						</Select>
+					</VBox>
+					<layout:Grid defaultSpan="L4 M6 S12" vSpacing="0">
+						<VBox>
+							<Label text="Requester:" hAlign="Right" class="gridLblClass" />
+							<Input value="{oDetailModel>/requesterId}" enabled="{oModifyModel>/editable}" />
+						</VBox>
+						<VBox>
+							<Label required="{oModifyModel>/screen1}" text="Request Id:"
+								hAlign="Right" class="gridLblClass" />
+							<Input value="{oDetailModel>/requestId}" enabled="{oModifyModel>/editable}" />
+						</VBox>
+						<VBox>
+							<Label required="{oModifyModel>/screen1}" text="Vendor Id:"
+								hAlign="Right" class="gridLblClass" />
+							<Input value="{oDetailModel>/vendorId}" enabled="{oModifyModel>/editable}" />
+						</VBox>
+						<VBox visible="{oModifyModel>/screen2}">
+							<Text text="Mode:" hAlign="Right" class="gridLblClass" />
+							<Input value="{oDetailModel>/mode}" enabled="{oModifyModel>/editable}" />
+						</VBox>
+						<VBox>
+							<Label required="{oModifyModel>/screen1}"
+								text="{path:'oDetailModel>/process',formatter:'.setKey'}:"
+								hAlign="Right" class="gridLblClass" />
+							<Input value="{oDetailModel>/prId}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isPO'}"></Input>
+							<Input value="{oDetailModel>/invoiceNo}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isInvoice'}"></Input>
+							<Input value="{oDetailModel>/productId}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isPU'}"></Input>
+						</VBox>
+						<VBox>
+							<Label required="{oModifyModel>/screen1}"
+								text="{path:'oDetailModel>/process',formatter:'.setCustomKey'}:"
+								hAlign="Right" class="gridLblClass" />
+							<Input value="{oDetailModel>/contractNo}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isPO'}"></Input>
+							<Input value="{oDetailModel>/goodsReceiptNo}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isInvoice'}"></Input>
+							<Input value="{oDetailModel>/material}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isPU'}"></Input>
+						</VBox>
+						<VBox visible="{path:'oDetailModel>/process',formatter:'.isInvoicePU'}">
+							<Text
+								text="{path:'oDetailModel>/process',formatter:'.setCustomKey2'}:"
+								hAlign="Right" class="gridLblClass" />
+							<Input value="{oDetailModel>/prId}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isInvoice'}"></Input>
+							<Input value="{oDetailModel>/plant}" enabled="{oModifyModel>/editable}"
+								visible="{path:'oDetailModel>/process',formatter:'.isPU'}"></Input>
+						</VBox>
+					</layout:Grid>
+				</VBox>
+			</Panel>
+			<!-- <VBox class="salesReportHdrBoxClass" visible="{parts:[{path:'oModifyModel>/screen2'},{path:'oModifyModel>/editable'}],formatter:'.isTableVisible'}"> 
+				<Toolbar class="tabClass"> <Label design="Bold" class="matTblLblClass" /> 
+				<ToolbarSpacer></ToolbarSpacer> <SearchField width="20%" liveChange="tabSortingFx" 
+				class="tblSrchFldClass" visible="{oScreenModifyModel>/isRead}"/> <Button 
+				icon="sap-icon://add" type="Transparent" press="onAdd" class="raiseTktBtnClass" 
+				/> </Toolbar> <Table id="idDetailTable" inset="false" noDataText="No items 
+				added" class=" tableBorderClass" items="{oDetailModel>/items}"> <columns> 
+				<Column width=""> <Text text="Item No" class="salesReportTblHdrClass" /> 
+				</Column> <Column width=""> <Text text="Material" class="salesReportTblHdrClass" 
+				/> </Column> <Column width=""> <Text text="Quantity" class="salesReportTblHdrClass" 
+				/> </Column> <Column width=""> <Text text="Price" class="salesReportTblHdrClass" 
+				/> </Column> </columns> <items> <ColumnListItem> <cells> <VBox> <Text text="{oDetailModel>itemNo}" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isOld'}" class="detailTableText" 
+				/> <Input value="{oDetailModel>itemNo}" change="onUnitChange" maxLength="17" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isNew'}" class="sapUiTinyMarginBegin 
+				caseCountsStyle sapUiSizeCompact" /> </VBox> <VBox> <Text text="{oDetailModel>material}" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isOld'}" class="detailTableText" 
+				/> <Input value="{oDetailModel>material}" change="onUnitChange" maxLength="17" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isNew'}" class="sapUiTinyMarginBegin 
+				caseCountsStyle sapUiSizeCompact" /> </VBox> <VBox> <Text text="{oDetailModel>quantity}" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isOld'}" class="detailTableText" 
+				/> <Input value="{oDetailModel>quantity}" change="onUnitChange" maxLength="17" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isNew'}" class="sapUiTinyMarginBegin 
+				caseCountsStyle sapUiSizeCompact" /> </VBox> <VBox> <Text text="{oDetailModel>price}" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isOld'}" class="detailTableText" 
+				/> <Input value="{oDetailModel>price}" change="onUnitChange" maxLength="17" 
+				visible="{path:'oDetailModel>isNew',formatter:'.isNew'}" class="sapUiTinyMarginBegin 
+				caseCountsStyle sapUiSizeCompact" /> </VBox> </cells> </ColumnListItem> </items> 
+				</Table> </VBox> -->
+		</content>
+		<footer>
+			<Toolbar class="tabClass">
+				<ToolbarSpacer></ToolbarSpacer>
+				<HBox visible="{oModifyModel>/screen2}">
+					<Button text="Approve" press="onAction"
+						class="sapUiSizeCompact detailApproveRejectButton" type="Accept" />
+					<Button text="Reject" press="onAction"
+						class="detailApproveRejectButton sapUiSizeCompact" type="Reject" />
+				</HBox>
+				<HBox>
+					<Button text="Submit" press="onSubmit"
+						class="detailApproveRejectButton sapUiSizeCompact" type="Emphasized"
+						visible="{oModifyModel>/screen1}" />
+				</HBox>
+
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

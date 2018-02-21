@@ -1,0 +1,145 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+    "_version": "1.1.0",
+    "id": "pmc",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "_version": "1.1.0",
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_belize"
+    ]
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "rootView": "pmc.pmc_ui.App",
+    "dependencies": {
+      "minUI5Version": "1.30",
+      "libs": {
+        "sap.m": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "./CSS/style.css"
+        },
+        {
+          "uri": "./CSS/dark.css"
+        },
+        {
+          "uri": "./CSS/fonts.css"
+        }
+       
+      ],
+       "js": [
+                {
+                    "uri": "./util/utility.js"
+                },
+                 {
+                    "uri": "./util/formatter.js"
+                }
+            ]
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/messageBundle_en.properties"
+      }
+    },
+    "routing": {
+      "config": {
+        "viewType": "XML",
+        "viewPath": "pmc_ui",
+        "targetAggregation": "pages",
+        "clearTarget": "false"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "launchPage",
+          "view": "launchPage",
+          "targetControl": "idAppControl"
+        },
+        {
+          "pattern": "",
+          "name": "masterDetail",
+          "view": "masterDetail",
+          "targetControl": "idAppControl",
+          "subroutes": [
+            {
+              "pattern": "inbox",
+              "name": "inbox",
+              "view": "inbox",
+              "targetControl": "SplitApp",
+              "targetAggregation": "detailPages"
+            },
+            {
+              "pattern": "slaManagement",
+              "name": "slaManagement",
+              "view": "slaManagement",
+              "targetControl": "SplitApp",
+              "targetAggregation": "detailPages"
+            },
+            {
+              "pattern": "ruleMaintenance",
+              "name": "ruleMaintenance",
+              "view": "ruleMaintenance",
+              "targetControl": "SplitApp",
+              "targetAggregation": "detailPages"
+            },
+            {
+              "pattern": "processFlow",
+              "name": "processFlow",
+              "view": "processFlow",
+              "targetControl": "SplitApp",
+              "targetAggregation": "detailPages"
+            },
+            {
+              "pattern": "userWorkList",
+              "name": "userWorkList",
+              "view": "userWorkList",
+              "targetControl": "SplitApp",
+              "targetAggregation": "detailPages",
+              "subroutes": [
+                {
+                  "pattern": "userWorkLoad/{ContextPath}",
+                  "name": "userWorkLoad",
+                  "view": "userWorkLoad",
+                  "targetAggregation": "detailPages"
+                }
+              ]
+            },
+            {
+              "pattern": "processAging",
+              "name": "processAging",
+              "view": "processAging",
+              "targetControl": "SplitApp",
+              "targetAggregation": "detailPages"
+            },
+            {
+              "pattern": "adminConsole",
+              "name": "adminPage",
+              "view": "adminPage",
+              "targetControl": "SplitApp",
+              "targetAggregation": "detailPages"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

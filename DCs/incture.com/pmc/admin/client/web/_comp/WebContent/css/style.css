@@ -1,0 +1,89 @@
+.sapMLabel{
+	font-family : Open Sans !important;
+}
+
+.sapMLnk {
+    font-family : Open Sans !important;
+}
+
+.sapMText {
+  	font-family : Open Sans !important;
+}
+
+.themeBtnClass{
+	left: 3rem;
+	width: 7.1rem;
+}
+
+.dropDownStyle.sapMSlt {
+    height: 1.6rem;
+    margin: 0.26rem 0 0.25rem 0;
+    border-radius: 3px;
+    margin-right: 1rem !important;
+}
+
+.settingLabelStyle{
+	color: #000000;
+    margin-top: 0.45rem;
+    width: 5rem;
+}
+
+
+.delegateLabelStyle{
+	color: white !important;
+}
+
+.dialogClass {
+	font-family: Open Sans;
+	width: 800px;
+	border-radius: 8px;
+}
+
+.dialogClass .sapUiPopupWithPadding {
+	padding: 0px !important;
+}
+
+.dialogClass .sapMDialogScrollCont {
+	padding: 0px !important;
+}
+
+.dialogClass .sapMIBar-CTX {
+	background: #0044b9 !important;
+}
+
+.dialogClass .sapMFooter-CTX {
+	background: #edecec !important;
+}
+
+.dialogClass .sapMIBar-CTX .sapMTitle {
+	color: #fff !important;
+} 
+
+.settingBoxStyle{
+	padding: 1rem;
+    padding-left: 2rem;
+}
+
+.addImageClass{
+	width: 2.35rem;
+    margin-right: 0.35rem !important;
+}
+
+
+.lineBoxClass{
+	border: solid 0.1rem;
+    width: 92.5% !important;
+    margin-left: 2.6rem;
+    position: absolute;
+    top: 4.2rem;
+}
+
+.slineBoxClass{
+	border: solid 0.1rem;
+}
+
+.carouselNavBtnStyle{
+	margin-left:0.5rem;
+	margin-right:0.5rem;
+	justify-content:center;
+}

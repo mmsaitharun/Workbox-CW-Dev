@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ResponsivePopover placement="Bottom" class="userProfilePopUpClass"
+		title="Notification(s)" contentWidth='20rem'>
+		<content>
+			<VBox class='' width="100%">
+				<List class="sapUiSizeCompact" items="{oNotificationModel>/notificationListDto}"
+					itemPress="" width="100%">
+				<StandardListItem title="{oNotificationModel>title}" icon="" 
+					type="Active" width="100%"/>
+			</List>
+			</VBox>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

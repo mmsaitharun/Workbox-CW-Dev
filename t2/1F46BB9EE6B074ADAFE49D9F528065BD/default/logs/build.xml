@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    development component
+                     name: pmc/admin/client/web
+                   vendor: incture.com
+                     type: J2EE
+                 sub-type: WebModule
+              type-vendor: sap.com
+
+       software component
+                     name: PMC_FRAMEWORK
+                   vendor: incture.com
+
+                 location: CWD_INC-PMC_D
+          source location: http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_FRAMEWORK/dev/inactive/
+            build variant: default
+
+    building on INC00718, Windows 10/amd64, version 10.0
+    using Java VM 'Java HotSpot(TM) 64-Bit Server VM', version 25.91-b15 (Oracle Corporation)
+    build started at 2018-02-21 11:50:45 GMT+05:30 (IST)
+
+    Build Plugin 'WebModulePlugin', Version 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:51 +0200, CL239773)
+    detailed versions:
+    sap.com:tc/bi/anttasks#def     7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:41 +0200, CL239773)
+    sap.com:tc/bi/bp/webmodule#web 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:51 +0200, CL239773)
+    sap.com:tc/bi/core#def         7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:27:09 +0200, CL239773)
+    sap.com:tc/bi/exception#def    7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:40 +0200, CL239773)
+    sap.com:tc/bi/extddicdb#def    7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:47 +0200, CL239773)
+    sap.com:tc/bi/extsql#def       7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:45 +0200, CL239773)
+    sap.com:tc/bi/framework#def    7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:21:29 +0200, CL239773)
+    sap.com:tc/bi/i18n#def         7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:37 +0200, CL239773)
+    sap.com:tc/bi/javatech#def     7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:43 +0200, CL239773)
+    sap.com:tc/bi/jdoc#def         7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:40 +0200, CL239773)
+    sap.com:tc/bi/jdoc/util#def    7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:25 +0200, CL239773)
+    sap.com:tc/bi/jlincbs#def      7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:52 +0200, CL239773)
+    sap.com:tc/bi/settings#version 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:23:45 +0200, CL239773)
+    sap.com:tc/bi/util#util        7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:21:55 +0200, CL239773)
+    sap.com:tc/bi/velocity#def     7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:37 +0200, CL239773)
+    sap.com:tc/bi/xml#def          7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:25:38 +0200, CL239773)
+ -->
+<project name="DC Build"
+         default="build"
+         basedir=".">
+<taskdef name="jlinppcheck" classname="com.sap.tc.buildplugin.pp.ant.JLinEECheckTask"/>
+<taskdef name="pppacker" classname="com.sap.tc.buildplugin.pp.PPPackTask"/>
+<taskdef name="propertybag" classname="com.sap.tools.ant.taskdefs.PropertyBag"/>
+<taskdef name="timer" classname="com.sap.tools.ant.taskdefs.Timer"/>
+<!-- Java compilation skipped because no package directories are available. -->
+
+<target name="createPublicParts">
+<timer/>
+<pppacker ppname="war">
+</pppacker>
+<timer message="Packing of public part 'war' finished in "/>
+<jlinppcheck/>
+</target>
+
+<target name="build" depends="createPublicParts">
+
+</target>
+</project>

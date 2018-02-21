@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Download As" placement="Bottom" class="dialogBgColor">
+		<SelectList itemPress="downloadPress">
+			<core:Item key="excel" text="Excel" />
+		</SelectList>
+	</Dialog>
+</core:FragmentDefinition>

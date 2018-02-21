@@ -1,0 +1,153 @@
+Development Component Build (2018-02-21 11:52:57 GMT+05:30 (IST))
+  Component name: pmc/po/adapter/rest/web
+  Component vendor: incture.com
+  SC compartment: incture.com_PMC_PO_ADAPTER_1
+  Configuration: CWD_INC-PMC_D
+  Location: CWD_INC-PMC_D
+  Source code location: http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/DCs/incture.com/pmc/po/adapter/rest/web/_comp/
+  DC root folder: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\rest\web\_comp\
+  DC type: J2EE
+  DC subtype: WebModule
+  Host: INC00718
+
+DC Model check:
+   DC is available locally
+   validating dependency to build plugin "sap.com/tc/bi/bp/webmodule"
+   validating dependency to  public part "lib_PP" of DC "incture.com/inc/ext/libs/app"
+   validating dependency to  public part "entities_PP" of DC "incture.com/pmc/po/adapter/entities/app"
+   validating dependency to  public part "Service_PP" of DC "incture.com/pmc/po/adapter/services/app"
+   validating dependency to  public part "api" of DC "sap.com/engine.jee5.facade"
+   DC model check OK
+
+Start build plugin:
+   using build plugin: sap.com/tc/bi/bp/webmodule
+   starting build plugin from : C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\tc\bi\bp\webmodule\_comp\gen\default\public\web\
+
+
+
+Build Plugin 'WebModulePlugin', Version 7.30 SP 5 (NW750CORE_05_REL, built on 2016-09-05 17:22:51 +0200, CL239773)
+   development component:  pmc/po/adapter/rest/web (incture.com)
+      software component:  PMC_PO_ADAPTER (incture.com)
+                location:  CWD_INC-PMC_D
+                    type:  J2EE, subtype WebModule
+           build variant:  default
+         source location:  http://INCTURECWD:50000/dtr/ws/INC-PMC/incture.com_PMC_PO_ADAPTER/dev/inactive/
+         output location:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\592D23DC4D40E258A59867BE6FBBE1A2\default
+       generation folder:  C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\592D23DC4D40E258A59867BE6FBBE1A2
+       plugin start time:  2018-02-21 11:52:57 GMT+05:30 (IST)
+                 Java VM:  Java HotSpot(TM) 64-Bit Server VM, 25.91-b15 (1.8, Oracle Corporation)
+
+
+General options:
+  convert *.xlf to *.properties: yes
+  include sources for debugging: yes
+ 
+
+
+Package folder ".apt_generated" exists but is empty and will be ignored.
+Checking path lengths for sources
+Path length checks finished in 0.003 seconds
+ 
+Preparing data context..
+Data context preparation finished in 0.016 seconds
+ 
+Creating Ant build file..
+  Creating output file: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\592D23DC4D40E258A59867BE6FBBE1A2\default\logs\build.xml
+  Using Java class:     com.sap.tc.buildplugin.BuildWebModule
+Build file creation finished in 0.022 seconds
+ 
+Starting Ant..
+  Using build file:     C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\592D23DC4D40E258A59867BE6FBBE1A2\default\logs\build.xml
+  Using build target:   build
+  Using Ant version:    1.7.1
+ 
+compile:
+      [echo] Forking Java compiler as a new process: C:\Program Files\Java\jdk1.8.0_131\bin\javac.exe
+      [echo] Settings:
+      [echo]         debug: on
+      [echo]      optimize: off
+      [echo]   deprecation: default
+      [echo]       verbose: default
+      [echo]      encoding: UTF-8
+      [echo]        source: 1.6
+      [echo]        target: 1.6
+      [echo]   source path: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\rest\web\_comp\source
+      [echo]    class path:
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\apache-logging-log4j.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\bcprov-1.45.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\com.google.code.gson-gson-2.4.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\commons-codec-1.6.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\commons-collections4-4.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\commons-io-1.3.2.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\commons-logging-1.1.3.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\httpclient-4.3.3.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\httpcore-4.3.2.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jackson-core-asl-1.9.2.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jackson-jaxrs-1.9.2.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jackson-mapper-asl-1.9.2.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jackson-xc-1.9.2.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\javaee-web-api-7.0.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\javapns-jdk16-2.2.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jersey-client-1.19.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jersey-core-1.19.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jersey-json-1.19.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jersey-server-1.19.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jersey-servlet-1.19.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jettison-1.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\jsr311-api-1.1.1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\ngdbc.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\org.apache.olingo-olingo-odata2-api-2.0.9.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\org.apache.olingo-olingo-odata2-api-annotation-2.0.9.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\org.apache.olingo-olingo-odata2-core-2.0.9.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\poi-3.16-beta1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\poi-ooxml-3.16-beta1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\poi-ooxml-schemas-3.16-beta1.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\sapjco3.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\inc\ext\libs\app\_comp\gen\default\public\lib_PP\lib\java\xmlbeans-2.6.0.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\services\app\_comp\gen\default\public\Service_PP\lib\java\incture.com~pmc~po~adapter~services~app~Service_PP.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\entities\app\_comp\gen\default\public\entities_PP\lib\java\incture.com~pmc~po~adapter~entities~app~entities_PP.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\ec~java~jsf~api.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\engine.jee5.facade.jar
+      [echo]       C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\orpersistence_client_lib_filtered.jar
+      [echo]    output dir: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\592D23DC4D40E258A59867BE6FBBE1A2\classes
+     [javac] Compiling 3 source files to C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t\592D23DC4D40E258A59867BE6FBBE1A2\classes
+     [javac] Reading options and classpath from file C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\592D23DC4D40E258A59867BE6FBBE1A2\default\logs\options3259167984562066388.tmp
+     [javac] Reading list of classes to be compiled from file C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\592D23DC4D40E258A59867BE6FBBE1A2\default\logs\classes8787916430973513462.tmp
+     [javac] WARNING: warning: [options] bootstrap class path not set in conjunction with -source 1.6
+     [javac] 1 warning
+     [timer] Java compilation finished in 1.12 seconds
+ 
+      [echo] Start XLF conversion
+  [xlf2prop] Found 0 XLF files to convert in folder "source"
+     [timer] XLF conversion finished in 0.001 seconds
+ 
+ 
+createPublicParts:
+  [pppacker] Packing public part 'war'
+  [pppacker] Packed   7 files for entity incture.com~pmc~po~adapter~rest~web (WAR)
+  [pppacker] Packed 1 entity for public part 'war'
+     [timer] Packing of public part 'war' finished in 0.042 seconds
+ 
+ 
+build:
+ 
+Ant runtime 1.178 seconds
+ 
+Ant build finished with WARNINGS
+Checking package reservation
+Package reservation check finished in 0.002 seconds
+ 
+Build plugin finished at 2018-02-21 11:52:58 GMT+05:30 (IST)
+Total build plugin runtime: 1.436 seconds
+ 
+Build finished with WARNING
+
+==== Post-Processing ====   started at 2018-02-21 11:52:58.729 IST
+Comparison of previous and actual build results took: 0.013 seconds
+
+Copy the build results 
+  from: C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\t2\592D23DC4D40E258A59867BE6FBBE1A2\default\
+  to:   C:\Users\sai.tharun\pmc_workspace\pmc-git-ws.jdi\0\DCs\incture.com\pmc\po\adapter\rest\web\_comp\gen\default\
+
+The build results of the following public parts were not copied, since they have not changed:
+  war

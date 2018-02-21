@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://incture.com/pmc/poadapter/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://incture.com/pmc/poadapter/services/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://incture.com/pmc/poadapter/services/" version="1.0">
+<xs:element name="baseDto" type="tns:baseDto"/>
+<xs:element name="getAllUserGroup" type="tns:getAllUserGroup"/>
+<xs:element name="getAllUserGroupResponse" type="tns:getAllUserGroupResponse"/>
+<xs:element name="getAllUserRole" type="tns:getAllUserRole"/>
+<xs:element name="getAllUserRoleResponse" type="tns:getAllUserRoleResponse"/>
+<xs:element name="getAllUsers" type="tns:getAllUsers"/>
+<xs:element name="getAllUsersResponse" type="tns:getAllUsersResponse"/>
+<xs:element name="getLoggedInUser" type="tns:getLoggedInUser"/>
+<xs:element name="getLoggedInUserResponse" type="tns:getLoggedInUserResponse"/>
+<xs:element name="getUserDetailsAssignedInGroup" type="tns:getUserDetailsAssignedInGroup"/>
+<xs:element name="getUserDetailsAssignedInGroupResponse" type="tns:getUserDetailsAssignedInGroupResponse"/>
+<xs:element name="getUserDetailsByUserId" type="tns:getUserDetailsByUserId"/>
+<xs:element name="getUserDetailsByUserIdResponse" type="tns:getUserDetailsByUserIdResponse"/>
+<xs:element name="getUserEmailByuserId" type="tns:getUserEmailByuserId"/>
+<xs:element name="getUserEmailByuserIdResponse" type="tns:getUserEmailByuserIdResponse"/>
+<xs:element name="getUserGroupByuserId" type="tns:getUserGroupByuserId"/>
+<xs:element name="getUserGroupByuserIdResponse" type="tns:getUserGroupByuserIdResponse"/>
+<xs:element name="getUserRoleByuserId" type="tns:getUserRoleByuserId"/>
+<xs:element name="getUserRoleByuserIdResponse" type="tns:getUserRoleByuserIdResponse"/>
+<xs:element name="getUsersAssignedInGroup" type="tns:getUsersAssignedInGroup"/>
+<xs:element name="getUsersAssignedInGroupResponse" type="tns:getUsersAssignedInGroupResponse"/>
+<xs:element name="getUsersByRole" type="tns:getUsersByRole"/>
+<xs:element name="getUsersByRoleResponse" type="tns:getUsersByRoleResponse"/>
+<xs:element name="groupInfoDto" type="tns:groupInfoDto"/>
+<xs:element name="roleInfoDto" type="tns:roleInfoDto"/>
+<xs:element name="userDetailsDto" type="tns:userDetailsDto"/>
+<xs:element name="userDto" type="tns:userDto"/>
+<xs:element name="userGroupDto" type="tns:userGroupDto"/>
+<xs:complexType name="getUserDetailsByUserId">
+<xs:sequence>
+<xs:element minOccurs="0" name="userId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserDetailsByUserIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:userDetailsDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="userDetailsDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="displayName" type="xs:string"/>
+<xs:element minOccurs="0" name="emailId" type="xs:string"/>
+<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+<xs:element minOccurs="0" name="mobileNo" type="xs:string"/>
+<xs:element minOccurs="0" name="photo" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="userId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllUserGroup">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAllUserGroupResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:userGroupDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="userGroupDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="groupName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUsersAssignedInGroup">
+<xs:sequence>
+<xs:element minOccurs="0" name="userGroup" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUsersAssignedInGroupResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserGroupByuserId">
+<xs:sequence>
+<xs:element minOccurs="0" name="userUniqueId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserGroupByuserIdResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:groupInfoDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="groupInfoDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="groupDiscription" type="xs:string"/>
+<xs:element minOccurs="0" name="groupUniqName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserRoleByuserId">
+<xs:sequence>
+<xs:element minOccurs="0" name="userUniqueId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserRoleByuserIdResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:roleInfoDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="roleInfoDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="roleDescription" type="xs:string"/>
+<xs:element minOccurs="0" name="roleUniqName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserEmailByuserId">
+<xs:sequence>
+<xs:element minOccurs="0" name="userUniqueId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserEmailByuserIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLoggedInUser">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getLoggedInUserResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:userDetailsDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllUsers">
+<xs:sequence>
+<xs:element minOccurs="0" name="userSearch" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllUsersResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:userDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="userDto">
+<xs:complexContent>
+<xs:extension base="tns:baseDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="emailId" type="xs:string"/>
+<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+<xs:element minOccurs="0" name="loginId" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="baseDto">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAllUserRole">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAllUserRoleResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:roleInfoDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserDetailsAssignedInGroup">
+<xs:sequence>
+<xs:element minOccurs="0" name="getUserDetailsAssignedInGroup" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUserDetailsAssignedInGroupResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:userDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUsersByRole">
+<xs:sequence>
+<xs:element minOccurs="0" name="role" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getUsersByRoleResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:userDetailsDto"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="getUserDetailsByUserIdIn">
+<wsdl:part element="tns:getUserDetailsByUserId" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getUserDetailsByUserIdOut">
+<wsdl:part element="tns:getUserDetailsByUserIdResponse" name="getUserDetailsByUserIdResponse"/>
+</wsdl:message>
+<wsdl:message name="getAllUserGroupIn">
+<wsdl:part element="tns:getAllUserGroup" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getAllUserGroupOut">
+<wsdl:part element="tns:getAllUserGroupResponse" name="getAllUserGroupResponse"/>
+</wsdl:message>
+<wsdl:message name="getUsersAssignedInGroupIn">
+<wsdl:part element="tns:getUsersAssignedInGroup" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getUsersAssignedInGroupOut">
+<wsdl:part element="tns:getUsersAssignedInGroupResponse" name="getUsersAssignedInGroupResponse"/>
+</wsdl:message>
+<wsdl:message name="getUserGroupByuserIdIn">
+<wsdl:part element="tns:getUserGroupByuserId" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getUserGroupByuserIdOut">
+<wsdl:part element="tns:getUserGroupByuserIdResponse" name="getUserGroupByuserIdResponse"/>
+</wsdl:message>
+<wsdl:message name="getUserRoleByuserIdIn">
+<wsdl:part element="tns:getUserRoleByuserId" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getUserRoleByuserIdOut">
+<wsdl:part element="tns:getUserRoleByuserIdResponse" name="getUserRoleByuserIdResponse"/>
+</wsdl:message>
+<wsdl:message name="getUserEmailByuserIdIn">
+<wsdl:part element="tns:getUserEmailByuserId" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getUserEmailByuserIdOut">
+<wsdl:part element="tns:getUserEmailByuserIdResponse" name="getUserEmailByuserIdResponse"/>
+</wsdl:message>
+<wsdl:message name="getLoggedInUserIn">
+<wsdl:part element="tns:getLoggedInUser" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getLoggedInUserOut">
+<wsdl:part element="tns:getLoggedInUserResponse" name="getLoggedInUserResponse"/>
+</wsdl:message>
+<wsdl:message name="getAllUsersIn">
+<wsdl:part element="tns:getAllUsers" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getAllUsersOut">
+<wsdl:part element="tns:getAllUsersResponse" name="getAllUsersResponse"/>
+</wsdl:message>
+<wsdl:message name="getAllUserRoleIn">
+<wsdl:part element="tns:getAllUserRole" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getAllUserRoleOut">
+<wsdl:part element="tns:getAllUserRoleResponse" name="getAllUserRoleResponse"/>
+</wsdl:message>
+<wsdl:message name="getUserDetailsAssignedInGroupIn">
+<wsdl:part element="tns:getUserDetailsAssignedInGroup" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getUserDetailsAssignedInGroupOut">
+<wsdl:part element="tns:getUserDetailsAssignedInGroupResponse" name="getUserDetailsAssignedInGroupResponse"/>
+</wsdl:message>
+<wsdl:message name="getUsersByRoleIn">
+<wsdl:part element="tns:getUsersByRole" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getUsersByRoleOut">
+<wsdl:part element="tns:getUsersByRoleResponse" name="getUsersByRoleResponse"/>
+</wsdl:message>
+<wsdl:portType name="UMEUserManagementFacade">
+<wsdl:operation name="getUserDetailsByUserId" parameterOrder="parameters">
+<wsdl:input message="tns:getUserDetailsByUserIdIn"/>
+<wsdl:output message="tns:getUserDetailsByUserIdOut"/>
+</wsdl:operation>
+<wsdl:operation name="getAllUserGroup" parameterOrder="parameters">
+<wsdl:input message="tns:getAllUserGroupIn"/>
+<wsdl:output message="tns:getAllUserGroupOut"/>
+</wsdl:operation>
+<wsdl:operation name="getUsersAssignedInGroup" parameterOrder="parameters">
+<wsdl:input message="tns:getUsersAssignedInGroupIn"/>
+<wsdl:output message="tns:getUsersAssignedInGroupOut"/>
+</wsdl:operation>
+<wsdl:operation name="getUserGroupByuserId" parameterOrder="parameters">
+<wsdl:input message="tns:getUserGroupByuserIdIn"/>
+<wsdl:output message="tns:getUserGroupByuserIdOut"/>
+</wsdl:operation>
+<wsdl:operation name="getUserRoleByuserId" parameterOrder="parameters">
+<wsdl:input message="tns:getUserRoleByuserIdIn"/>
+<wsdl:output message="tns:getUserRoleByuserIdOut"/>
+</wsdl:operation>
+<wsdl:operation name="getUserEmailByuserId" parameterOrder="parameters">
+<wsdl:input message="tns:getUserEmailByuserIdIn"/>
+<wsdl:output message="tns:getUserEmailByuserIdOut"/>
+</wsdl:operation>
+<wsdl:operation name="getLoggedInUser" parameterOrder="parameters">
+<wsdl:input message="tns:getLoggedInUserIn"/>
+<wsdl:output message="tns:getLoggedInUserOut"/>
+</wsdl:operation>
+<wsdl:operation name="getAllUsers" parameterOrder="parameters">
+<wsdl:input message="tns:getAllUsersIn"/>
+<wsdl:output message="tns:getAllUsersOut"/>
+</wsdl:operation>
+<wsdl:operation name="getAllUserRole" parameterOrder="parameters">
+<wsdl:input message="tns:getAllUserRoleIn"/>
+<wsdl:output message="tns:getAllUserRoleOut"/>
+</wsdl:operation>
+<wsdl:operation name="getUserDetailsAssignedInGroup" parameterOrder="parameters">
+<wsdl:input message="tns:getUserDetailsAssignedInGroupIn"/>
+<wsdl:output message="tns:getUserDetailsAssignedInGroupOut"/>
+</wsdl:operation>
+<wsdl:operation name="getUsersByRole" parameterOrder="parameters">
+<wsdl:input message="tns:getUsersByRoleIn"/>
+<wsdl:output message="tns:getUsersByRoleOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="UMEUserManagementFacadeBinding" type="tns:UMEUserManagementFacade">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="getUserDetailsByUserId">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getAllUserGroup">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getUsersAssignedInGroup">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getUserGroupByuserId">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getUserRoleByuserId">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getUserEmailByuserId">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getLoggedInUser">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getAllUsers">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getAllUserRole">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getUserDetailsAssignedInGroup">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getUsersByRole">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="UMEUserManagementFacadeService">
+<wsdl:port binding="tns:UMEUserManagementFacadeBinding" name="UMEUserManagementFacadePort">
+<soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://incturecwd:50000/UMEUserManagementFacadeService/UMEUserManagementFacade"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

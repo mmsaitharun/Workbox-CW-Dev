@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mapping version="1.0">
+<development-component component-type="J2EE" name="pmc/po/adapter/rest/web" src-archive="incture.com~pmc~po~adapter~rest~web~war_srcarchive.zip" sub-type="WebModule" type-vendor="sap.com" vendor="incture.com">
+<sourcefolder srcfolderpath="source">
+<sourceelement path="com/incture/pmc/rest/DataBaseManagementFacadeRest.java"/>
+<sourceelement path="com/incture/pmc/rest/EjbInjectableProvider.java"/>
+<sourceelement path="com/incture/pmc/rest/UMEUserRest.java"/>
+</sourcefolder>
+</development-component>
+</mapping>

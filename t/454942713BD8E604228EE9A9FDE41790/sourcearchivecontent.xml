@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mapping version="1.0">
+<development-component component-type="J2EE" name="pmc/rest/web" src-archive="incture.com~pmc~rest~web~war_srcarchive.zip" sub-type="WebModule" type-vendor="sap.com" vendor="incture.com">
+<sourcefolder srcfolderpath="source">
+<sourceelement path="com/incture/pmc/rest/AdminConsoleRest.java"/>
+<sourceelement path="com/incture/pmc/rest/CollaborationRest.java"/>
+<sourceelement path="com/incture/pmc/rest/ConfigurationRest.java"/>
+<sourceelement path="com/incture/pmc/rest/E2EProcessViewRest.java"/>
+<sourceelement path="com/incture/pmc/rest/EjbInjectableProvider.java"/>
+<sourceelement path="com/incture/pmc/rest/NotificationRest.java"/>
+<sourceelement path="com/incture/pmc/rest/PrincipalPropagationRest.java"/>
+<sourceelement path="com/incture/pmc/rest/ProcessActionRest.java"/>
+<sourceelement path="com/incture/pmc/rest/ProcessRest.java"/>
+<sourceelement path="com/incture/pmc/rest/ReportRest.java"/>
+<sourceelement path="com/incture/pmc/rest/RulesRest.java"/>
+<sourceelement path="com/incture/pmc/rest/SLARest.java"/>
+<sourceelement path="com/incture/pmc/rest/SequenceGeneratorRest.java"/>
+<sourceelement path="com/incture/pmc/rest/SubstitutionProfileRest.java"/>
+<sourceelement path="com/incture/pmc/rest/SubstitutionRest.java"/>
+<sourceelement path="com/incture/pmc/rest/TaskRest.java"/>
+<sourceelement path="com/incture/pmc/rest/UserManagementRest.java"/>
+<sourceelement path="com/incture/pmc/rest/UserWorkloadRest.java"/>
+<sourceelement path="com/incture/pmc/rest/WorkboxActionRest.java"/>
+<sourceelement path="com/incture/pmc/rest/WorkboxRest.java"/>
+<sourceelement path="com/incture/pmc/rest/dto/ProcessRequestDto.java"/>
+<sourceelement path="com/incture/pmc/rest/dto/UserProcessDetailRequestDto.java"/>
+<sourceelement path="com/incture/pmc/rest/dto/UserSearchRequestDto.java"/>
+</sourcefolder>
+</development-component>
+</mapping>

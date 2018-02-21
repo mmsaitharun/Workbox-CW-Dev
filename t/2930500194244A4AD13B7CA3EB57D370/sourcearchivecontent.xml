@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mapping version="1.0">
+<development-component component-type="J2EE" name="pmc/po/adapter/entities/ejb" src-archive="incture.com~pmc~po~adapter~entities~ejb~ejbjar_srcarchive.zip" sub-type="EJBModule" type-vendor="sap.com" vendor="incture.com">
+<sourcefolder srcfolderpath="ejbModule">
+<sourceelement path="com/incture/pmc/poadapter/dao/BaseDao.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dao/ProcessEventsDao.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dao/TaskEventsDao.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dao/TaskOwnersDao.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/BaseDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/ProcessEventsDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/ResponseDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/SubstitutionProfileDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/SubstitutionProfileResponse.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/SubstitutionRuleDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/TaskEventsDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/TaskModelDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/TaskOwnerDetailsDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/TaskOwnersDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/UserDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/BaseDo.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/ProcessConfigDo.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/ProcessEventsDo.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/SlaManagementDo.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/TaskEventsDo.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/TaskEventsDoPK.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/TaskOwnersDo.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/TaskOwnersDoPK.java"/>
+<sourceelement path="com/incture/pmc/poadapter/entity/TaskStepsDo.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/EntityManagerProvider.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/EntityManagerProviderLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/EnOperation.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/ExecutionFault.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/ExecutionStatusDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/FaultStatus.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/GroupInfoDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/InvalidInputException.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/InvalidInputFault.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/LogUtil.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/MessageUIDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/NoResultFault.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/NonUniqueRecordFault.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/RecordExistFault.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/ReportResponseDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/RoleInfoDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/SearchMessage.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/SecurityException.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/ServicesUtil.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/UmeUtil.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/UserDetailsDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/util/UserGroupDto.java"/>
+</sourcefolder>
+</development-component>
+</mapping>

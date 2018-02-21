@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<content version="4">
+<metadata>
+<development-component>
+<name>pmc/rest/web</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>WebModule</sub-type>
+</component-type>
+</development-component>
+<public-part>
+<name>war</name>
+<purpose>assembly</purpose>
+</public-part>
+<dependencies>
+<dependency>
+<dc-ref>
+<name>inc/ext/libs/app</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">lib_PP</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>pmc/service/ejb/app</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">services_pp</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>engine.jee5.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+</dependencies>
+</metadata>
+<source-components/>
+<archives>
+<archive location="srcarchive" path="src/java/src.zip" type="zip"/>
+<archive location="war" path="lib/java/incture.com~pmc~rest~web.war" type="war">
+<property key="attributes">J2EE-Module[module-type[web]],jar,war</property>
+</archive>
+</archives>
+<entities>
+<entity>
+<name>incture.com~pmc~rest~web</name>
+<entity-type>WAR</entity-type>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<fileset location="srcarchive" source-location="DC" source-path="source">
+<file path="com/incture/pmc/rest/AdminConsoleRest.java"/>
+<file path="com/incture/pmc/rest/CollaborationRest.java"/>
+<file path="com/incture/pmc/rest/ConfigurationRest.java"/>
+<file path="com/incture/pmc/rest/E2EProcessViewRest.java"/>
+<file path="com/incture/pmc/rest/EjbInjectableProvider.java"/>
+<file path="com/incture/pmc/rest/NotificationRest.java"/>
+<file path="com/incture/pmc/rest/PrincipalPropagationRest.java"/>
+<file path="com/incture/pmc/rest/ProcessActionRest.java"/>
+<file path="com/incture/pmc/rest/ProcessRest.java"/>
+<file path="com/incture/pmc/rest/ReportRest.java"/>
+<file path="com/incture/pmc/rest/RulesRest.java"/>
+<file path="com/incture/pmc/rest/SLARest.java"/>
+<file path="com/incture/pmc/rest/SequenceGeneratorRest.java"/>
+<file path="com/incture/pmc/rest/SubstitutionProfileRest.java"/>
+<file path="com/incture/pmc/rest/SubstitutionRest.java"/>
+<file path="com/incture/pmc/rest/TaskRest.java"/>
+<file path="com/incture/pmc/rest/UserManagementRest.java"/>
+<file path="com/incture/pmc/rest/UserWorkloadRest.java"/>
+<file path="com/incture/pmc/rest/WorkboxActionRest.java"/>
+<file path="com/incture/pmc/rest/WorkboxRest.java"/>
+<file path="com/incture/pmc/rest/dto/ProcessRequestDto.java"/>
+<file path="com/incture/pmc/rest/dto/UserProcessDetailRequestDto.java"/>
+<file path="com/incture/pmc/rest/dto/UserSearchRequestDto.java"/>
+</fileset>
+<fileset location="war" source-location="DC" source-path="WebContent">
+<file path="META-INF/MANIFEST.MF"/>
+<file path="WEB-INF/web-j2ee-engine.xml"/>
+</fileset>
+<fileset location="war" source-location="gen" source-path="classes">
+<file path="WEB-INF/classes/com/incture/pmc/rest/AdminConsoleRest.class" source-path="com/incture/pmc/rest/AdminConsoleRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/CollaborationRest.class" source-path="com/incture/pmc/rest/CollaborationRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/ConfigurationRest.class" source-path="com/incture/pmc/rest/ConfigurationRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/E2EProcessViewRest.class" source-path="com/incture/pmc/rest/E2EProcessViewRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/EjbInjectableProvider.class" source-path="com/incture/pmc/rest/EjbInjectableProvider.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/NotificationRest.class" source-path="com/incture/pmc/rest/NotificationRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/ProcessActionRest.class" source-path="com/incture/pmc/rest/ProcessActionRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/ProcessRest.class" source-path="com/incture/pmc/rest/ProcessRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/ReportRest.class" source-path="com/incture/pmc/rest/ReportRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/RulesRest.class" source-path="com/incture/pmc/rest/RulesRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/SLARest.class" source-path="com/incture/pmc/rest/SLARest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/SequenceGeneratorRest.class" source-path="com/incture/pmc/rest/SequenceGeneratorRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/SubstitutionProfileRest.class" source-path="com/incture/pmc/rest/SubstitutionProfileRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/SubstitutionRest.class" source-path="com/incture/pmc/rest/SubstitutionRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/TaskRest.class" source-path="com/incture/pmc/rest/TaskRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/UserManagementRest.class" source-path="com/incture/pmc/rest/UserManagementRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/UserWorkloadRest.class" source-path="com/incture/pmc/rest/UserWorkloadRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/WorkboxActionRest.class" source-path="com/incture/pmc/rest/WorkboxActionRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/WorkboxRest.class" source-path="com/incture/pmc/rest/WorkboxRest.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/dto/ProcessRequestDto.class" source-path="com/incture/pmc/rest/dto/ProcessRequestDto.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/dto/UserProcessDetailRequestDto.class" source-path="com/incture/pmc/rest/dto/UserProcessDetailRequestDto.class"/>
+<file path="WEB-INF/classes/com/incture/pmc/rest/dto/UserSearchRequestDto.class" source-path="com/incture/pmc/rest/dto/UserSearchRequestDto.class"/>
+</fileset>
+</entity>
+</entities>
+</content>

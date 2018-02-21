@@ -1,0 +1,35 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout" xmlns="sap.m" controllerName="com.incture.adminpage.adminPage"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<Toolbar class="sectionHeaderStyleClass">
+				<Button text="Change Theme" press="onSettings"
+					class="sapUiSizeCompact buttonRadiusStyleClass themeBtnClass" />
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="Save" width="5rem" type="Accept"
+					class="sapUiSizeCompact buttonRadiusStyleClass " press="onSavePress" />
+			</Toolbar>
+			<VBox>
+				<!-- <HBox class="lineBoxClass"></HBox> -->
+				<HBox items="{oPageModel>/roleBasedPages}" justifyContent="Center">
+					<VBox class="carouselNavBtnStyle">
+						<HBox justifyContent="Center">
+							<Button type="{oPageModel>type}" press="onPress" />
+						</HBox>
+						<HBox justifyContent="Center">
+							<Text text="{oPageModel>name}" />
+						</HBox>
+					</VBox>
+				</HBox>
+			</VBox>
+			<Carousel id="idCarousel" class="sapUiContentPadding"
+				pages="{oPageModel>/roleBasedPages}" pageChanged="onPageChanged">
+				<pages>
+					<core:Fragment id="idRFragment"
+						fragmentName="com.incture.fragments.configuration" type="XML" />
+				</pages>
+			</Carousel>
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://oneapp.com/incture/pmc/poadapter/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://oneapp.com/incture/pmc/poadapter/services/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://oneapp.com/incture/pmc/poadapter/services/" version="1.0">
+<xs:element name="baseDto" type="tns:baseDto"/>
+<xs:element name="getProcessDetails" type="tns:getProcessDetails"/>
+<xs:element name="getProcessDetailsResponse" type="tns:getProcessDetailsResponse"/>
+<xs:element name="getTaskDetails" type="tns:getTaskDetails"/>
+<xs:element name="getTaskDetailsResponse" type="tns:getTaskDetailsResponse"/>
+<xs:element name="processEventsDto" type="tns:processEventsDto"/>
+<xs:element name="taskEventsDto" type="tns:taskEventsDto"/>
+<xs:element name="taskOwnerDetailsDto" type="tns:taskOwnerDetailsDto"/>
+<xs:complexType name="getProcessDetails">
+<xs:sequence>
+<xs:element minOccurs="0" name="processInstanceId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getProcessDetailsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:processEventsDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="processEventsDto">
+<xs:complexContent>
+<xs:extension base="tns:baseDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="completedAt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="name" type="xs:string"/>
+<xs:element minOccurs="0" name="processId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="xs:string"/>
+<xs:element minOccurs="0" name="startedAt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="startedBy" type="xs:string"/>
+<xs:element minOccurs="0" name="startedByDisplayName" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+<xs:element minOccurs="0" name="subject" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="taskEvents" nillable="true" type="tns:taskEventsDto"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="baseDto">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="taskEventsDto">
+<xs:complexContent>
+<xs:extension base="tns:baseDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="completedAt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="completionDeadLine" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="createdAt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="currentProcessor" type="xs:string"/>
+<xs:element minOccurs="0" name="currentProcessorDisplayName" type="xs:string"/>
+<xs:element minOccurs="0" name="description" type="xs:string"/>
+<xs:element minOccurs="0" name="eventId" type="xs:string"/>
+<xs:element minOccurs="0" name="name" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="owners" nillable="true" type="tns:taskOwnerDetailsDto"/>
+<xs:element minOccurs="0" name="priority" type="xs:string"/>
+<xs:element minOccurs="0" name="processId" type="xs:string"/>
+<xs:element minOccurs="0" name="requestId" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+<xs:element minOccurs="0" name="subject" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="taskOwnerDetailsDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="displayName" type="xs:string"/>
+<xs:element minOccurs="0" name="logonId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTaskDetails">
+<xs:sequence>
+<xs:element minOccurs="0" name="taskInstanceId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTaskDetailsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:taskEventsDto"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="getProcessDetailsIn">
+<wsdl:part element="tns:getProcessDetails" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getProcessDetailsOut">
+<wsdl:part element="tns:getProcessDetailsResponse" name="getProcessDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="getTaskDetailsIn">
+<wsdl:part element="tns:getTaskDetails" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="getTaskDetailsOut">
+<wsdl:part element="tns:getTaskDetailsResponse" name="getTaskDetailsResponse"/>
+</wsdl:message>
+<wsdl:portType name="PMCProcessManagementFacade">
+<wsdl:operation name="getProcessDetails" parameterOrder="parameters">
+<wsdl:input message="tns:getProcessDetailsIn"/>
+<wsdl:output message="tns:getProcessDetailsOut"/>
+</wsdl:operation>
+<wsdl:operation name="getTaskDetails" parameterOrder="parameters">
+<wsdl:input message="tns:getTaskDetailsIn"/>
+<wsdl:output message="tns:getTaskDetailsOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PMCProcessManagementFacadeBinding" type="tns:PMCProcessManagementFacade">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="getProcessDetails">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getTaskDetails">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="PMCProcessManagementFacadeService">
+<wsdl:port binding="tns:PMCProcessManagementFacadeBinding" name="ProcessManagementFacadePort">
+<soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://INCTURECWD:50000/PMCProcessManagementFacadeService/PMCProcessManagementFacade"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

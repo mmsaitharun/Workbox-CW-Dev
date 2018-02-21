@@ -1,0 +1,55 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns="sap.m" controllerName="pmc_ui.processAging" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" showHeader="false" class="pmcBackGroundColor">
+		<content>
+			<IconTabBar expandable="false" id="idReportTab" select="onLoadTableData" class="UWLtabBarClass">
+				<items>
+					<IconTabFilter text="{i18n>THIS_WEEK}" key="week"/>
+					<IconTabFilter text="{i18n>THIS_MONTH}" key="month"/>
+				</items>
+			</IconTabBar>
+			<l:VerticalLayout class="outerBoxProcessAgingStyleClass">
+				<Toolbar class="processAgingBar">
+					<Label text="{i18n>SHOWING_ALL_OPEN_PROCESS}" class="processAgingBarLabelClass" />
+					<ToolbarSpacer></ToolbarSpacer>
+					<Select id="idSelectedProcessName" items="{oProcessNameModel>/processConfigDtos}"
+						change="onLoadTableData" class="sapUiSizeCompact dropDownPmcStyle">
+						<core:Item key="{oProcessNameModel>key}" text="{oProcessNameModel>processDisplayName}" />
+					</Select>
+				</Toolbar>
+				<l:FixFlex id="processAgingGraphFlex" class="processAgingGraphSize"
+					minFlexSize="100">
+					<l:flexContent>
+						<viz:VizFrame height='60%' width="100%" vizType='stacked_column'
+							legendVisible="true" class="processAgingstackGraph" id="PMC_PROCESS_AGING_GRAPH">
+						</viz:VizFrame>
+					</l:flexContent>
+				</l:FixFlex>
+				<Toolbar class="processAgingTableBtnBar">
+					<Label text="{i18n>NUMERICAL_BREAKDOWN_TITLE}" class="docHdrblClass" />
+					<ToolbarSpacer></ToolbarSpacer>
+					<!-- <SegmentedButton id="idRangeBtn" selectedKey="week"
+						class="sapUiSizeCompact">
+						<items>
+							<SegmentedButtonItem text="{i18n>THIS_WEEK}"
+								key="week" press="onLoadWeekGraphData" />
+							<SegmentedButtonItem text="{i18n>THIS_MONTH}"
+								key="month" press="onLoadMonthGraphData" />
+						</items>
+					</SegmentedButton> -->
+					<Button tooltip="{i18n>DOWNLOAD}"
+						class="sapUiSizeCompact buttonRadiusStyleClass secondaryBtnStyleClass processAgingBtnBar"
+						icon="images/mSExcel.png" press="onProcessAgingDownload"></Button>
+				</Toolbar>
+				<Table inset="false" id="PMC_PROCESS_AGING_TABLE"
+					class="tableBorderClass tableHeader sapUiSizeCompact">
+				</Table>
+				<Table inset="false" id="PMC_PROCESS_AGING_TOTAL_TABLE"
+					showNoData="false" class="tableBorderClass totalTableHeader sapUiSizeCompact">
+				</Table>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<content version="4">
+<metadata>
+<development-component>
+<name>pmc/admin/client/web</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>WebModule</sub-type>
+</component-type>
+</development-component>
+<public-part>
+<name>war</name>
+<purpose>assembly</purpose>
+</public-part>
+<dependencies>
+<dependency>
+<dc-ref>
+<name>engine.jee5.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>ui/five</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+</dependencies>
+</metadata>
+<source-components/>
+<archives>
+<archive location="war" path="lib/java/incture.com~pmc~admin~client~web.war" type="war">
+<property key="attributes">J2EE-Module[module-type[web]],jar,war</property>
+</archive>
+</archives>
+<entities>
+<entity>
+<name>incture.com~pmc~admin~client~web</name>
+<entity-type>WAR</entity-type>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<fileset location="war" source-location="DC" source-path="WebContent">
+<file path="Component.js"/>
+<file path="META-INF/MANIFEST.MF"/>
+<file path="WEB-INF/web-j2ee-engine.xml"/>
+<file path="adminpage/App.view.xml"/>
+<file path="adminpage/adminPage.controller.js"/>
+<file path="adminpage/adminPage.view.xml"/>
+<file path="css/dark.css"/>
+<file path="css/light.css"/>
+<file path="css/style.css"/>
+<file path="fragments/appSetting.fragment.xml"/>
+<file path="fragments/configuration.fragment.xml"/>
+<file path="images/add.png"/>
+<file path="index.html"/>
+<file path="util/formatter.js"/>
+<file path="util/utility.js"/>
+</fileset>
+</entity>
+</entities>
+</content>

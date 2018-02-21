@@ -1,0 +1,49 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="pmc_ui.launchPage" xmlns:layout="sap.ui.layout"
+	xmlns:tnt="sap.tnt" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" showHeader="false"
+		class="launchPageClass pageBackgroundStyle">
+		<content>
+			<layout:Grid defaultSpan="L2 M4 S12">
+				<layout:content enabled="false">
+					<VBox justifyContent="Center" alignItems="Center" class="reportBoxStyle"
+						id="inboxId">
+						<Image src="images/inboxIcon.png" width="27%"
+							class="launchPadAgingIconStyleClass" />
+						<Label text="{i18n>INBOX}" class="launchPadTileStyleClass" />
+					</VBox>
+					<VBox justifyContent="Center" alignItems="Center" class="reportBoxStyle"
+						id="UserWorkListId">
+						<Image src="images/multyUser.png" width="29%"
+							class="launchPadIconStyleClass" />
+						<Label text="{i18n>WORKLOAD_MANAGEMENT}" class="launchPadTileStyleClass" />
+					</VBox>
+					<VBox justifyContent="Center" alignItems="Center" class="reportBoxStyle"
+						id="processAgingId">
+						<Image src="images/processAging.png" width="28.8%"
+							class="launchPadIconStyleClass" />
+						<Label text="{i18n>PROCESS_TRACKER}" class="launchPadTileStyleClass" />
+					</VBox>
+					<VBox justifyContent="Center" alignItems="Center" class="reportBoxStyle"
+						id="slaManagementId">
+						<Image src="images/SLAicon.png" width="27%"
+							class="launchPadSLAIconStyleClass" />
+						<Label text="{i18n>RULES_BOARD}" class="launchPadTileStyleClass" />
+					</VBox>
+					<VBox justifyContent="Center" alignItems="Center" class="reportBoxStyle"
+						id="ruleMaintenanceId">
+						<Image src="images/actionHub.png" width="34%"
+							class="launchPadactionIconStyleClass" />
+						<Label text="{i18n>ACTION_HUB}" class="launchPadTileStyleClass" />
+					</VBox>
+					<VBox justifyContent="Center" alignItems="Center" class="reportBoxStyle"
+						id="adminConsoleId">
+						<Image src="images/adminIcon.png" width="34%"
+							class="launchPadAdminIconStyleClass" />
+						<Label text="Settings" class="launchPadTileStyleClass" />
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+	</Page>
+</core:View>

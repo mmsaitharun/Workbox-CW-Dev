@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mapping version="1.0">
+<development-component component-type="J2EE" name="pmc/po/adapter/services/ejb" src-archive="incture.com~pmc~po~adapter~services~ejb~ejbjar_srcarchive.zip" sub-type="EJBModule" type-vendor="sap.com" vendor="incture.com">
+<sourcefolder srcfolderpath=".apt_generated">
+<sourceelement path="com/incture/pmc/poadapter/services/BaseDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/GetProcessDetails.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/GetProcessDetailsResponse.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/GetTaskDetails.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/GetTaskDetailsResponse.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ObjectFactory.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/PMCProcessManagementFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ProcessEventsDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/TaskEventsDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/TaskOwnerDetailsDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/package-info.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/BaseDto.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/GetProcessDetails.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/GetProcessDetailsResponse.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/GetTaskDetails.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/GetTaskDetailsResponse.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/ObjectFactory.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/PMCProcessManagementFacade.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/ProcessEventsDto.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/TaskEventsDto.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/TaskOwnerDetailsDto.java"/>
+<sourceelement path="com/oneapp/incture/pmc/poadapter/services/package-info.java"/>
+</sourcefolder>
+<sourcefolder srcfolderpath="ejbModule">
+<sourceelement path="com/incture/hana/dbconsumer/HanaDBConnector.java"/>
+<sourceelement path="com/incture/hana/dbconsumer/HanaDBDao.java"/>
+<sourceelement path="com/incture/pmc/bpm/events/ConsumeBPMEventsBean.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/CustomAttributeDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/NoteDto.java"/>
+<sourceelement path="com/incture/pmc/poadapter/dto/ProcessExportFilterCriteria.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/CustomAttributesService.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/CustomAttributesServiceLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/DatabaseManagementFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/DatabaseManagementFacadeLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacadeLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ProcessManagementFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ProcessManagementFacadeLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumer.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumerLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/SubstitutionManagementFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/SubstitutionManagementFacadeLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacadeLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/UMEUserManagementFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/UMEUserManagementFacadeLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/WorkBoxActionFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/WorkBoxActionFacadeLocal.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/processActionFacade.java"/>
+<sourceelement path="com/incture/pmc/poadapter/services/processActionFacadeLocal.java"/>
+</sourcefolder>
+</development-component>
+</mapping>

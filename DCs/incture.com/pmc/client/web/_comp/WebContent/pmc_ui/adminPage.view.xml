@@ -1,0 +1,25 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:layout="sap.ui.layout" controllerName="pmc_ui.adminPage"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false" class="pmcBackGroundColor">
+		<content>
+			<Toolbar class="sectionHeaderStyleClass">
+				<Button text="Reset" width="4rem"
+					class="sapUiSizeCompact buttonRadiusStyleClass resetButtonStyleClass"
+					press="onReset" />
+				<Button text="Save" width="4rem"
+					class="sapUiSizeCompact buttonRadiusStyleClass processButtonStyleClass"
+					press="onSavePress" />
+			</Toolbar>
+			<IconTabBar expandable="false" id="taskTypeTabBar" select="onConfigSelection" selectedKey="{oUserDefaultModel>/selectedConfig}"
+				backgroundDesign="Solid" items="{oPageModel>/roleBasedPages}" class="tabBarClass">
+				<items>
+					<IconTabFilter text="{oPageModel>shortName}" key="{oPageModel>key}">
+						<core:Fragment fragmentName="pmc.fragments.configuration"
+							type="XML" />
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog showHeader="false" class="dialogClass" contentWidth="30%">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label text="Selected Users" class="delegateLabelStyle mailTextStyle" />
+				</contentMiddle>
+				<!-- <contentRight>
+					<Button icon="sap-icon://decline" press="onSelectionCriteriaClose"></Button>
+				</contentRight> -->
+			</Bar>
+		</customHeader>
+		<HBox width="100%" background="#ffffff">
+			<SearchField search="handleSearch" class="sapUiSizeCompact searchFldClass" width="100%"/>
+		</HBox>
+		<VBox height="2rem"/>
+		<Table class="sapUiSizeCompact listTblClass" id="idUsersList" 
+			items="{oSelectedUsersModel>/userList}" mode="MultiSelect"
+			itemPress="onClickItem">
+			<columns>
+				<Column>
+					<Label text="Select All"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onClickItem" selected="true">
+					<cells>
+						<Text text="{oSelectedUsersModel>userId}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<buttons>
+			<Button text="OK" press="onSelectedUsersSubmit"  type="Transparent"
+				class="sapUiSizeCompact normalBtnClass" />
+			<Button text="Cancel" press="onUserListClose"  type="Transparent"
+				class="sapUiSizeCompact normalBtnClass" />
+		</buttons>
+	</Dialog>
+	<!-- <SelectDialog
+		noDataText="No Users"
+		title="Selected Users" 
+		multiSelect="true"
+		search="handleSearch"
+		confirm="onSelectedUsersSubmit"
+		cancel="onUserListClose"
+		items="{oSelectedUsersModel>/userList}" 
+		class="sapUiSizeCompact dialogClass"
+		contentWidth="30%">
+		<StandardListItem 
+			selected="true"
+			title="{oSelectedUsersModel>userId}"
+			type="Active" />
+	</SelectDialog> -->
+</core:FragmentDefinition>

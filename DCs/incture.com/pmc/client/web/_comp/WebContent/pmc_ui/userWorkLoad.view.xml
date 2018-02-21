@@ -1,0 +1,124 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:tnt="sap.tnt" xmlns:layout="sap.ui.layout"
+	xmlns="sap.m" controllerName="pmc_ui.userWorkLoad" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" showHeader="false" class="pmcBackGroundColor">
+		<content>
+			<VBox>
+				<!-- <HBox class="userWorkLoadHeaderStyle"> <Image src="{path:'oUserDetailsModel>/image', 
+					formatter:'pmc.util.formatter.fnGetUserPic'}" alt="" class="userWorkLoadImageStyle" 
+					/> <VBox class="userWorkLoadSubHeaderFirstStyle"> <Label text="{oUserDetailsModel>/userName}" 
+					class="userWorkLoadNamestyle" /> </VBox> <VBox class="userWorkLoadSubHeaderStyle"> 
+					<HBox> <Label text="{i18n>USER_ID}" class="userWorkLoadLblStyle" /> <Label 
+					text="-" class="userWorkLoadSeperatortyle" /> <Text text="{oUserDetailsModel>/userId}" 
+					tooltip="{oUserDetailsModel>/applicationGroupsName}" wrapping="false" class="userWorkLoadKeyStyle" 
+					/> </HBox> <HBox> <Label text="{i18n>USER_EMAIL_ID}" class="userWorkLoadLblStyle" 
+					/> <Label text="-" class="userWorkLoadSeperatortyle" /> <Text text="{oUserDetailsModel>/userMailId}" 
+					tooltip="{oUserDetailsModel>/applicationGroupsName}" wrapping="false" class="userWorkLoadKeyStyle" 
+					/> </HBox> <HBox> <Label text="{i18n>USER_GROUP}" class="userWorkLoadLblStyle" 
+					/> <Label text="-" class="userWorkLoadSeperatortyle" /> <Text text="{oUserDetailsModel>/applicationGroupsName}" 
+					tooltip="{oUserDetailsModel>/applicationGroupsName}" wrapping="false" class="userWorkLoadKeyStyle" 
+					/> </HBox> </VBox> </HBox> -->
+				<IconTabBar backgroundDesign="Solid" select="handleTabSelect"
+					class="userWorkLoadTabStyleClass" expandable="false" id="workLoadTypeTab">
+					<items>
+						<IconTabFilter text="{i18n>WORKLOAD_FOR_TODAY}" key="userDetailsTab">
+							<HBox>
+								<Image src="images/userProfile.png" class="sapUiTinyMargin"
+									width="2rem" press="onPressUserProfile" />
+								<layout:Grid defaultSpan="L6 M3 S6" vSpacing="0"
+									class="processMarginStyle">
+									<VBox>
+										<Label text="{i18n>SEVERITY}" class="userWorkLoadDetailsTitalLblClass" />
+										<Label text="{oUserDefaultModel>/userWorkLoadType}"
+											class="userWorkLoadSeverityClass" />
+									</VBox>
+									<VBox
+										visible="{path:'oUserDefaultModel>/userTaskStatus', formatter:'pmc.util.formatter.fnShowReadyTaskNumbers'}">
+										<Label text="{i18n>NO_OF_READY_TASKS}" class="userWorkLoadDetailsTitalLblClass" />
+										<Label text="{oUserWorkLoadModel>/count}" class="userWorkLoadKeyClass" />
+									</VBox>
+									<VBox
+										visible="{path:'oUserDefaultModel>/userTaskStatus', formatter:'pmc.util.formatter.fnShowReservedTaskNumbers'}">
+										<Label text="{i18n>NO_OF_RESERVED_TASKS}" class="userWorkLoadDetailsTitalLblClass" />
+										<Label text="{oUserWorkLoadModel>/count}" class="userWorkLoadKeyClass" />
+									</VBox>
+									<VBox
+										visible="{path:'oUserDefaultModel>/userTaskStatus', formatter:'pmc.util.formatter.fnShowAllNumbers'}">
+										<Label text="{i18n>NO_OF_TASKS}" class="userWorkLoadDetailsTitalLblClass" />
+										<Label text="{oUserWorkLoadModel>/count}"
+											tooltip="{i18n>NO_OF_READY_TASKS} + {i18n>NO_OF_RESERVED_TASKS}"
+											class="userWorkLoadKeyClass" />
+									</VBox>
+								</layout:Grid>
+							</HBox>
+							<Panel id="userWorkLoadPanel" class="workLoadPanel" />
+						</IconTabFilter>
+						<IconTabFilter text="{i18n>OVER_A_PERIOD_OF_TIME}"
+							key="userDetailsGraphTab">
+							<HBox justifyContent="SpaceBetween" width="95%" class="marginTop1rem">
+								<HBox justifyContent="SpaceBetween" width="17%"
+									class="switchStyleClass">
+									<Text text="{i18n>DISTRIBUTION}" class="graphLabel" />
+									<Switch id="idGraphTypeBtn" state="false"
+										class="sapUiSizeCompact rulesStatusSwitchClass" customTextOn=" "
+										customTextOff=" " change="onchangeGraph">
+										<layoutData>
+											<FlexItemData growFactor="1" />
+										</layoutData>
+									</Switch>
+									<Text text="{i18n>CUMULATIVE}" id="graphLabel" class="graphLabel" />
+								</HBox>
+								<SegmentedButton selectedKey="{i18n>THIS_WEEK}"
+									id="idUserRangeBtn" class="sapUiSizeCompact">
+									<items>
+										<SegmentedButtonItem text="{i18n>THIS_WEEK}"
+											key="WEEK" press="onRangeChange" width="54%" />
+										<SegmentedButtonItem text="{i18n>THIS_MONTH}"
+											key="MONTH" press="onRangeChange" width="54%" />
+									</items>
+								</SegmentedButton>
+							</HBox>
+							<layout:FixFlex minFlexSize="350"
+								id="userWorkLoadGraphFlex" class="userWorkLoadGraphSize">
+								<layout:flexContent>
+									<viz:Popover></viz:Popover>
+									<viz:VizFrame height='100%' width="90%" vizType='pie'
+										legendVisible="false" class="userWorkLoadlineGraph" id="userWorkLoadGraph">
+										<viz:dataset>
+											<viz.data:FlattenedDataset data="{oDayGraphDataModel>/graphData}">
+												<viz.data:dimensions>
+													<viz.data:DimensionDefinition
+														name="Status" value="{status}" />
+												</viz.data:dimensions>
+												<viz.data:measures>
+													<viz.data:MeasureDefinition
+														name="Task Count" value="{count}" />
+												</viz.data:measures>
+											</viz.data:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<viz.feeds:FeedItem uid="size" type="Measure"
+												values="Task Count" />
+											<viz.feeds:FeedItem uid="color" type="Dimension"
+												values="Status" />
+										</viz:feeds>
+									</viz:VizFrame>
+								</layout:flexContent>
+							</layout:FixFlex>
+							<layout:FixFlex minFlexSize="350" id="usertaskStatusFlex"
+								class="userWorkLoadGraphSize">
+								<layout:flexContent>
+									<viz:Popover></viz:Popover>
+									<viz:VizFrame height='60%' width="100%" vizType='column'
+										legendVisible="true" class="processAgingstackGraph" id="PMC_TASK_STATUS_GRAPH">
+									</viz:VizFrame>
+								</layout:flexContent>
+							</layout:FixFlex>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

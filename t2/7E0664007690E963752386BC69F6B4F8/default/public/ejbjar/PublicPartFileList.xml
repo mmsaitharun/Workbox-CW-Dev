@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<content version="4">
+<metadata>
+<development-component>
+<name>pmc/po/adapter/services/ejb</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>EJBModule</sub-type>
+</component-type>
+</development-component>
+<public-part>
+<name>ejbjar</name>
+<purpose>assembly</purpose>
+</public-part>
+<dependencies>
+<dependency>
+<dc-ref>
+<name>pmc/po/adapter/entities/ejb</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>EJBModule</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">client</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>pmc/po/adapter/entities/ejb</name>
+<vendor>incture.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>EJBModule</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="assembly">ejbjar</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>engine.jee5.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/bpem/facade/ear</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>Enterprise Application</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/esi/esp/wsrm/facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Service</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/sdo21/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/usermanagement/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+<dependency>
+<dc-ref>
+<name>tc/je/webservices/api</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Service</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+</dependencies>
+</metadata>
+<source-components/>
+<archives>
+<archive location="javalib" path="lib/java/incture.com~pmc~po~adapter~services~ejb.jar" type="jar">
+<property key="attributes">J2EE-Module[module-type[ejb]],jar</property>
+</archive>
+<archive location="srcarchive" path="src/java/src.zip" type="zip"/>
+</archives>
+<entities>
+<entity>
+<name>incture.com~pmc~po~adapter~services~ejb</name>
+<entity-type>EJB-JAR</entity-type>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<fileset location="javalib" source-location="DC" source-path="ejbModule">
+<file path="META-INF/MANIFEST.MF"/>
+<file path="META-INF/ejb-j2ee-engine.xml"/>
+<file path="META-INF/wsdl/com/incture/pmc/poadapter/services/rootwsdl_PMCProcessManagementFacadeService/rootwsdl_PMCProcessManagementFacadeService.wsdl"/>
+<file path="META-INF/wsdl/com/oneapp/incture/pmc/poadapter/services/rootwsdl_PMCProcessManagementFacadeService/rootwsdl_PMCProcessManagementFacadeService.wsdl"/>
+</fileset>
+<fileset location="javalib" source-location="gen" source-path="classes">
+<file path="com/incture/hana/dbconsumer/HanaDBConnector.class"/>
+<file path="com/incture/hana/dbconsumer/HanaDBDao.class"/>
+<file path="com/incture/pmc/bpm/events/ConsumeBPMEventsBean.class"/>
+<file path="com/incture/pmc/poadapter/dto/CustomAttributeDto.class"/>
+<file path="com/incture/pmc/poadapter/dto/NoteDto.class"/>
+<file path="com/incture/pmc/poadapter/dto/ProcessExportFilterCriteria.class"/>
+<file path="com/incture/pmc/poadapter/services/BaseDto.class"/>
+<file path="com/incture/pmc/poadapter/services/CustomAttributesService.class"/>
+<file path="com/incture/pmc/poadapter/services/CustomAttributesServiceLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetails.class"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetailsResponse.class"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetails.class"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetailsResponse.class"/>
+<file path="com/incture/pmc/poadapter/services/ObjectFactory.class"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessEventsDto.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumer.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumerLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/TaskEventsDto.class"/>
+<file path="com/incture/pmc/poadapter/services/TaskOwnerDetailsDto.class"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/package-info.class"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacadeLocal.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/BaseDto.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetProcessDetails.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetProcessDetailsResponse.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetTaskDetails.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetTaskDetailsResponse.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/ObjectFactory.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/PMCProcessManagementFacade.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/ProcessEventsDto.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/TaskEventsDto.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/TaskOwnerDetailsDto.class"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/package-info.class"/>
+</fileset>
+<fileset location="srcarchive" source-location="DC" source-path=".apt_generated">
+<file path="com/incture/pmc/poadapter/services/BaseDto.java"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetails.java"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetailsResponse.java"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetails.java"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetailsResponse.java"/>
+<file path="com/incture/pmc/poadapter/services/ObjectFactory.java"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessEventsDto.java"/>
+<file path="com/incture/pmc/poadapter/services/TaskEventsDto.java"/>
+<file path="com/incture/pmc/poadapter/services/TaskOwnerDetailsDto.java"/>
+<file path="com/incture/pmc/poadapter/services/package-info.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/BaseDto.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetProcessDetails.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetProcessDetailsResponse.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetTaskDetails.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/GetTaskDetailsResponse.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/ObjectFactory.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/PMCProcessManagementFacade.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/ProcessEventsDto.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/TaskEventsDto.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/TaskOwnerDetailsDto.java"/>
+<file path="com/oneapp/incture/pmc/poadapter/services/package-info.java"/>
+</fileset>
+<fileset location="srcarchive" source-location="DC" source-path="ejbModule">
+<file path="com/incture/hana/dbconsumer/HanaDBConnector.java"/>
+<file path="com/incture/hana/dbconsumer/HanaDBDao.java"/>
+<file path="com/incture/pmc/bpm/events/ConsumeBPMEventsBean.java"/>
+<file path="com/incture/pmc/poadapter/dto/CustomAttributeDto.java"/>
+<file path="com/incture/pmc/poadapter/dto/NoteDto.java"/>
+<file path="com/incture/pmc/poadapter/dto/ProcessExportFilterCriteria.java"/>
+<file path="com/incture/pmc/poadapter/services/CustomAttributesService.java"/>
+<file path="com/incture/pmc/poadapter/services/CustomAttributesServiceLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumer.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumerLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacadeLocal.java"/>
+</fileset>
+</entity>
+<entity>
+<name>com.incture.pmc.poadapter.dto</name>
+<package>com/incture/pmc/poadapter/dto</package>
+<entity-type>Java Package</entity-type>
+<entity-sub-type>Class</entity-sub-type>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<fileset location="javalib" source-location="gen" source-path="classes">
+<file path="com/incture/pmc/poadapter/dto/CustomAttributeDto.class"/>
+<file path="com/incture/pmc/poadapter/dto/NoteDto.class"/>
+<file path="com/incture/pmc/poadapter/dto/ProcessExportFilterCriteria.class"/>
+</fileset>
+<fileset location="srcarchive" source-location="DC" source-path="ejbModule">
+<file path="com/incture/pmc/poadapter/dto/CustomAttributeDto.java"/>
+<file path="com/incture/pmc/poadapter/dto/NoteDto.java"/>
+<file path="com/incture/pmc/poadapter/dto/ProcessExportFilterCriteria.java"/>
+</fileset>
+</entity>
+<entity>
+<name>com.incture.pmc.poadapter.services</name>
+<package>com/incture/pmc/poadapter/services</package>
+<entity-type>Java Package</entity-type>
+<entity-sub-type>Class</entity-sub-type>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<fileset location="javalib" source-location="gen" source-path="classes">
+<file path="com/incture/pmc/poadapter/services/BaseDto.class"/>
+<file path="com/incture/pmc/poadapter/services/CustomAttributesService.class"/>
+<file path="com/incture/pmc/poadapter/services/CustomAttributesServiceLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetails.class"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetailsResponse.class"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetails.class"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetailsResponse.class"/>
+<file path="com/incture/pmc/poadapter/services/ObjectFactory.class"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessEventsDto.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumer.class"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumerLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/TaskEventsDto.class"/>
+<file path="com/incture/pmc/poadapter/services/TaskOwnerDetailsDto.class"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacadeLocal.class"/>
+<file path="com/incture/pmc/poadapter/services/package-info.class"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacade.class"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacadeLocal.class"/>
+</fileset>
+<fileset location="srcarchive" source-location="DC" source-path=".apt_generated">
+<file path="com/incture/pmc/poadapter/services/BaseDto.java"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetails.java"/>
+<file path="com/incture/pmc/poadapter/services/GetProcessDetailsResponse.java"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetails.java"/>
+<file path="com/incture/pmc/poadapter/services/GetTaskDetailsResponse.java"/>
+<file path="com/incture/pmc/poadapter/services/ObjectFactory.java"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/PMCProcessManagementFacadeService.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessEventsDto.java"/>
+<file path="com/incture/pmc/poadapter/services/TaskEventsDto.java"/>
+<file path="com/incture/pmc/poadapter/services/TaskOwnerDetailsDto.java"/>
+<file path="com/incture/pmc/poadapter/services/package-info.java"/>
+</fileset>
+<fileset location="srcarchive" source-location="DC" source-path="ejbModule">
+<file path="com/incture/pmc/poadapter/services/CustomAttributesService.java"/>
+<file path="com/incture/pmc/poadapter/services/CustomAttributesServiceLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/DatabaseManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessDataExportManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumer.java"/>
+<file path="com/incture/pmc/poadapter/services/ProcessManagementFacadeWSDLConsumerLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/SubstitutionProfileManagerFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/UMEUserManagementFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/WorkBoxActionFacadeLocal.java"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacade.java"/>
+<file path="com/incture/pmc/poadapter/services/processActionFacadeLocal.java"/>
+</fileset>
+</entity>
+</entities>
+</content>

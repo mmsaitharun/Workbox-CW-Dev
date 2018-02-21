@@ -1,0 +1,51 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified" xmlns:tnt="sap.tnt" xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic" xmlns:layout="sap.ui.layout"
+	controllerName="pmc_ui.masterDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<u:Shell id="myShell" icon="" class="inctureMDShellClass">
+		<u:header>
+			<Bar class="inctureMDBarClass">
+				<contentLeft>
+					<Image src="images/backWhiteButton.png" tooltip="{i18n>BACK_TOOLTIP}"
+						width="2rem" press="onNavBack" visible="{oUserDefaultModel>/displayBack}" />
+				</contentLeft>
+				<contentMiddle>
+					<Label
+						text="{path:'oUserDefaultModel>/reportHeader', formatter:'pmc.util.formatter.fnHeaderStyle'}" />
+				</contentMiddle>
+				<contentRight>
+					<!-- <Text text="3" class="notifyCountStyle"/>
+					<Image src="images/notification.png" class="notificationIconClass" tooltip="Notifications"
+						press="onNotificationClick" /> -->
+					<Image src="images/mail.png" class="emailImageStyle" tooltip="{i18n>SEND_MAIL}"
+						press="onEmailClick" />
+					<Image src="images/userAccount.png" width="1.4rem"
+						tooltip="{i18n>USER_PROFILE}" press="onUserClick" class="userIconStyleClass" />
+					<Text text="{oUserDefaultModel>/loggedInUser}" class="loggedInUserNameStyle" />
+					<Image src="images/home_Page.png" tooltip="{i18n>LAUNCH_PAGE}"
+						class="homeIconStyle" press="onBackToLaunchPage" />
+				</contentRight>
+			</Bar>
+		</u:header>
+		<u:content>
+			<SplitApp id="SplitApp" initialDetail="detail"
+				initialMaster="master" class="SplitApp">
+				<masterPages>
+					<Page id="master" showHeader="false" class="masterBackGroundStyleClass">
+						<content>
+							<tnt:SideNavigation id="sideNavigation"
+								height="100%" class="sideNavigation">
+								<tnt:NavigationList id="navList" class="sideNavigationClass" items="{oNavModel>/navigationPages}">
+									<tnt:NavigationListItem text="{oNavModel>name}"
+										key="{oNavModel>key}" icon="{oNavModel>iconUrl}" select="onNavPress" />
+								</tnt:NavigationList>
+							</tnt:SideNavigation>
+						</content>
+					</Page>
+				</masterPages>
+				<detailPages>
+				</detailPages>
+			</SplitApp>
+		</u:content>
+	</u:Shell>
+</core:View>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://incture.com/pmc/poadapter/services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://incture.com/pmc/poadapter/services/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://incture.com/pmc/poadapter/services/" version="1.0">
+<xs:element name="cancelProcess" type="tns:cancelProcess"/>
+<xs:element name="cancelProcessResponse" type="tns:cancelProcessResponse"/>
+<xs:complexType name="cancelProcess">
+<xs:sequence>
+<xs:element minOccurs="0" name="processInstanceId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cancelProcessResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="cancelProcessIn">
+<wsdl:part element="tns:cancelProcess" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="cancelProcessOut">
+<wsdl:part element="tns:cancelProcessResponse" name="cancelProcessResponse"/>
+</wsdl:message>
+<wsdl:portType name="processActionFacade">
+<wsdl:operation name="cancelProcess" parameterOrder="parameters">
+<wsdl:input message="tns:cancelProcessIn"/>
+<wsdl:output message="tns:cancelProcessOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="processActionFacadeBinding" type="tns:processActionFacade">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="cancelProcess">
+<soap:operation soapAction=""/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="processActionFacadeService">
+<wsdl:port binding="tns:processActionFacadeBinding" name="processActionFacadePort">
+<soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://incturecwd:50000/processActionFacadeService/processActionFacade"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
